@@ -3,7 +3,7 @@ div(class="search-room-card__dropdown-guests-field")
     h3(class="search-room-card__dropdown-guests-field-label") Гости
     div(class="search-room-card__dropdown-guests")
         div(class="search-room-card__dropdown-guests-switcher")
-            span Сколько гостей
+            span(class="search-room-card__guests") Сколько гостей
             div(class="search-room-card__dropdown-guests-arrow-wrapper")
                 span(class="search-room-card__dropdown-guests-arrow") keyboard_arrow_down
         //-Выпадающее меню        
@@ -11,35 +11,29 @@ div(class="search-room-card__dropdown-guests-field")
             //-Элемент меню для количества взрослых
             div(class="search-room-card__dropdown-guests-input")
                 span(class="search-room-card__dropdown-guests-input-label") Взрослые
-                div(class="search-room-card__dropdown-guests-minus-wrapper")
-                    span -
-                span(class="search-room-card__dropdown-guests-number") 0
+                span(class="search-room-card__minus") -
+                span(class="search-room-card__number") 0
                 input(class="search-room-card__dropdown-guests-input-hidden" type="number" value="0")
-                div(class="search-room-card__dropdown-guests-plus-wrapper")
-                    span +
+                span(class="search-room-card__plus") +
             
             //-Элемент меню для количества детей
             div(class="search-room-card__dropdown-guests-input")
                 span(class="search-room-card__dropdown-guests-input-label") Дети
-                div(class="search-room-card__dropdown-guests-minus-wrapper")
-                    span -
-                span(class="search-room-card__dropdown-guests-number") 0
+                span(class="search-room-card__minus") -
+                span(class="search-room-card__number") 0
                 input(class="search-room-card__dropdown-guests-input-hidden" type="number" value="0")
-                div(class="search-room-card__dropdown-guests-plus-wrapper")
-                    span +
+                span(class="search-room-card__plus") +
                    
             //-Элемент меню для количества младенцев
             div(class="search-room-card__dropdown-guests-input")
                 span(class="search-room-card__dropdown-guests-input-label") Младенцы
-                div(class="search-room-card__dropdown-guests-minus-wrapper")
-                    span -
-                span(class="search-room-card__dropdown-guests-number") 0
+                div(class="search-room-card__minus") -
+                span(class="search-room-card__number") 0
                 input(class="search-room-card__dropdown-guests-input-hidden" type="number" value="0")
-                div(class="search-room-card__dropdown-guests-plus-wrapper")
-                    span +
+                div(class="search-room-card__plus") +
             
             //-Кнопки очистить/применить
             div(class="search-room-card__dropdown-guests-buttons")
-                div(class="search-room-card__dropdown-guests-refresh ") Очистить
-                div(class="search-room-card__dropdown-guests-submit") Применить
+                div(class="search-room-card__refresh") Очистить
+                div(class="search-room-card__submit") Применить
         

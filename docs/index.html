@@ -51,8 +51,7 @@
   </div>
 </div>
 </header>
-      <div class="content">
-        <div class="search-card-wrapper">
+<div class="content content_theme_search">
 <div class="search-room-card">
   <h1 class="search-room-card__header">Найдём номера под ваши пожелания</h1>
 <div class="search-room-card__dropdown-dates">
@@ -72,36 +71,30 @@
 <div class="search-room-card__dropdown-guests-field">
   <h3 class="search-room-card__dropdown-guests-field-label">Гости</h3>
   <div class="search-room-card__dropdown-guests">
-    <div class="search-room-card__dropdown-guests-switcher"><span>Сколько гостей</span>
+    <div class="search-room-card__dropdown-guests-switcher"><span class="search-room-card__guests">Сколько гостей</span>
       <div class="search-room-card__dropdown-guests-arrow-wrapper"><span class="search-room-card__dropdown-guests-arrow">keyboard_arrow_down</span></div>
     </div>
     <div class="search-room-card__dropdown-guests-inputs">
-      <div class="search-room-card__dropdown-guests-input"><span class="search-room-card__dropdown-guests-input-label">Взрослые</span>
-        <div class="search-room-card__dropdown-guests-minus-wrapper"><span>-</span></div><span class="search-room-card__dropdown-guests-number">0</span>
-        <input class="search-room-card__dropdown-guests-input-hidden" type="number" value="0">
-        <div class="search-room-card__dropdown-guests-plus-wrapper"><span>+</span></div>
+      <div class="search-room-card__dropdown-guests-input"><span class="search-room-card__dropdown-guests-input-label">Взрослые</span><span class="search-room-card__minus">-</span><span class="search-room-card__number">0</span>
+        <input class="search-room-card__dropdown-guests-input-hidden" type="number" value="0"><span class="search-room-card__plus">+</span>
       </div>
-      <div class="search-room-card__dropdown-guests-input"><span class="search-room-card__dropdown-guests-input-label">Дети</span>
-        <div class="search-room-card__dropdown-guests-minus-wrapper"><span>-</span></div><span class="search-room-card__dropdown-guests-number">0</span>
-        <input class="search-room-card__dropdown-guests-input-hidden" type="number" value="0">
-        <div class="search-room-card__dropdown-guests-plus-wrapper"><span>+</span></div>
+      <div class="search-room-card__dropdown-guests-input"><span class="search-room-card__dropdown-guests-input-label">Дети</span><span class="search-room-card__minus">-</span><span class="search-room-card__number">0</span>
+        <input class="search-room-card__dropdown-guests-input-hidden" type="number" value="0"><span class="search-room-card__plus">+</span>
       </div>
       <div class="search-room-card__dropdown-guests-input"><span class="search-room-card__dropdown-guests-input-label">Младенцы</span>
-        <div class="search-room-card__dropdown-guests-minus-wrapper"><span>-</span></div><span class="search-room-card__dropdown-guests-number">0</span>
+        <div class="search-room-card__minus">-</div><span class="search-room-card__number">0</span>
         <input class="search-room-card__dropdown-guests-input-hidden" type="number" value="0">
-        <div class="search-room-card__dropdown-guests-plus-wrapper"><span>+</span></div>
+        <div class="search-room-card__plus">+</div>
       </div>
       <div class="search-room-card__dropdown-guests-buttons">
-        <div class="search-room-card__dropdown-guests-refresh ">Очистить</div>
-        <div class="search-room-card__dropdown-guests-submit">Применить</div>
+        <div class="search-room-card__refresh">Очистить</div>
+        <div class="search-room-card__submit">Применить</div>
       </div>
     </div>
   </div>
 </div>
 <button class="search-room-card__button-with-arrow search-room-card__button-with-arrow_theme_one"> <span class="search-room-card__button-with-arrow-label">Подобрать номер</span><span class="search-room-card__button-arrow" type="button">arrow_forward</span></button>
-</div>
-        </div><span class="best-place">Лучшие номера для вашей работы, отдыха и просто вдохновения</span>
-        <div class="enter-card-block-wrapper" style="display: none;">
+</div><span class="content__span">Лучшие номера для вашей работы, отдыха и просто вдохновения</span>
 <div class="enter-card">
   <h1 class="enter-card__header">Войти</h1>
 <input class="enter-card__email-input" type="email" placeholder="Email">
@@ -111,8 +104,40 @@
 <button class="enter-card__click-button enter-card__click-button_theme_two">Создать</button>
   </div>
 </div>
-        </div>
-      </div>
+<div class="registration-card">
+  <h1 class="registration-card__header">Регистрация аккаунта</h1>
+<input class="registration-card__name-input" type="text" placeholder="Имя">
+<input class="registration-card__surname-input" type="text" placeholder="Фамилия">
+<div class="registration-card__radio-sex">
+  <div class="registration-card__radio-sex-man-wrapper registration-card__radio-sex_checked">
+    <div class="registration-card__radio-sex-man-input">
+      <div class="registration-card__radio-sex-man-checker"></div>
+    </div><span class="registration-card__radio-sex-man-label">Мужчина</span>
+  </div>
+  <div class="registration-card__radio-sex-woman-wrapper">
+    <div class="registration-card__radio-sex-woman-input">
+      <div class="registration-card__radio-sex-woman-checker"></div>
+    </div><span class="registration-card__radio-sex-woman-label">Женщина</span>
+  </div>
+</div>
+<div class="registration-card__masked-text-field">
+  <h3 class="registration-card__masked-text-field-label">дата рождения</h3>
+  <input class="registration-card__masked-input" type="text" placeholder="ДД.ММ.ГГГГ">
+</div>
+  <h3 class="registration-card__data-label">данные для входа в сервис</h3>
+<input class="registration-card__email-input" type="email" placeholder="Email">
+<input class="registration-card__password-input" type="password" placeholder="Пароль">
+<div class="registration-card__toggle">
+  <div class="registration-card__toggle-wrapper">
+    <div class="registration-card__toggle-btn"></div><span class="registration-card__toggle-btn-label">Получать спецпредложения</span>
+  </div>
+</div>
+<button class="registration-card__button-with-arrow registration-card__button-with-arrow_theme_one"> <span class="registration-card__button-with-arrow-label">Перейти к оплате</span><span class="registration-card__button-arrow" type="button">arrow_forward</span></button>
+  <div class="registration-card__create-account"><span class="registration-card__create-account-span">Уже есть аккаунт на Toxin</span>
+<button class="registration-card__click-button registration-card__click-button_theme_two">Войти</button>
+  </div>
+</div>
+</div>
 <footer class="footer">
   <div class="footer__nav">
 <div class="footer__logo">

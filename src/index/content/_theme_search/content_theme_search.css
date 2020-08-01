@@ -1,0 +1,23 @@
+.content_theme_search {
+    height: 83rem;
+    background-image: url("./images/landing.jpg");
+}
+
+.content_theme_search .search-room-card {
+    display: block;
+    position: absolute;
+    top: 8.4%;
+    left: 9.7%;
+}
+
+.content_theme_search .content__span {
+    display: block
+}
+
+.content_theme_search .enter-card {
+    display: none;
+}
+
+.content_theme_search .registration-card {
+    display: none;
+}

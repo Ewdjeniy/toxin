@@ -1,0 +1,20 @@
+.content_theme_registration {
+    height: 68.3rem;
+    background-image: url("./images/bed.jpg");
+}
+
+.content_theme_registration .search-room-card {
+    display: none;
+}
+
+.content_theme_registration .content__span {
+    display: none;
+}
+
+.content_theme_registration .registration-card {
+    display: block;
+}
+
+.content_theme_registration .enter-card {
+    display: none;
+}

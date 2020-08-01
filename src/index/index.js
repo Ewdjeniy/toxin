@@ -1,21 +1,68 @@
 import './fonts/fonts.css';
 import './root.css';
+import './search-room-card/search-room-card.js';
 
 
 
 
-//const headerAuthentication = document.getElementsByClassName('header__authentication')[0],
-//    headerEnterButton = headerAuthentication.getElementsByClassName('header__enter-button')[0],
-//    content = document.getElementsByClassName('content')[0],
-//    searchRoomCardBlockWrapper = document.getElementsByClassName('search-room-card-block-wrapper')[0],
-//    bestPlaceSpan = document.getElementsByClassName('best-place')[0],
-//    enterCardBlockWrapper = document.getElementsByClassName('enter-card-block-wrapper')[0];
-//
-//enterButton.onclick = function () {
-//    searchRoomCardBlockWrapper.style.display = 'none';
-//    bestPlaceSpan.style.display = 'none';
-//    enterCardBlockWrapper.style.display = 'block';
-//    content.style.backgroundImage = 'url("./images/bed.jpg")';
-//    content.style.Height = '68.3rem';
-//    headerEnterButton.classList.add('header__enter-button_border-color_purple-alfa50');
-//}
+const header = document.getElementsByClassName('header')[0],
+    logo = header.getElementsByClassName('header__logo')[0],
+    headerButtons = header.getElementsByClassName('header__buttons')[0],
+    headerEnterButton = header.getElementsByClassName('header__enter-button')[0],
+    headerRegistrationButton = header.getElementsByClassName('header__registration-button')[0],
+    content = document.getElementsByClassName('content')[0],
+    searchRoomCard = document.getElementsByClassName('search-room-card')[0],
+    contentSpan = document.getElementsByClassName('content__span')[0],
+    enterCard = document.getElementsByClassName('enter-card')[0];
+let headerEnterButtonTurner = 0,
+    headerRegistrationButtonTurner = 0;
+
+headerEnterButton.onclick = function () {
+    if (headerEnterButtonTurner == 0) {
+        content.classList.remove('content_theme_search');
+        content.classList.remove('content_theme_registration');
+        content.classList.add('content_theme_enter');
+        headerButtons.classList.remove('header__buttons_theme_registration');
+        headerButtons.classList.add('header__buttons_theme_enter');
+        headerRegistrationButtonTurner = 0;
+        headerEnterButtonTurner = 1;
+    } else {
+        content.classList.remove('content_theme_registration');
+        content.classList.remove('content_theme_enter');
+        content.classList.add('content_theme_search');
+        headerButtons.classList.remove('header__buttons_theme_registration');
+        headerButtons.classList.remove('header__buttons_theme_enter');
+        headerEnterButtonTurner = 0;
+        headerRegistrationButtonTurner = 0;
+    }
+}
+
+headerRegistrationButton.onclick = function () {
+    if (headerRegistrationButtonTurner == 0) {
+        content.classList.remove('content_theme_search');
+        content.classList.remove('content_theme_enter');
+        content.classList.add('content_theme_registration');
+        headerButtons.classList.remove('header__buttons_theme_enter');
+        headerButtons.classList.add('header__buttons_theme_registration');
+        headerEnterButtonTurner = 0;
+        headerRegistrationButtonTurner = 1;
+    } else {
+        content.classList.remove('content_theme_registration');
+        content.classList.remove('content_theme_enter');
+        content.classList.add('content_theme_search');
+        headerButtons.classList.remove('header__buttons_theme_registration');
+        headerButtons.classList.remove('header__buttons_theme_enter');
+        headerEnterButtonTurner = 0;
+        headerRegistrationButtonTurner = 0;
+    }
+}
+
+logo.onclick = function () {
+    content.classList.remove('content_theme_registration');
+    content.classList.remove('content_theme_enter');
+    content.classList.add('content_theme_search');
+    headerButtons.classList.remove('header__buttons_theme_registration');
+    headerButtons.classList.remove('header__buttons_theme_enter');
+    headerEnterButtonTurner = 0;
+    headerRegistrationButtonTurner = 0;
+}
