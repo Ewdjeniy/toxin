@@ -1,0 +1,15 @@
+//-Главный блок
+div(class="registration-card")
+    h1(class="registration-card__header") Регистрация аккаунта
+    include ./__name-input/registration-card__name-input.pug
+    include ./__surname-input/registration-card__surname-input.pug
+    include ./__radio-sex/registration-card__radio-sex.pug
+    include ./__masked-text-field/registration-card__masked-text-field.pug
+    h3(class="registration-card__data-label") данные для входа в сервис
+    include ./__email-input/registration-card__email-input.pug
+    include ./__password-input/registration-card__password-input.pug
+    include ./__toggle/registration-card__toggle.pug
+    include ./__button-with-arrow/registration-card__button-with-arrow.pug
+    div(class="registration-card__create-account")
+        span(class="registration-card__create-account-span") Уже есть аккаунт на Toxin
+        include ./__click-button/registration-card__click-button.pug

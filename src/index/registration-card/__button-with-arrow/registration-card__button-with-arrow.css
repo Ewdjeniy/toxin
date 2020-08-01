@@ -1,0 +1,23 @@
+/*блок кнопки со стрелкой*/
+.registration-card__button-with-arrow {
+    @extend %H3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 0.15rem;
+    margin-bottom: 3rem;
+}
+
+/*Блок названия кнопки со стрелкой*/
+.registration-card__button-with-arrow-label {
+    width: 100%;
+}
+
+/*Стрелка*/
+.registration-card__button-arrow {
+    margin-left: auto;
+    font-size: 2.4rem;
+    @extend %material-icon;
+    position: absolute;
+    left: 89.4%;
+}

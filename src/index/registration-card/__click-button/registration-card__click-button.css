@@ -1,0 +1,3 @@
+.registration-card__click-button {
+    @extend %H3;
+}

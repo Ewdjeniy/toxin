@@ -1,0 +1,10 @@
+.registration-card__click-button_theme_two {
+    width: 9.9rem;
+    height: 4.4rem;
+    background-color: #FFFFFF;
+    border-radius: 2.2rem;
+    color: #BC9CFF;
+    border: 2px solid #BC9CFF;
+    cursor: pointer;
+    outline: 0;
+}

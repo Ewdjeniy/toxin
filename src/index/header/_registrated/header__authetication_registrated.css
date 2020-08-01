@@ -1,0 +1,8 @@
+/*модификатор, меняет незарегистрированного на за~*/
+.header__authetication_registrated .header__buttons {
+    display: none;
+}
+
+.header__authetication_registrated .header__user-name {
+    display: block;
+}

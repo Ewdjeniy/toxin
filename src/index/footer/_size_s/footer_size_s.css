@@ -1,0 +1,32 @@
+/*модификатор / стили для моб. телефона*/
+.footer_size_s {
+    width: 76.8rem;
+    height: 36.7rem;
+}
+
+.footer_size_s .footer__nav {
+    display: none;
+}
+
+.footer_size_s .footer__logo-wrapper {
+    width: auto;
+    height: auto;
+}
+
+.footer_size_s .footer__copyright {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.footer_size_s .footer__copyright-span {
+    display: block;
+    margin: 2rem 0 2.5rem 0;
+}
+
+.footer_size_s .footer__awesome-icons {
+    margin: 0;
+}

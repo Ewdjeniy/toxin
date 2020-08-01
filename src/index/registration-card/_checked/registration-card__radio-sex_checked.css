@@ -1,0 +1,24 @@
+/*модификатор*/
+.registration-card__radio-sex_checked {
+    border-color: #BC9CFF !important;
+}
+
+/*чекер радио мужчины при модификаторе*/
+.registration-card__radio-sex_checked .registration-card__radio-sex-man-checker {
+    display: block;
+}
+
+/*чекер радио женщины при модификаторе*/
+.registration-card__radio-sex_checked .registration-card__radio-sex-woman-checker {
+    display: block;
+}
+
+/*лэйбл у радио мужчины при модификаторе*/
+.registration-card__radio-sex_checked .registration-card__radio-sex-man-label {
+   color: rgba(31, 32, 65, 0.75) !important; 
+}
+
+/*лэйбл у радио женщины при модификаторе*/
+.registration-card__radio-sex_checked .registration-card__radio-sex-woman-label {
+    color: rgba(31, 32, 65, 0.75) !important;
+}

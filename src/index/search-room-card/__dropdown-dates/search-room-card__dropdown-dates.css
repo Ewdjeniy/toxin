@@ -1,0 +1,42 @@
+/*блок элемента*/
+.search-room-card__dropdown-dates {
+    @extend %Body;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.1rem;
+}
+
+/*блоки с названием полей (прибытие/выезд)*/
+.search-room-card__dropdown-arrival-label, .search-room-card__dropdown-departure-label {
+    @extend %H3;
+}
+
+/*блок с переключателем для выпадения календаря*/
+.search-room-card__dropdown-arrival-switcher, .search-room-card__dropdown-departure-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4rem;
+    width: 15rem;
+    padding-left: 1.4rem;
+    cursor: pointer;
+}
+
+/*обертка для стрелки вниз*/
+.search-room-card__dropdown-arrival-arrow-wrapper, .search-room-card__dropdown-departure-arrow-wrapper {
+    width: 4.4rem;
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*стрелка вниз*/
+.search-room-card__dropdown-departure-arrow, .search-room-card__dropdown-arrival-arrow {
+    color: rgba(31, 32, 65, 0.5);
+    margin-top: 0.2rem;
+    @extend %material-icon;
+}

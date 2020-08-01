@@ -1,0 +1,52 @@
+/*блок элемента*/
+.registration-card__toggle {
+    @extend %Body;
+    box-sizing: border-box;
+    margin-bottom: 2.2rem;
+}
+
+/*обертка переключателя и его лэйбла*/
+.registration-card__toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/*наружняя часть переключателя*/
+.registration-card__toggle-btn {
+    display: inline-block;
+    width: 4rem;
+    /* ширина */
+    height: 2rem;
+    /* высота */
+    border-radius: 1rem;
+    /* радиус скругления */
+    z-index: 0;
+    margin: 0 1rem 0 0;
+    background-color: #FFFFFF;
+    padding: 0;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+    /* анимация */
+}
+
+/*внутренняя часть переключателя*/
+.registration-card__toggle-btn::after {
+    content: "";
+    height: 1.2rem;
+    /* высота кнопки */
+    width: 1.2rem;
+    /* ширина кнопки */
+    border-radius: 50%;
+    top: 15%;
+    /* положение кнопки по вертикали относительно основы */
+    left: 10%;
+    /* положение кнопки по горизонтали относительно основы */
+    transition-duration: 300ms;
+    /* анимация */
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(31, 32, 65, 0.25);
+}

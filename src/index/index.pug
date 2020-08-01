@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title Toxin
+    body
+        //-div(style="width: 1440px; min-height: 100vh; background-color: red;")
+            include ./header/header.pug
+            div(class="content")
+                div(class="enter-card-block-wrapper")
+                    include ./enter-card/enter-card.pug
+        div(id="root")
+            include ./header/header.pug
+            div(class="content")
+                div(class="search-card-wrapper")
+                    include ./search-room-card/search-room-card.pug
+                span(class="best-place") Лучшие номера для вашей работы, отдыха и просто вдохновения
+                div(class="enter-card-block-wrapper" style="display: none;")
+                    include ./enter-card/enter-card.pug
+            include ./footer/footer.pug
+            

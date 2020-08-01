@@ -1,0 +1,10 @@
+/*модификатор*/
+.registration-card__toggle-btn_switch_on {
+    border: 1px solid #BC9CFF;
+}
+
+/*модификатор*/
+.registration-card__toggle-btn_switch_on::after {
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    left: 61%;
+}

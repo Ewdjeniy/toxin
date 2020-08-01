@@ -1,0 +1,176 @@
+@import "./__button-with-arrow/registration-card__button-with-arrow.css";
+@import "./__click-button/registration-card__click-button.css";
+@import "./__email-input/registration-card__email-input.css";
+@import "./__password-input/registration-card__password-input.css";
+@import "./__name-input/registration-card__name-input.css";
+@import "./__surname-input/registration-card__surname-input.css";
+@import "./__masked-text-field/registration-card__masked-text-field.css";
+@import "./__radio-sex/registration-card__radio-sex.css";
+@import "./__toggle/registration-card__toggle.css";
+@import "./_theme_one/registration-card__button-with-arrow_theme_one.css";
+@import "./_theme_two/registration-card__click-button_theme_two.css";
+@import "./_checked/registration-card__radio-sex_checked.css";
+@import "./_switch_on/registration-card__toggle-btn_switch_on.css";
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Material Icons"), local(MaterialIcons-Regular), url(search-room-card/fonts/MaterialIcons-Regular.woff) format("woff"), url(search-room-card/fonts/MaterialIcons-Regular.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Montserrat Regular"), local(Montserrat-Regular), url(search-room-card/fonts/Montserrat-Regular.woff) format("woff"), url(search-room-card/fonts/Montserrat-Regular.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    src: local("Montserrat Regular"), local(Montserrat-Medium), url(search-room-card/fonts/Montserrat-Medium.woff) format("woff"), url(search-room-card/fonts/Montserrat-Medium.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    src: local("Montserrat SemiBold"), local(Montserrat-SemiBold), url(search-room-card/fonts/Montserrat-SemiBold.woff) format("woff"), url(search-room-card/fonts/Montserrat-SemiBold.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    src: local("Montserrat Bold"), local(Montserrat-Bold), url(search-room-card/fonts/Montserrat-Bold.woff) format("woff"), url(search-room-card/fonts/Montserrat-Bold.ttf) format("ttf");
+}
+
+@font-face {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Quicksand Bold"), local(Quicksand-Bold), url(search-room-card/fonts/Quicksand-Bold.woff) format("woff"), url(search-room-card/fonts/Quicksand-Bold.ttf) format("ttf");
+}
+
+/*Основные цвета, шрифты*/
+$darkShade100: #1F2041;
+$darkShade75: rgba(31, 32, 65, 0.75);
+$darkShade50: rgba(31, 32, 65, 0.5);
+$darkShade25: rgba(31, 32, 65, 0.25);
+$darkShade05: rgba(31, 32, 65, 0.05);
+$purple: #BC9CFF;
+$green: #6FCF97;
+$purpleGrad: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+
+%H1 {
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand", "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 3rem;
+    color: #1F2041;
+    letter-spacing: normal;
+}
+
+%H2 {
+    padding: 0;
+    margin: 0;
+    font-family: "Quicksand", "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+    color: #1F2041;
+}
+
+%H3 {
+    padding: 0;
+    margin: 0 0 0.5rem 0;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #1F2041;
+    text-transform: uppercase;
+}
+
+%Body {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: rgba(31, 32, 65, 0.75);
+}
+
+%material-icon {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    /* Preferred icon size */
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+
+
+
+
+/*Главный блок*/
+.registration-card {
+    @extend %Body;
+    width: 38rem;
+    height: 64.6rem;
+    padding: 4rem 3rem 3rem 2.9rem;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2.5rem rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+}
+
+/*Заголовок главного блока*/
+.registration-card__header {
+    @extend %H1;
+    margin-bottom: 2rem;
+}
+
+.registration-card__data-label {
+    @extend %H3;
+}
+
+/*блок для создания аккаунта*/
+.registration-card__create-account {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+}
+
+/*Нет аккаунта на Toxin?*/
+.registration-card__create-account-span {
+    color: #000000;
+}

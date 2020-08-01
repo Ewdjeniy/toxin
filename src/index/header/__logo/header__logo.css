@@ -1,0 +1,19 @@
+/*блок элемента*/
+.header__logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+/*круг логотипа*/
+.header__logo__elem1 {
+    width: 4rem;
+    height: 4rem;
+}
+
+/*надпись toxin*/
+.header__logo__toxin {
+    width: 5.4rem;
+    height: 1.3rem;
+    margin-left: 1.1rem;
+}
