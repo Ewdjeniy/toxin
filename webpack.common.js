@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
   module.exports = {
     entry: {
-      toxin: './src/index/index.js'
+      toxin: './src/landing/index.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -76,7 +76,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-          template: './src/index/index.pug'
+          template: './src/landing/index.pug'
         }),
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
