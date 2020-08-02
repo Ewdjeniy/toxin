@@ -1,0 +1,38 @@
+//-Поле для количества гостей с выпадающем меню
+div(class="search-room-card__guests")
+    h3(class="search-room-card__guests-label") Гости
+    div(class="search-room-card__dropdown-guests")
+        div(class="search-room-card__guests-switcher")
+            div 
+                span(class="search-room-card__adults-value") Сколько гостей
+                span(class="search-room-card__babies-value")
+            span(class="search-room-card__guests-arrow") keyboard_arrow_down
+            
+        //-Выпадающее меню        
+        div(class="search-room-card__guests-inputs")
+            //-Элемент меню для количества взрослых
+            div(class="search-room-card__guests-input")
+                span(class="search-room-card__guests-input-label") Взрослые
+                span(class="search-room-card__adults-minus") -
+                span(class="search-room-card__adults-number") 0
+                span(class="search-room-card__adults-plus") +
+            
+            //-Элемент меню для количества детей
+            div(class="search-room-card__guests-input")
+                span(class="search-room-card__guests-input-label") Дети
+                span(class="search-room-card__adults-minus") -
+                span(class="search-room-card__adults-number") 0
+                span(class="search-room-card__adults-plus") +
+                   
+            //-Элемент меню для количества младенцев
+            div(class="search-room-card__guests-input")
+                span(class="search-room-card__guests-input-label") Младенцы
+                div(class="search-room-card__babies-minus") -
+                span(class="search-room-card__babies-number") 0
+                div(class="search-room-card__babies-plus") +
+            
+            //-Кнопки очистить/применить
+            div(class="search-room-card__guests-buttons")
+                div(class="search-room-card__refresh") Очистить
+                div(class="search-room-card__submit") Применить
+        

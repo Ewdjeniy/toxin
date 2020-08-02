@@ -1,0 +1,22 @@
+div(class="filter__checkbox")
+    form(class="filter__checkbox-form" name="filterCheckboxForm")
+        input(type="checkbox" name="filterCheckboxSmoke")
+        input(type="checkbox" name="filterCheckboxPets" checked)
+        input(type="checkbox" name="filterCheckboxGuests" checked)
+        
+    h3(class="filter__checkbox-label") Сheckbox buttons
+    div(class="filter__checkbox-checkboxes")
+        div(class="filter__checkbox-smoke")
+            div(class="filter__checkbox-box")
+                div(class="filter__checkbox-checker")
+            span Можно курить
+            
+        div(class="filter__checkbox-pets")
+            div(class="filter__checkbox-box filter-box_checked")
+                div(class="filter__checkbox-checker")
+            span Можно с питомцами
+            
+        div(class="filter__checkbox-guests")
+            div(class="filter__checkbox-box filter-box_checked")
+                div(class="filter__checkbox-checker")
+            span Можно пригласить гостей (до 10 человек)

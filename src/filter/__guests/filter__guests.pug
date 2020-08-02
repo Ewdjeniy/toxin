@@ -1,0 +1,37 @@
+//-Поле для количества гостей с выпадающем меню
+div(class="filter__guests")
+    h3(class="filter__guests-label") Гости
+    div(class="filter__dropdown-guests")
+        div(class="filter__guests-switcher")
+            div 
+                span(class="filter__adults-value") Сколько гостей
+                span(class="filter__babies-value")
+            span(class="filter__guests-arrow") keyboard_arrow_down
+        //-Выпадающее меню        
+        div(class="filter__guests-inputs")
+            //-Элемент меню для количества взрослых
+            div(class="filter__guests-input")
+                span(class="filter__guests-input-label") Взрослые
+                span(class="filter__adults-minus") -
+                span(class="filter__adults-number") 0
+                span(class="filter__adults-plus") +
+            
+            //-Элемент меню для количества детей
+            div(class="filter__guests-input")
+                span(class="filter__guests-input-label") Дети
+                span(class="filter__adults-minus") -
+                span(class="filter__adults-number") 0
+                span(class="filter__adults-plus") +
+                   
+            //-Элемент меню для количества младенцев
+            div(class="filter__guests-input")
+                span(class="filter__guests-input-label") Младенцы
+                div(class="filter__babies-minus") -
+                span(class="filter__babies-number") 0
+                div(class="filter__babies-plus") +
+            
+            //-Кнопки очистить/применить
+            div(class="filter__guests-buttons")
+                div(class="filter__refresh") Очистить
+                div(class="filter__submit") Применить
+        

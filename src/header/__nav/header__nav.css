@@ -1,0 +1,33 @@
+/*блок элемента*/
+.header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 44.7rem;
+}
+
+/*ссылки*/
+.header__link {
+    color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+/*обертка ссылок с выпадающем меню*/
+.header__services, .header__agreements {
+    display: flex;
+    align-items: center;
+}
+
+/*обертка ссылки Услуги*/
+.header__services {
+    margin-right: 1.05rem;
+}
+
+/*стрелки вниз*/
+.header__services-arrow, .header__agreements-arrow {
+    @extend %material-icon;
+    margin-top: 0.4rem;
+}

@@ -1,0 +1,30 @@
+.filter__date-label {
+    @extend %H3;
+}
+
+.filter__date-dropdown {
+    @extend %Body;
+}
+
+.filter__date-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+.filter__date-arrow {
+    @extend %material-icon;
+    width: 4.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31, 32, 65, 0.5);
+}

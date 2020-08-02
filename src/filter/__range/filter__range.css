@@ -1,0 +1,57 @@
+.filter__range {
+    @extend %Body;
+    box-sizing: border-box;
+    width: 26.6rem;
+}
+
+.filter__range-values {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__range-header {
+    @extend %H3
+}
+
+.filter__range-indicator {
+    font-weight: normal;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+.filter__range-scale {
+    width: 100%;
+    height: 0.6rem;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 0.3rem;
+    position: relative;
+}
+
+.filter__range-slider {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -80%;
+    left: 28%;
+}
+
+.filter__range-circle1 {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+.filter__range-connector {
+    width: 7rem;
+    height: 0.6rem;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+
+.filter__range-circle2 {
+    width: 1.2rem;
+    height: 1.2rem;
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+}
