@@ -1,0 +1,36 @@
+@import "./_checked/checkbox_checked.css";
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox__hidden {
+    display: none;
+}
+
+.checkbox__box {
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 0.4rem;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.checkbox__checker {
+    width: 0.6rem;
+    height: 0.4rem;
+    border-left: 0.2rem solid;
+    border-bottom: 0.2rem solid;
+    border-image: linear-gradient(180deg, #BC9CFF, #8BA4F9) 0 100%;
+    border-image-slice: 1;
+    transform: rotate(315deg);
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: none;
+}

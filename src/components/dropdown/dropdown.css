@@ -1,0 +1,72 @@
+@import "./_expanded/dropdown_expanded.css";
+@import "./_active/dropdown__refresh_active.css";
+
+/*блок элемента*/
+.dropdown {
+    font-size: 0.625rem;
+    width: 100%;
+    user-select: none;
+    position: relative;
+}
+
+/*блок с названием поля*/
+.drop-guests__label {
+    @extend %H3;
+}
+
+/*блок с переключателем выпадающего меню*/
+.dropdown__switcher {
+    @extend %Body;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    width: 100%;
+    padding-left: 1.4em;
+    cursor: pointer;
+}
+
+/*стрелка вниз*/
+.dropdown__arrow {
+    @extend %material-icon;
+    color: rgba(31, 32, 65, 0.5);
+    width: 2em;
+    height: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown__inputs {
+    display: none;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    padding: 1rem;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+.dropdown__input {
+    @extend %H3;
+}
+
+.dropdown__plus, .dropdown__minus {
+    cursor: pointer;
+}
+
+.dropdown__refresh {
+    cursor: pointer;
+    display: none;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+.dropdown__submit {
+    cursor: pointer;
+    color: #BC9CFF;
+}

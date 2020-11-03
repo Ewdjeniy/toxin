@@ -1,0 +1,10 @@
+include ../arrow-btn/arrow-btn
+include ../dropdown/dropdown
+
+//-Главный блок
+div(class="search-room-card")
+    h1(class="search-room-card__header") Найдём номера под ваши пожелания
+    include ../drop-dates/drop-dates.pug
+    h3(class="drop-guests__label") Гости
+    +dropdown('Сколько гостей', ['Взрослые', 'Дети', 'Младенцы'], '[{"one": "гость", "two": "гостя", "twelve": "гостей"},{"one": "гость", "two": "гостя", "twelve": "гостей"},{"one": "младенец", "two": "младенца", "twelve": "младенцев"}]')(class="dropdown")
+    +arrowBtn('Подобрать номер')

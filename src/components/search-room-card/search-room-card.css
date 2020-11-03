@@ -1,0 +1,24 @@
+@import "../drop-dates/drop-dates.css";
+@import "../dropdown/dropdown.css";
+@import "../arrow-btn/arrow-btn.css";
+
+
+
+/*главный блок*/
+.search-room-card {
+    font-size: 0.625rem;
+    width: 38em;
+    height: 37.4em;
+    padding: 4em 3em 3em 2.9em;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2.5em rgba(0, 0, 0, 0.2);
+    border-radius: 0.4em;
+}
+
+/*заголовок главного блока*/
+.search-room-card__header {
+    @extend %H1;
+    margin-bottom: 0.2em;
+}

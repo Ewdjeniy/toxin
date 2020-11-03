@@ -1,0 +1,60 @@
+/*блок элемента*/
+.footer__subscription {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    padding-left: 1.1em;
+    width: 26em;
+    height: 4.4em;
+}
+
+/*текстовый инппут*/
+.footer__input {
+    @extend %Body;
+    border: 0;
+    outline: 0;
+}
+
+/*webkit плейсхолдер текстового инпута*/
+.footer__input::-webkit-input-placeholder {
+    /* Chrome */
+    line-height: 1.8em;
+    color: rgba(31, 32, 65, 0.25);
+}
+
+/*ie плейсхолдер текстового инпута*/
+.footer__input:-ms-input-placeholder {
+    /* IE 10+ */
+    line-height: 1.8em;
+    color: rgba(31, 32, 65, 0.25);
+}
+
+/*mozila плейсхолдер текстового инпута*/
+.footer__input:-moz-placeholder {
+    /* Firefox 4 - 18 */
+    line-height: 1.8em;
+    color: rgba(31, 32, 65, 0.25);
+}
+
+/*обёртка стрелки*/
+.footer__arrow-wrapper {
+    width: 4.4em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*стрелка*/
+.footer__arrow {
+    @extend %material-icon;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+}

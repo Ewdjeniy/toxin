@@ -1,0 +1,23 @@
+mixin richCheckbox(label, description, checked)
+    if checked == 'checked'
+        table(class="rich-checkbox rich-checkbox_checked")
+            tr(class="rich-checkbox__tr")
+                td
+                    input(class="rich-checkbox__input" type="checkbox" checked)
+                    div(class="rich-checkbox__box")
+                        div(class="rich-checkbox__checker")
+                td(class="rich-checkbox__label")=label
+            tr(class="rich-checkbox__tr")
+                td
+                td(class="rich-checkbox__description")=description
+    else
+        table(class="rich-checkbox")
+            tr(class="rich-checkbox__tr")
+                td
+                    input(class="rich-checkbox__input" type="checkbox")
+                    div(class="rich-checkbox__box")
+                        div(class="rich-checkbox__checker")
+                td(class="rich-checkbox__label")=label
+            tr(class="rich-checkbox__tr")
+                td
+                td(class="rich-checkbox__description")=description    

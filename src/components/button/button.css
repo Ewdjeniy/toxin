@@ -1,0 +1,9 @@
+@import "./_theme_enter/button_theme_enter.css";
+@import "./_theme_registration/button_theme_registration.css";
+
+.button {
+    @extend %H3;
+    border-radius: 2.2em;
+    cursor: pointer;
+    outline: 0;
+}

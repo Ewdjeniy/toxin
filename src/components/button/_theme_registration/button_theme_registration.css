@@ -1,0 +1,9 @@
+.button_theme_registration {
+    display: inline-block;
+    width: 19.6em;
+    height: 3.4em;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFFFFF !important;
+    margin-left: 1.7em !important;
+    border: none;
+}

@@ -1,0 +1,9 @@
+include ../button/button
+
+header(class="header")
+    include ../logo/logo.pug
+    include ./__nav/header__nav.pug
+    span(class="header__user-name") Юлий Цезарь
+    div(class="header__buttons")
+        +button('Войти')(class="button button_theme_enter")
+        +button('зарегистрироваться')(class="button button_theme_registration")

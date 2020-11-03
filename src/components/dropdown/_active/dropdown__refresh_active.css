@@ -1,0 +1,4 @@
+/*кнопка очистить с модификатором search-room-card_dropdown-guests-refresh-active*/
+.dropdown__refresh_active {
+    display: block !important;
+}

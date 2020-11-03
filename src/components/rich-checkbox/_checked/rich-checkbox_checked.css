@@ -1,0 +1,7 @@
+.rich-checkbox_checked .rich-checkbox__box {
+    border-color: #BC9CFF !important;
+}
+
+.rich-checkbox_checked .rich-checkbox__checker {
+    display: block;
+}

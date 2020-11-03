@@ -1,8 +1,6 @@
-@import "./header/header.css";
-@import "./footer/footer.css";
-@import "./content/content.css";
-@import "./filter/filter.css";
-
+@import "./components/header/header.css";
+@import "./components/content/content.css";
+@import "./components/footer/footer.css";
 
 /*Основные цвета, шрифты*/
 $darkShade100: #1F2041;
@@ -21,31 +19,31 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: "Quicksand", "Open Sans";
     font-style: normal;
     font-weight: bold;
-    font-size: 2.4rem;
-    line-height: 3rem;
+    line-height: 1.5em;
     color: #1F2041;
     letter-spacing: normal;
+    font-size: 2.4em;
 }
 
 %H2 {
     padding: 0;
     margin: 0;
-    font-family: "Quicksand", "MOpen Sans";
+    font-family: "Quicksand", "Open Sans";
     font-style: normal;
     font-weight: bold;
-    font-size: 1.9rem;
-    line-height: 2.4rem;
+    font-size: 1.9em;
+    line-height: 2.4em;
     color: #1F2041;
 }
 
 %H3 {
     padding: 0;
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5em 0;
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 1.2em;
+    line-height: 1.5em;
     color: #1F2041;
     text-transform: uppercase;
 }
@@ -54,8 +52,8 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
+    font-size: 1.4em;
+    line-height: 2.4em;
     color: rgba(31, 32, 65, 0.75);
 }
 
@@ -63,8 +61,8 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+    font-size: 1.4em;
+    line-height: 1.7em;
     color: rgba(31, 32, 65, 0.5);
 }
 
@@ -78,8 +76,8 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.4rem;
-    line-height: 2.4rem;
+    font-size: 2.4em;
+    line-height: 2.4em;
     /* Preferred icon size */
     display: inline-block;
     text-transform: none;
@@ -99,20 +97,3 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     /* Support for IE. */
     font-feature-settings: 'liga';
 }
-
-
-* {
-	margin: 0;
-	padding: 0;
-}
-
-/*
-body {
-    background-color: black;
-}
-*/
-
-html {
-    font-size: 10px;
-}
-

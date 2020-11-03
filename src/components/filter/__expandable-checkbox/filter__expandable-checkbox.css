@@ -1,0 +1,34 @@
+.filter__expandable-checkbox {
+    @extend %Body;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.filter__expandable-checkbox-label {
+    @extend %H3;
+}
+
+.filter__expandable-checkbox-switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.filter__expandable-checkbox-checkboxes {
+    display: none;
+}
+
+.filter__expandable-checkbox-arrow {
+    @extend %material-icon;
+    width: 4.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31, 32, 65, 0.5);
+}

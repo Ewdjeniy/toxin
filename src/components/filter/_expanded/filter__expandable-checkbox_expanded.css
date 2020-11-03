@@ -1,0 +1,5 @@
+/*выпадающее меню с модификатором filter_guests-expanded*/
+.filter__expandable-checkbox_expanded .filter__expandable-checkbox-checkboxes {
+    display: flex;
+    flex-direction: column;
+}

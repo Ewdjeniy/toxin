@@ -1,0 +1,50 @@
+@import "./__date/filter__date.css";
+@import "../drop-guests/drop-guests.css";
+@import "./__range/filter__range.css";
+@import "../checkbox/checkbox.css";
+@import "../rich-checkbox/rich-checkbox.css";
+
+
+
+@import "../drop-beds/drop-beds.css";
+@import "./__expandable-checkbox/filter__expandable-checkbox.css";
+@import "./_expanded/filter__expandable-checkbox_expanded.css";
+
+.filter {
+    width: 26.6rem;
+}
+
+.filter__checkbox {
+    @extend %Body;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.filter__checkbox-label {
+    @extend %H3;
+}
+
+.filter__rich-checkbox {
+    @extend %Body;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.filter__rich-checkbox-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1F2041;
+}
+
+.filter__rich-checkbox-checkboxes {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+}

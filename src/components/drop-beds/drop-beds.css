@@ -1,0 +1,103 @@
+@import "./_expanded/drop-beds_expanded.css";
+
+/*блок элемента*/
+.drop-beds {
+    @extend %Body;
+    width: 100%;
+    user-select: none;
+}
+
+/*блок с названием поля*/
+.drop-beds__label {
+    @extend %H3;
+}
+
+.drop-beds__dropdown {
+    width: 100%;
+    position:relative;
+}
+
+/*блок с переключателем выпадающего меню*/
+.drop-beds__switcher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4rem;
+    width: 100%;
+    padding-left: 1.4rem;
+    cursor: pointer;
+}
+
+.drop-beds__comma {
+    display: none;
+}
+
+/*стрелка вниз*/
+.drop-beds__arrow {
+    @extend %material-icon;
+    color: rgba(31, 32, 65, 0.5);
+    width: 4.4rem;
+    height: 4.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*выпадающее меню*/
+.drop-beds__inputs {
+    display: none;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border: 1px solid rgba(31, 32, 65, 0.5);
+    padding: 1rem;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+/*блоки с элементом выпадающего меню*/
+.drop-beds__input {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: #1F2041;
+}
+
+/*названия элементов выпадающего меню*/
+.drop-beds__input-label {
+    margin-right: auto;
+}
+
+.drop-beds__minus,
+.drop-beds__plus {
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 50%;
+    color: rgba(31, 32, 65, 0.5);
+    cursor: pointer;
+}
+
+.drop-beds__number {
+    margin: 0 1rem 0 1rem;
+}
+

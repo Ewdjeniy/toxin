@@ -1,0 +1,40 @@
+/*блок элемента*/
+.drop-dates {
+    /*@extend %Body;*/
+    font-size: 0.625rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.1em;
+    user-select: none;
+}
+
+/*блоки с названием полей (прибытие/выезд)*/
+.drop-dates__arrival-label, .drop-dates__departure-label {
+    @extend %H3;
+}
+
+/*блок с переключателем для выпадения календаря*/
+.drop-dates__arrival-switcher, .drop-dates__departure-switcher {
+    @extend %Body;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    width: 11em;
+    padding-left: 1.4em;
+    cursor: pointer;
+}
+
+/*стрелка вниз*/
+.drop-dates__arrow {
+    @extend %material-icon;
+    width: 4.4em;
+    height: 1.3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31, 32, 65, 0.5);
+}
