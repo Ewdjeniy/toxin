@@ -1,15 +1,19 @@
+include ../calendar/calendar
+
 //-поля прибытия/выезда
 div(class="drop-dates")
-    //-поле даты прибытия
-    div(class="drop-dates__arrival")
-        h3(class="drop-dates__arrival-label") Прибытие
-        div(class="drop-dates__arrival-switcher")
-            span ДД.ММ.ГГГГ
-            span(class="drop-dates__arrow") keyboard_arrow_down
-    //-поле даты выезда           
-    div(class="drop-dates__departure")
-        h3(class="drop-dates__departure-label") Выезд
-        div(class="drop-dates__departure-switcher")
-            span ДД.ММ.ГГГГ
-            span(class="drop-dates__arrow") keyboard_arrow_down
+    div(class="drop-dates__droper")
+        //-поле даты прибытия
+        div(class="drop-dates__arrival")
+            h3(class="drop-dates__arrival-label") Прибытие
+            div(class="drop-dates__arrival-switcher")
+                span(class="drop-dates__arrival-value") ДД.ММ.ГГГГ
+                span(class="drop-dates__arrow") keyboard_arrow_down
+        //-поле даты выезда           
+        div(class="drop-dates__departure")
+            h3(class="drop-dates__departure-label") Выезд
+            div(class="drop-dates__departure-switcher")
+                span(class="drop-dates__departure-value") ДД.ММ.ГГГГ
+                span(class="drop-dates__arrow") keyboard_arrow_down
+    +calendar(class="drop-dates__calendar")
         

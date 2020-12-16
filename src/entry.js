@@ -1,6 +1,10 @@
 import './fonts/fonts.css';
-import './root.css';
+import './pages/landing/landing.css';
+import './components/drop-dates/drop-dates.js';
+import './components/dropdown/dropdown.js';
 import './components/search-room-card/search-room-card.js';
+import './components/calendar/calendar.js';
+import './components/arrow-btn/arrow-btn.js';
 
 
 

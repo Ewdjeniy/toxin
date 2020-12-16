@@ -1,10 +1,23 @@
+import './calendar.css';
+
 const calendars = document.getElementsByClassName('calendar');
 //new Date(year, month, date, hours, minutes, seconds, ms)
 var ths = new Date(2019, 7, 9, 2, 3, 4, 567);
 
 for (let i = 0; i < calendars.length; i++) {
+    if (getComputedStyle(calendars[i]).display == 'none' || calendars[i].style.display == 'none') {
+        calendars[i].style.display = 'inline-block';
+        calendars[i].style.position = 'relative';
+        calendars[i].style.zIndex = '-10000';
+        calendars[i].style.color = 'transparent';
+        calendars[i].style.backgroundColor = 'transparent';
+        calendars[i].style.height = '0';
+        calendars[i].style.margin = '0';
+        calendars[i].style.border = '0';
+    }
+    
     $(calendars[i]).datepicker({
-        //inline: true,
+        inline: true,
         keyboardNav: false,
         offset: 10,
         moveToOtherMonthsOnSelect: false,
@@ -26,8 +39,18 @@ for (let i = 0; i < calendars.length; i++) {
         onShow: function () {
             calendarChangeView(i);
         },
+        onHide: function(inst, animationCompleted){
+            if (animationCompleted) {
+                let hideEvent = new Event("hide");
+                calendars[i].dispatchEvent(hideEvent);
+            }
+        },
         onSelect: function(formattedDate, date, inst) {
             activateButtons(i, date.length);
+            let event = new Event("input");
+            calendars[i].dispatchEvent(event);
+            event = new Event("change");
+            calendars[i].dispatchEvent(event);
         },
     });
 }

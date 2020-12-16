@@ -1,9 +1,4 @@
-@import "../search-room-card/search-room-card.css";
-@import "../enter-card/enter-card.css";
-@import "../registration-card/registration-card.css";
 @import "./_theme_search/content_theme_search.css";
-@import "./_theme_enter/content_theme_enter.css";
-@import "./_theme_registration/content_theme_registration.css";
 
 .content {
     font-size: 0.625rem;
