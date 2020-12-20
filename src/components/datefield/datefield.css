@@ -1,0 +1,31 @@
+@import "../../theme/variables.css";
+
+.datefield {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 0.4em;
+    width: 26.6em;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.datefield__arrow {
+    @extend %material-icon;
+    width: 2.4em;
+    height: 2.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+.datefield__calendar {
+    display: none;
+}
+
+.datefield__value {
+    text-transform: lowercase;
+}

@@ -1,3 +1,5 @@
+import './filter__expandable-checkbox.css';
+
 const filterExpandableCheckboxes = document.getElementsByClassName('filter__expandable-checkbox');
 
 for (let i = 0; i < filterExpandableCheckboxes.length; i++) {

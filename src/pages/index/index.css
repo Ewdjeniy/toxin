@@ -1,0 +1,31 @@
+@import "../../theme/variables.css";
+
+.content {
+    font-size: 0.625rem;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 83em;
+    background-image: url("./images/landing.jpg");
+}
+
+.content__span {
+    @extend %Body;
+    width: 29.7em;
+    height: 4.8em;
+    text-align: right;
+    position: absolute;
+    top: 91.8%;
+    right: 9.4%;
+}
+
+.content .search-room-card {
+    display: block;
+    position: absolute;
+    top: 8.4%;
+    left: 9.7%;
+}

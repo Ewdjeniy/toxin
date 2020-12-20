@@ -1,3 +1,5 @@
+import './rich-checkbox.css';
+
 const richCheckboxes = document.getElementsByClassName('rich-checkbox');
 
 for (let i = 0; i < richCheckboxes.length; i++) {

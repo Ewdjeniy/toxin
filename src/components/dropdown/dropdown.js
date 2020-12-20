@@ -36,6 +36,8 @@ for (let i = 0; i < drops.length; i++) {
             dropInputValues[j].innerHTML = result;
             dropHandlerValuesArray[j] = result;
             dropHandler.value = JSON.stringify(dropHandlerValuesArray);
+            let event = new Event("change");
+            drops[i].dispatchEvent(event);
         });
     }
     
@@ -46,6 +48,8 @@ for (let i = 0; i < drops.length; i++) {
             dropInputValues[j].innerHTML = result;
             dropHandlerValuesArray[j] = result;
             dropHandler.value = JSON.stringify(dropHandlerValuesArray);
+            let event = new Event("change");
+            drops[i].dispatchEvent(event);
         });
     }
 }

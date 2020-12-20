@@ -1,7 +1,35 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const fs = require('fs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const pages = [];
+
+fs
+  .readdirSync(path.resolve(__dirname, 'src', 'pages'))
+  .filter((file) => {
+    return file.indexOf('base') !== 0;
+  })
+  .forEach((file) => {
+    pages.push(file.split('/', 2));
+  });
+
+const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
+  getData: () => {
+    try {
+      return JSON.parse(fs.readFileSync(`./src/pages/${fileName}/data.json`, 'utf8'));
+    } catch (e) {
+      console.warn(`data.json was not provided for page ${fileName}`);
+      return {};
+    }
+  },
+  filename: `${fileName}.html`,
+  template: `./src/pages/${fileName}/${fileName}.pug`,
+  alwaysWriteToDisk: true,
+  inject: 'body',
+  hash: true,
+}));
 
   module.exports = {
     entry: {
@@ -43,6 +71,17 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
             },
           ],
         },
+         {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
         {
           test: /\.(png|svg|jpg|gif)$/,
           use: [{
@@ -75,15 +114,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-          filename: "index.html",
-          template: './src/pages/landing/landing.pug',
-        }),
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
           filename: "[name].css",
           chunkFilename: "[id].css"
         })
-    ]
+    ].concat(htmlPlugins),
   };

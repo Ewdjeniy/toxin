@@ -1,28 +1,15 @@
-@import "../logo/logo.css";
-@import "./__nav/header__nav.css";
-@import "../button/button.css";
-
-
-
-/*главный блок*/
 .header {
-    font-size: 0.625rem;
-    height: 7rem;
-    background-color: #FFFFFF;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 14.05rem 0 14.1rem;
-}
+  display: flex;
+  flex: 1 0 auto;
+  height: 7rem;
+  padding: 0 14.05rem 0 14.1rem;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+  font-size: 0.625rem;
+  align-items: center;
 
-.header__buttons {
-    display: flex;
-}
-
-/*имя пользователя*/
-.header__user-name {
-    display: none;
-    border-left: 1px solid rgba(31, 32, 65, 0.1);
-    padding: 0.7em 0 0.7em 2em;
+  .header__menu {
+    flex: 1 0 auto;
+    padding-left: 1rem;
+  }
 }

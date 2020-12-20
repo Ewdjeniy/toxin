@@ -6,20 +6,17 @@ var ths = new Date(2019, 7, 9, 2, 3, 4, 567);
 
 for (let i = 0; i < calendars.length; i++) {
     if (getComputedStyle(calendars[i]).display == 'none' || calendars[i].style.display == 'none') {
-        calendars[i].style.display = 'inline-block';
-        calendars[i].style.position = 'relative';
+        calendars[i].style.display = 'block';
+        calendars[i].style.position = 'absolute';
         calendars[i].style.zIndex = '-10000';
         calendars[i].style.color = 'transparent';
         calendars[i].style.backgroundColor = 'transparent';
-        calendars[i].style.height = '0';
-        calendars[i].style.margin = '0';
         calendars[i].style.border = '0';
+        calendars[i].style.outline = '0';
     }
     
     $(calendars[i]).datepicker({
-        inline: true,
         keyboardNav: false,
-        offset: 10,
         moveToOtherMonthsOnSelect: false,
         moveToOtherYearsOnSelect: false,
         multipleDatesSeparator: ' - ',

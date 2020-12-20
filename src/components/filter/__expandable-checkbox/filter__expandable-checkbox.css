@@ -1,5 +1,6 @@
+@import "../../../theme/variables.css";
+
 .filter__expandable-checkbox {
-    @extend %Body;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

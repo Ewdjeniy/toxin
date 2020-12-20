@@ -6,25 +6,25 @@
 }
 
 .rich-checkbox__box {
-    margin-right: 1rem;
-    width: 2rem;
-    height: 2rem;
+    margin-right: 1em;
+    width: 2em;
+    height: 2em;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 0.4rem;
+    border-radius: 0.4em;
     position: relative;
 }
 
 .rich-checkbox__checker {
-    width: 0.6rem;
-    height: 0.4rem;
-    border-left: 0.2rem solid;
-    border-bottom: 0.2rem solid;
+    width: 0.6em;
+    height: 0.4em;
+    border-left: 0.2em solid;
+    border-bottom: 0.2em solid;
     border-image: linear-gradient(180deg, #BC9CFF, #8BA4F9) 0 100%;
     border-image-slice: 1;
     transform: rotate(315deg);
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 0.5em;
+    left: 0.5em;
     display: none;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .rich-checkbox__description {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     color: rgba(31, 32, 65, 0.5);
 }
 

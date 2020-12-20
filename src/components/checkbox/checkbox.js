@@ -1,3 +1,5 @@
+import './checkbox.css';
+
 const checkboxes = document.getElementsByClassName('checkbox');
 
 for (let i = 0; i < checkboxes.length; i++) {

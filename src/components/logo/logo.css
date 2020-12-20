@@ -1,21 +1,18 @@
-/*блок элемента*/
 .logo {
-    font-size: 0.625rem;
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    cursor: pointer;
-}
+  display: flex;
+  margin-right: auto;
+  cursor: pointer;
+  font-size: 0.625rem;
+  align-items: center;
 
-/*круг логотипа*/
-.logo__circle {
+  .logo__circle {
     width: 4em;
     height: 4em;
-}
+  }
 
-/*надпись toxin*/
-.logo__toxin {
+  .logo__toxin {
     width: 5.4em;
     height: 1.3em;
     margin-left: 1.1em;
+  }
 }

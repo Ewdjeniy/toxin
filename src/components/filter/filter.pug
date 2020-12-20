@@ -1,18 +1,22 @@
+include ../dropdown/dropdown
 include ../checkbox/checkbox
 include ../rich-checkbox/rich-checkbox
 
 div(class="filter")
-    include ./__date/filter__date.pug
-    include ../drop-guests/drop-guests.pug
+    h3 даты пребывания в отеле
+    include ../datefield/datefield.pug
+    h3 гости
+    +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
     include ./__range/filter__range.pug
-    div(class="filter__checkbox")
-        h3(class="filter__checkbox-label") Сheckbox buttons
+    form(class="filter__checkbox")
+        h3 Правила дома
         +checkbox('Можно курить')
         +checkbox('Можно с питомцами', 'checked')
         +checkbox('Можно пригласить гостей (до 10 человек)', 'checked')
-    div(class="filter__rich-checkbox")
-        h3(class="filter__rich-checkbox-label") доступность
+    form(class="filter__rich-checkbox")
+        h3 доступность
         +richCheckbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
         +richCheckbox('Помощник для инвалидов', 'На первом этаже вас встретит специалист и проводит до номера.')
-    include ../drop-beds/drop-beds.pug
+    h3 Удоства номера
+    +dropdown('2 спальни, 2 кровати...', {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 0})(class="drop-conveniences")
     include ./__expandable-checkbox/filter__expandable-checkbox.pug

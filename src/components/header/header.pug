@@ -1,9 +1,18 @@
+include ../menu/menu
 include ../button/button
 
-header(class="header")
-    include ../logo/logo.pug
-    include ./__nav/header__nav.pug
-    span(class="header__user-name") Юлий Цезарь
-    div(class="header__buttons")
-        +button('Войти')(class="button button_theme_enter")
-        +button('зарегистрироваться')(class="button button_theme_registration")
+//-
+  options.menuItems - массив елементов меню
+
+mixin header(options)
+  if !options
+    - options = {}
+
+  .header
+    a.header__logo(href = '/index.html')
+      include ../logo/logo.pug
+    .header__menu
+      +menu({items: options.menuItems})
+    .header__buttons
+      +button('Войти')(class="button button_theme_enter")
+      +button('зарегистрироваться')(class="button button_theme_registration")

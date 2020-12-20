@@ -1,0 +1,14 @@
+extends ../base/base
+
+
+
+block title
+    | Filter
+
+block main
+    +layout__container()
+        +layout__container()
+            include ../../components/filter/filter.pug
+        +layout__container({grow: 1, direction: column})
+            h1 Номера, которые мы для вас подобрали
+            +layout__container()

@@ -1,0 +1,23 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+    @extend %H1;
+}
+
+h2 {
+    @extend %H2;
+}
+
+h3 {
+    @extend %H3;
+}
+
+body {
+    @extend %Body;
+}

@@ -1,22 +1,21 @@
 mixin dropdown(label, inputs)
-    div(class="dropdown")
-        div&attributes(attributes)
-            input(type="hidden" class="dropdown__handler")
-            div(class="dropdown__switcher")
-                div(class="dropdown__value")=label
-                span(class="dropdown__arrow") keyboard_arrow_down
-            table(class="dropdown__inputs")
-                each val in inputs
-                    tr(class="dropdown__input")
-                        td(class="dropdown__input-label")=val
-                        td(class="dropdown__minus") -
-                        td(class="dropdown__input-value") 0
-                        td(class="dropdown__plus") +
-                tr(class="dropdown__btns")
-                    td
-                        button(class="dropdown__refresh") Очистить
-                    td
-                    td
-                    td
-                        button(class="dropdown__submit") Применить
+    div(class="dropdown")&attributes(attributes)
+        input(type="hidden" class="dropdown__handler")
+        div(class="dropdown__switcher")
+            div(class="dropdown__value")=label
+            span(class="dropdown__arrow") keyboard_arrow_down
+        table(class="dropdown__inputs")
+            each val, key in inputs
+                tr(class="dropdown__input")
+                    td(class="dropdown__input-label")=key
+                    td(class="dropdown__minus") -
+                    td(class="dropdown__input-value")=val
+                    td(class="dropdown__plus") +
+            tr(class="dropdown__btns")
+                td
+                    button(class="dropdown__refresh") Очистить
+                td
+                td
+                td
+                    button(class="dropdown__submit") Применить
         
