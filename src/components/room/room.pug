@@ -1,0 +1,31 @@
+include ../rate/rate
+
+mixin room(options)
+    .room
+        include ../carousel/carousel.pug
+
+        .room__about-room
+            .room__info
+                span(class="room__badge-number") № 
+                span(class="room__room-number")=options.number
+                if options.luxury
+                    span(class="room__room-category")  люкс
+            .room__money-for-room
+                span(class="room__money")=options.price
+                | &#8381
+                span(class="room__time")  в сутки
+                
+        .room__rate-wrapper
+            if options.stars == 5
+                +rate(class="rate_star_5")
+            else if options.stars == 4
+                +rate(class="rate_star_4")
+            else if options.stars == 3
+                +rate(class="rate_star_3")
+            else if options.stars == 2
+                +rate(class="rate_star_2")
+            else if options.stars == 1
+                +rate(class="rate_star_1")
+            div(class="room__comments-indicator")
+                span(class="room__comments-amount")=options.reviews
+                span  Отзывов

@@ -1,0 +1,32 @@
+.room-details {
+    display: grid;
+    grid-template-areas: "info impressions card"
+        "comments comments card"
+        "rules canseling card";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+.info-card{
+    grid-area: card;
+}
+
+.room-info{
+    grid-area: info;
+}
+
+.room-impressions{
+    grid-area: impressions;
+}
+
+.comments{
+    grid-area: comments;
+}
+
+.bullet-list{
+    grid-area: rules;
+}
+
+.canseling{
+    grid-area: canseling;
+}

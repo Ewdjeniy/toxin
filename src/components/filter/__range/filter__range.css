@@ -1,7 +1,7 @@
 .filter__range {
     @extend %Body;
     box-sizing: border-box;
-    width: 26.6rem;
+    width: 26.6em;
 }
 
 .filter__range-values {
@@ -35,22 +35,22 @@
 }
 
 .filter__range-circle1 {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.2em;
+    height: 1.2em;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: 2px solid #FFFFFF;
     border-radius: 50%;
 }
 
 .filter__range-connector {
-    width: 7rem;
-    height: 0.6rem;
+    width: 7em;
+    height: 0.6em;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
 
 .filter__range-circle2 {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.2em;
+    height: 1.2em;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: 2px solid #FFFFFF;
     border-radius: 50%;

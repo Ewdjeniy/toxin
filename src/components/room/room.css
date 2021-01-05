@@ -1,0 +1,78 @@
+.room {
+    width: 27em;
+    height: 25.75em;
+    background-color: #FFFFFF;
+    border-radius: 0.4em;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+/*блок элемента*/
+.room__about-room {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 1.9em 0.8em 2em;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    padding-bottom: 0.9em;
+}
+
+/*значок №*/
+.room__badge-number {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.4em;
+    line-height: 1.7em;
+    color: #1F2041;
+}
+
+/*номер комнаты*/
+.room__room-number {
+    @extend %H2;
+}
+
+/*категория комнаты (люкс)*/
+.room__room-category {
+    @extend %H3;
+    color: #BC9CFF;
+}
+
+/*цена*/
+.room__money-for-room {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+/*за какое время (сутки)*/
+.room__time {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2em;
+    line-height: 1.8em;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+
+/*блок-обертка для звезд и отзывов(кол-во)*/
+.room__rate-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    padding: 0 1.9em 0 2em;
+    color: rgba(31, 32, 65, 0.5);
+}
+
+/*span с количеством отзывов*/
+.room__comments-amount {
+    font-weight: bold;
+}

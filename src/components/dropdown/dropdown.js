@@ -27,10 +27,12 @@ for (let i = 0; i < drops.length; i++) {
     
     for (let j = 0; j < dropInputValues.length; j++) {
         dropHandlerValuesArray.push(parseInt(dropInputValues[j].innerHTML));
+        dropHandler.value = JSON.stringify(dropHandlerValuesArray);
     }
     
     for (let j = 0; j < dropPluses.length; j++) {
         dropPluses[j].addEventListener('click', function() {
+            dropHandlerValuesArray = JSON.parse(dropHandler.value);
             const result = parseInt(dropInputValues[j].innerHTML) + 1;
             
             dropInputValues[j].innerHTML = result;
@@ -43,6 +45,7 @@ for (let i = 0; i < drops.length; i++) {
     
     for (let j = 0; j < dropMinuses.length; j++) {
         dropMinuses[j].addEventListener('click', function() {
+            dropHandlerValuesArray = JSON.parse(dropHandler.value);
             const result = parseInt(dropInputValues[j].innerHTML) > 0 ? parseInt(dropInputValues[j].innerHTML) - 1 : 0;
             
             dropInputValues[j].innerHTML = result;

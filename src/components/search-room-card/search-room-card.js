@@ -1,20 +1,18 @@
 import "./search-room-card.css";
 
-const dropsGuests = document.getElementsByClassName('drop-guests');
-const searchRoomCard = document.getElementsByClassName('search-room-card')[0];
-const searchRoomCardLink = searchRoomCard.getElementsByClassName('arrow-btn')[0];
+const searchRoomCards = document.getElementsByClassName('search-room-card');
 
-searchRoomCardLink.onclick = function() {
-    localStorage.toxin = 'test';
-}
-
-for (let i = 0; i < dropsGuests.length; i++) {
-    const dropGuestsHandler = dropsGuests[i].getElementsByClassName('dropdown__handler')[0],
-        dropGuestsValue = dropsGuests[i].getElementsByClassName('dropdown__value')[0],
-        dropGuestsPluses = dropsGuests[i].getElementsByClassName('dropdown__plus'),
-        dropGuestsMinuses = dropsGuests[i].getElementsByClassName('dropdown__minus');
-
-    dropsGuests[i].onchange = function () {
+for (let i = 0; i < searchRoomCards.length; i++) {
+    const dropGuests = searchRoomCards[i].getElementsByClassName('drop-guests')[0];
+    const dropGuestsHandler = dropGuests.getElementsByClassName('dropdown__handler')[0],
+        dropGuestsValue = dropGuests.getElementsByClassName('dropdown__value')[0],
+        dropGuestsPluses = dropGuests.getElementsByClassName('dropdown__plus'),
+        dropGuestsMinuses = dropGuests.getElementsByClassName('dropdown__minus');
+    const searchRoomCardLink = searchRoomCards[i].getElementsByClassName('arrow-btn')[0];
+    const calendarAltField = searchRoomCards[i].getElementsByClassName('calendar__altField')[0];
+    let data = {"startDate": "null", "endDate": "null", "guestsAmount": "[0,0,0]"};
+    
+    dropGuests.onchange = function () {
         const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1],
             babiesAmount = JSON.parse(dropGuestsHandler.value)[2];
 
@@ -28,7 +26,16 @@ for (let i = 0; i < dropsGuests.length; i++) {
             dropGuestsValue.innerHTML = 'Сколько гостей?';
         }
     }
+    
+    searchRoomCardLink.onclick = function() {
+        data.startDate = calendarAltField.value.split('-')[0];
+        data.endDate = calendarAltField.value.split('-')[1];
+        data.guestsAmount = dropGuestsHandler.value;
+        localStorage.toxin = JSON.stringify(data);
+        searchRoomCardLink.getElementsByTagName('a')[0].click();
+    }
 }
+
 
 
 

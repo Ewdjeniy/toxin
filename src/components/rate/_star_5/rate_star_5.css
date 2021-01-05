@@ -1,0 +1,20 @@
+/*модификатор для 5 звезд*/
+.rate_star_5 .rate__star1:before {
+    content: 'grade';
+}
+
+.rate_star_5 .rate__star2:before {
+    content: 'grade';
+}
+
+.rate_star_5 .rate__star3:before {
+    content: 'grade';
+}
+
+.rate_star_5 .rate__star4:before {
+    content: 'grade';
+}
+
+.rate_star_5 .rate__star5:before {
+    content: 'grade';
+}

@@ -1,0 +1,25 @@
+mixin pagination(pages)
+    .pagination
+        .pagination__pages
+            if pages > 4
+                span(class="pagination__arrow-back pagination__arrow_hidden") arrow_back
+                span(class="pagination__page pagination__page_active") 1
+                span(class="pagination__page") 2
+                span(class="pagination__page") 3
+                span(class="pagination__ellipsis") ...
+                span(class="pagination__page-last")=pages
+                span(class="pagination__arrow-forward") arrow_forward
+            else if pages > 1
+                span(class="pagination__arrow-back pagination__arrow_hidden") arrow_back
+                span(class="pagination__page pagination__page_active") 1
+                - i = 1
+                while i < pages - 1
+                    span(class="pagination__page")=++i
+                span(class="pagination__page-last")=pages
+                span(class="pagination__arrow-forward") arrow_forward
+            else
+                span(class="pagination__arrow-back pagination__arrow_hidden") arrow_back
+                span(class="pagination__page-last pagination__page_active") 1
+                span(class="pagination__arrow-forward pagination__arrow_hidden") arrow_forward
+                    
+        .pagination__description 1 - 12 из 100+ вариантов аренды

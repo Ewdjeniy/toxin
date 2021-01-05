@@ -1,22 +1,31 @@
 include ../dropdown/dropdown
 include ../checkbox/checkbox
 include ../rich-checkbox/rich-checkbox
+include ../room/room
+include ../pagination/pagination
 
-div(class="filter")
-    h3 даты пребывания в отеле
-    include ../datefield/datefield.pug
-    h3 гости
-    +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
-    include ./__range/filter__range.pug
-    form(class="filter__checkbox")
-        h3 Правила дома
-        +checkbox('Можно курить')
-        +checkbox('Можно с питомцами', 'checked')
-        +checkbox('Можно пригласить гостей (до 10 человек)', 'checked')
-    form(class="filter__rich-checkbox")
-        h3 доступность
-        +richCheckbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-        +richCheckbox('Помощник для инвалидов', 'На первом этаже вас встретит специалист и проводит до номера.')
-    h3 Удоства номера
-    +dropdown('2 спальни, 2 кровати...', {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 0})(class="drop-conveniences")
-    include ./__expandable-checkbox/filter__expandable-checkbox.pug
+.filter
+    .filter__inputs
+        h3 даты пребывания в отеле
+        include ../datefield/datefield.pug
+        h3 гости
+        +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
+        include ./__range/filter__range.pug
+        form
+            h3 Правила дома
+            +checkbox('Можно курить')(class="filter__smoke")
+            +checkbox('Можно с питомцами', 'checked')(class="filter__pets")
+            +checkbox('Можно пригласить гостей (до 10 человек)', 'checked')(class="filter__guests")
+        form
+            h3 доступность
+            +richCheckbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')(class="filter__wide-corridor")
+            +richCheckbox('Помощник для инвалидов', 'На первом этаже вас встретит специалист и проводит до номера.')
+        h3 Удоства номера
+        +dropdown('2 спальни, 2 кровати...', {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 1})(class="drop-conveniences")
+        include ./__expandable-checkbox/filter__expandable-checkbox.pug
+    .filter__screen
+        h1(class="filter__screen-header") Номера, которые мы для вас подобрали
+        .filter__result
+            each room in data.rooms
+                +room(room)
+        +pagination(15)

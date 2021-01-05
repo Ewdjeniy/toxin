@@ -1,6 +1,6 @@
 mixin richCheckbox(label, description, checked)
     if checked == 'checked'
-        table(class="rich-checkbox rich-checkbox_checked")
+        table(class="rich-checkbox rich-checkbox_checked")&attributes(attributes)
             tr(class="rich-checkbox__tr")
                 td
                     input(class="rich-checkbox__input" type="checkbox" checked)
@@ -11,7 +11,7 @@ mixin richCheckbox(label, description, checked)
                 td
                 td(class="rich-checkbox__description")=description
     else
-        table(class="rich-checkbox")
+        table(class="rich-checkbox")&attributes(attributes)
             tr(class="rich-checkbox__tr")
                 td
                     input(class="rich-checkbox__input" type="checkbox")

@@ -1,0 +1,8 @@
+/*модификатор для 2 звезд*/
+.rate_star_2 .rate__star1:before {
+    content: 'grade';
+}
+
+.rate_star_2 .rate__star2:before {
+    content: 'grade';
+}

@@ -1,0 +1,4 @@
+/*окрас в белый цвет текущей фотографии на карусели*/
+.carousel__circle_active {
+    background-color: #FFFFFF;
+}

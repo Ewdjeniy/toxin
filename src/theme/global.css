@@ -20,4 +20,5 @@ h3 {
 
 body {
     @extend %Body;
+    overflow-x: hidden;
 }

@@ -1,0 +1,18 @@
+include ../arrow-btn/arrow-btn
+include ../dropdown/dropdown
+
+.info-card
+    .info-card__about-room
+        .info-card__info
+            span(class="info-card__badge-number") № 
+            span(class="info-card__room-number") 888
+            span(class="info-card__room-category")  люкс
+        .info-card__money-for-room
+            span(class="info-card__money") 9 990
+            | &#8381
+            span(class="info-card__time")  в сутки
+    include ../drop-dates/drop-dates.pug
+    h3 Гости
+    +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
+    include ./__calculations/info-card__calculations.pug
+    +arrowBtn('Забронировать')

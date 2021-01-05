@@ -13,5 +13,7 @@ for (let i = 0; i < richCheckboxes.length; i++) {
             richCheckboxes[i].classList.add('rich-checkbox_checked');
             richCheckboxInput.checked = true;
         }
+        let event = new Event("change");
+        richCheckboxes[i].dispatchEvent(event);
     }
 }

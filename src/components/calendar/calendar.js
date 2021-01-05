@@ -1,8 +1,6 @@
 import './calendar.css';
 
 const calendars = document.getElementsByClassName('calendar');
-//new Date(year, month, date, hours, minutes, seconds, ms)
-var ths = new Date(2019, 7, 9, 2, 3, 4, 567);
 
 for (let i = 0; i < calendars.length; i++) {
     if (getComputedStyle(calendars[i]).display == 'none' || calendars[i].style.display == 'none') {
@@ -15,12 +13,17 @@ for (let i = 0; i < calendars.length; i++) {
         calendars[i].style.outline = '0';
     }
     
+    const altInput = document.createElement('input');
+    altInput.type = 'hidden';
+    altInput.className = 'calendar__altField';
+    calendars[i].after(altInput);
+    
     $(calendars[i]).datepicker({
         keyboardNav: false,
-        moveToOtherMonthsOnSelect: false,
-        moveToOtherYearsOnSelect: false,
         multipleDatesSeparator: ' - ',
         minDate: new Date(),
+        altField: $(altInput),
+        altFieldDateFormat: 'yyyy,m,d',
         navTitles: {
             days: 'MM yyyy',
             months: 'yyyy',
@@ -43,6 +46,7 @@ for (let i = 0; i < calendars.length; i++) {
             }
         },
         onSelect: function(formattedDate, date, inst) {
+            calendarChangeView(i);
             activateButtons(i, date.length);
             let event = new Event("input");
             calendars[i].dispatchEvent(event);

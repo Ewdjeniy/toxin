@@ -1,0 +1,16 @@
+/*модификатор для 4 звезд*/
+.rate_star_4 .rate__star1:before {
+    content: 'grade';
+}
+
+.rate_star_4 .rate__star2:before {
+    content: 'grade';
+}
+
+.rate_star_4 .rate__star3:before {
+    content: 'grade';
+}
+
+.rate_star_4 .rate__star4:before {
+    content: 'grade';
+}

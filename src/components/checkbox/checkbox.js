@@ -11,5 +11,7 @@ for (let i = 0; i < checkboxes.length; i++) {
             checkboxes[i].classList.add('checkbox_checked');
             checkboxes[i].getElementsByClassName('checkbox__hidden')[0].checked = true;
         }
+        let event = new Event("change");
+        checkboxes[i].dispatchEvent(event);
     }
 }

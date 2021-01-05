@@ -1,0 +1,47 @@
+@import "../../theme/variables.css";
+
+/*блок элемента*/
+.rate {
+    box-sizing: border-box;  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    color: rgba(31, 32, 65, 0.25);
+    font-size: 0.6em;
+    width: 12em;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #BC9CFF;
+}
+
+/*звезды*/
+.rate__star1, .rate__star2, .rate__star3, .rate__star4, .rate__star5 {
+    @extend %material-icon;
+}
+
+/*звезда*/
+.rate__star1:before {
+    content: 'star_outline';
+}
+
+/*звезда*/
+.rate__star2:before {
+    content: 'star_outline';
+}
+
+/*звезда*/
+.rate__star3:before {
+    content: 'star_outline';
+}
+
+/*звезда*/
+.rate__star4:before {
+    content: 'star_outline';
+}
+
+/*звезда*/
+.rate__star5:before {
+    content: 'star_outline';
+}
