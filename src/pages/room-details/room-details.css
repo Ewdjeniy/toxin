@@ -1,6 +1,7 @@
 .room-details {
     display: grid;
-    grid-template-areas: "info impressions card"
+    grid-template-areas: 
+        "info impressions card"
         "comments comments card"
         "rules canseling card";
     grid-template-columns: 1fr 1fr 1fr;
@@ -11,15 +12,15 @@
     grid-area: card;
 }
 
-.room-info{
+.room-details__info{
     grid-area: info;
 }
 
-.room-impressions{
+.room-details__impressions{
     grid-area: impressions;
 }
 
-.comments{
+.room-details__comments{
     grid-area: comments;
 }
 
@@ -27,6 +28,21 @@
     grid-area: rules;
 }
 
-.canseling{
+.room-details__canseling{
     grid-area: canseling;
+}
+
+.bullet-list {
+    width: 29.2em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bullet-list__ul {
+    padding: 0;
+}
+
+.votes {
+    align-self: flex-end;
 }

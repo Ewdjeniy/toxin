@@ -3,6 +3,9 @@ import "./search-room-card.css";
 const searchRoomCards = document.getElementsByClassName('search-room-card');
 
 for (let i = 0; i < searchRoomCards.length; i++) {
+    console.log(localStorage.toxin);
+    
+    const localData = getDataFromLocalStorage('toxin');
     const dropGuests = searchRoomCards[i].getElementsByClassName('drop-guests')[0];
     const dropGuestsHandler = dropGuests.getElementsByClassName('dropdown__handler')[0],
         dropGuestsValue = dropGuests.getElementsByClassName('dropdown__value')[0],
@@ -10,7 +13,47 @@ for (let i = 0; i < searchRoomCards.length; i++) {
         dropGuestsMinuses = dropGuests.getElementsByClassName('dropdown__minus');
     const searchRoomCardLink = searchRoomCards[i].getElementsByClassName('arrow-btn')[0];
     const calendarAltField = searchRoomCards[i].getElementsByClassName('calendar__altField')[0];
-    let data = {"startDate": "null", "endDate": "null", "guestsAmount": "[0,0,0]"};
+    const calendar = searchRoomCards[i].getElementsByClassName('calendar')[0];
+    const datepicker = $(calendar).datepicker().data('datepicker');
+    const dropdownValues = searchRoomCards[i].getElementsByClassName('drop-guests')[0].getElementsByClassName('dropdown__input-value');
+    let local = localData ? localData : {"startDate": "", "endDate": "", "guestsAmount": "[0,0,0]"};
+    const createLocalData = function(storageName) {        
+        local.startDate = calendarAltField.value.split('-')[0];
+        local.endDate = calendarAltField.value.split('-')[1];
+        local.guestsAmount = dropGuestsHandler.value;
+        localStorage[storageName] = JSON.stringify(local);
+    };
+    const showValue = function () {
+        const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1];
+        const babiesAmount = JSON.parse(dropGuestsHandler.value)[2];
+
+        if (adultsAmount > 0 && babiesAmount > 0) {
+            dropGuestsValue.innerHTML = adultsAmount + ' ' + returnWordSuffix(adultsAmount, 'гость', 'гостя', 'гостей') + ', ' + babiesAmount + ' ' + returnWordSuffix(babiesAmount, 'младенец', 'младенца', 'младенцев');
+        } else if (adultsAmount > 0 && babiesAmount == 0) {
+            dropGuestsValue.innerHTML = adultsAmount + ' ' + returnWordSuffix(adultsAmount, 'гость', 'гостя', 'гостей');
+        } else if (adultsAmount == 0 && babiesAmount > 0) {
+            dropGuestsValue.innerHTML = babiesAmount + ' ' + returnWordSuffix(babiesAmount, 'младенец', 'младенца', 'младенцев');
+        } else {
+            dropGuestsValue.innerHTML = 'Сколько гостей?';
+        }
+    };   
+    
+    window.onbeforeunload = function(e) {
+        localStorage.toxin = JSON.stringify(local);
+    };
+    
+    if (localData) {
+        if (localData.startDate && !localData.endDate) {
+            datepicker.selectDate(new Date(localData.startDate));
+        } else if (localData.startDate && localData.endDate) {
+            datepicker.selectDate([new Date(localData.startDate), new Date(localData.endDate)]);
+        }
+        for (let j = 0; j < dropdownValues.length; j++) {
+            dropdownValues[j].innerHTML = JSON.parse(localData.guestsAmount)[j];
+        }
+        dropGuestsHandler.value = localData.guestsAmount;
+        showValue();
+    }
     
     dropGuests.onchange = function () {
         const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1],
@@ -28,16 +71,10 @@ for (let i = 0; i < searchRoomCards.length; i++) {
     }
     
     searchRoomCardLink.onclick = function() {
-        data.startDate = calendarAltField.value.split('-')[0];
-        data.endDate = calendarAltField.value.split('-')[1];
-        data.guestsAmount = dropGuestsHandler.value;
-        localStorage.toxin = JSON.stringify(data);
+        createLocalData('toxin');
         searchRoomCardLink.getElementsByTagName('a')[0].click();
     }
 }
-
-
-
 
 function returnWordSuffix(amount, one, two, twelve) {
     let string = twelve;
@@ -64,4 +101,12 @@ function returnWordSuffix(amount, one, two, twelve) {
     }
 
     return string;
+}
+function getDataFromLocalStorage(localStorageKey) {
+    let result = null;
+    if (localStorage[localStorageKey]) {
+        result = JSON.parse(localStorage[localStorageKey]);
+        localStorage.removeItem(localStorageKey);
+    }
+    return result;
 }

@@ -50,5 +50,8 @@ for (let i = 0; i < dateDrops.length; i++) {
             dropDatesArrivalValue.innerHTML = 'ДД.ММ.ГГГГ';
             dropDatesDepartureValue.innerHTML = 'ДД.ММ.ГГГГ';
         }
+        
+        let event = new Event("change");
+        dateDrops[i].dispatchEvent(event);
     }
 }

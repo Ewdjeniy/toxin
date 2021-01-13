@@ -11,7 +11,7 @@ include ../pagination/pagination
         h3 гости
         +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
         include ./__range/filter__range.pug
-        form
+        form(name="test")
             h3 Правила дома
             +checkbox('Можно курить')(class="filter__smoke")
             +checkbox('Можно с питомцами', 'checked')(class="filter__pets")

@@ -1,88 +1,412 @@
 {
     "rooms": [
         {
+            "images": ["images/room888.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "888",
             "luxury": true,
             "price": "9990",
             "stars": "5",
-            "reviews": "145"
+            "reviews": "145",
+            "smoke" : false,
+            "pets" : false,
+            "guests" : false,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": false,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2021-01-11 14:00:30",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2021-01-03 17:45:30",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room840.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "840",
             "luxury": false,
             "price": "9990",
             "stars": "4",
-            "reviews": "65"
+            "reviews": "65",
+            "smoke" : false,
+            "pets" : false,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room980.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "980",
             "luxury": true,
             "price": "8500",
             "stars": "3",
-            "reviews": "35"
+            "reviews": "35",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : false,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room856.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "856",
             "luxury": false,
             "price": "7300",
             "stars": "5",
-            "reviews": "19"
+            "reviews": "19",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room740.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "740",
             "luxury": false,
             "price": "6000",
             "stars": "4",
-            "reviews": "44"
+            "reviews": "44",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room982.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "982",
             "luxury": false,
             "price": "5800",
             "stars": "3",
-            "reviews": "56"
+            "reviews": "56",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room678.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "678",
             "luxury": false,
             "price": "5500",
             "stars": "5",
-            "reviews": "45"
+            "reviews": "45",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room450.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "450",
             "luxury": false,
             "price": "5300",
             "stars": "4",
-            "reviews": "39"
+            "reviews": "39",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room350.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "350",
             "luxury": false,
             "price": "5000",
             "stars": "3",
-            "reviews": "77"
+            "reviews": "77",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room666.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "666",
             "luxury": false,
             "price": "5000",
             "stars": "5",
-            "reviews": "25"
+            "reviews": "25",
+            "smoke" : false,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : false,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020-01-05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020-01-03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room444.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "444",
             "luxury": false,
             "price": "5000",
             "stars": "3",
-            "reviews": "15"
+            "reviews": "15",
+            "smoke" : false,
+            "pets" : false,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         },
         {
+            "images": ["images/room352.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
             "number": "352",
             "luxury": false,
             "price": "5000",
             "stars": "3",
-            "reviews": "55"
+            "reviews": "55",
+            "smoke" : true,
+            "pets" : true,
+            "guests" : true,
+            "wideCorridor" : true,
+            "bedRooms": 2,
+            "beds": 2,
+            "bathRooms": 1,
+            "cosiness": true,
+            "comments": [
+                {
+                    "avatar": "images/murad.png",
+                    "name": "Мурад",
+                    "surname": "Сарафанов",
+                    "date": "2020.01.05",
+                    "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару &mdash; никто не жаловался из соседей",
+                    "likes": 12
+                },
+                {
+                    "avatar": "images/pat.png",
+                    "name": "Патрисия",
+                    "surname": "Стёклышкова",
+                    "date": "2020.01.03",
+                    "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                    "likes": 2
+                }
+            ]
         }
   ]
 }

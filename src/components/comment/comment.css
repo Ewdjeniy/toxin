@@ -1,0 +1,40 @@
+.comment {
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    grid-template-areas: 
+        "ava author"
+        "like comment";
+}
+
+.comment__author-avatar {
+    grid-area: ava;
+    width: 4.8em;
+    height: 4.8em;
+    border-radius: 50%;
+    background-image: url('./images/murad.png');
+    background-position: center 25%;
+}
+
+.comment__author-info {
+    grid-area: author;
+}
+
+.like {
+    grid-area: like;
+    justify-self: center;
+}
+
+.comment__author-name {
+    font-weight: bold;
+}
+
+.comment__author-surname {
+    font-weight: bold;
+}
+
+.comment__text {
+    grid-area: comment;
+    margin: 0;
+}

@@ -1,6 +1,6 @@
 extends ../base/base
-
-
+include ../../components/text-with-picture/text-with-picture
+include ../../components/li/li
 
 block title
   | Room-details
@@ -8,13 +8,29 @@ block title
 block main
     .room-details
         include ../../components/info-card/info-card.pug  
-        .room-info
+        .room-details__info
             h2 Сведения о номере
-        .room-impressions
+            +textWithPicture('tag_faces', 'Комфорт', 'Шумопоглощающие стены')(class="text-with-picture_border-bottom")
+            +textWithPicture('location_city', 'Удобство', 'Окно в каждой из спален')
+        .room-details__impressions
             h2 Впечатления от номера
-        .comments
+            +layout__container()
+                include ../../components/diagram/diagram.pug
+                ul(class="votes")
+                    +li('Великолепно')
+                    +li('Хорошо')
+                    +li('Удовлетворительно')
+                    +li('Разочарован')
+        .room-details__comments
             h2 Отзвывы посетителей номера
         .bullet-list
-            h2 Правила
-        .canseling
+            h3 Правила
+            ul(class="bullet-list__ul")
+                +li('Время прибытия &mdash; после 13:00, а выезд до 12:00')
+        .room-details__canseling
             h2 Отмена
+            p.
+                Бесплатная отмена в течении 48ч. После 
+                этого при отмене не позднее чем за 5дн. до 
+                прибытия вы получите полный возврат зы 
+                вычетом сбора за услуги.

@@ -1,0 +1,28 @@
+.diagram
+    svg(width="100%" height="100%" viewBox="0 0 42 42" class="donut")
+        defs
+            linearGradient(id="gradient1" x1="0" x2="0" y1="0" y2="1")
+                stop(stop-color="#FFE39C" offset="0%")
+                stop(stop-color="#FFBA9C" offset="100%")
+            linearGradient(id="gradient2" x1="0" x2="0" y1="0" y2="1")
+                stop(stop-color="#6FCF97" offset="0%")
+                stop(stop-color="#66D2EA" offset="100%")
+            linearGradient(id="gradient3" x1="0" x2="0" y1="0" y2="1")
+                stop(stop-color="#BC9CFF" offset="0%")
+                stop(stop-color="#8BA4F9" offset="100%")
+            linearGradient(id="gradient4" x1="0" x2="0" y1="0" y2="1")
+                stop(stop-color="#919191" offset="0%")
+                stop(stop-color="#3D4975" offset="100%")
+        circle(class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff")
+        circle(class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#d2d3d4" stroke-width="1")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient3)" stroke-width="1" stroke-dasharray="24.5 75.5" stroke-dashoffset="25")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="3.5" stroke-dasharray="0.5 99.5" stroke-dashoffset="100.5")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient2)" stroke-width="1" stroke-dasharray="24.5 75.5" stroke-dashoffset="100")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="3.5" stroke-dasharray="0.5 99.5" stroke-dashoffset="75.5")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient1)" stroke-width="1" stroke-dasharray="49.5 50.5" stroke-dashoffset="75")
+        circle(class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="3.5" stroke-dasharray="0.5 99.5" stroke-dashoffset="25.5")
+        
+        
+        g(class="chart-text")
+            text(x="50%" y="50%" class="chart-number") 260
+            text(x="50%" y="50%" class="chart-label") Голосов

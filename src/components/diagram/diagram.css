@@ -1,0 +1,35 @@
+.diagram {
+    width: 15em;
+    height: 15em;
+}
+
+.chart-text {
+    font-family: "Montserrat", Arial, sans-serif;
+    fill: #BC9CFF;
+    font-weight: bold;
+    -moz-transform: translateY(0.25em);
+    -ms-transform: translateY(0.25em);
+    -webkit-transform: translateY(0.25em);
+    transform: translateY(0.25em);
+}
+
+.chart-number {
+    font-size: 0.7em;
+    line-height: 1.9em;
+    text-anchor: middle;
+    -moz-transform: translateY(-0.25em);
+    -ms-transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+}
+
+.chart-label {
+    font-size: 0.4em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    text-anchor: middle;
+    -moz-transform: translateY(0.7em);
+    -ms-transform: translateY(0.7em);
+    -webkit-transform: translateY(0.7em);
+    transform: translateY(0.7em);
+}

@@ -1,7 +1,7 @@
 mixin checkbox(label, checked)
     if checked == 'checked'
         div(class="checkbox checkbox_checked")&attributes(attributes)
-            input(class="checkbox__hidden" type="checkbox" checked)
+            input(class="checkbox__hidden" type="checkbox" name=name checked)
             div(class="checkbox__box")
                 div(class="checkbox__checker")
             span=label

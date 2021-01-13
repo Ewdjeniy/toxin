@@ -1,6 +1,6 @@
 import './info-card.css';
+import localData from '../../pages/room-details/room-details.js';
 
-const localData = getDataFromLocalStorage('toxin');
 const infoCards = document.getElementsByClassName('info-card');
 
 for (let i = 0; i < infoCards.length; i++) {
@@ -85,7 +85,3 @@ function returnWordSuffix(amount, one, two, twelve) {
 
     return string;
 }
-
-
-
-export default localData;

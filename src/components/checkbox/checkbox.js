@@ -1,17 +1,27 @@
 import './checkbox.css';
 
-const checkboxes = document.getElementsByClassName('checkbox');
-
-for (let i = 0; i < checkboxes.length; i++) {
-    checkboxes[i].onclick = function () {
+function hangCheckboxesHandler() {
+    const checkboxes = document.getElementsByClassName('checkbox');
+    for (let i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].getElementsByClassName('checkbox__hidden')[0].checked) {
-            checkboxes[i].classList.remove('checkbox_checked');
-            checkboxes[i].getElementsByClassName('checkbox__hidden')[0].checked = false;
-        } else {
             checkboxes[i].classList.add('checkbox_checked');
-            checkboxes[i].getElementsByClassName('checkbox__hidden')[0].checked = true;
+        } else {
+            checkboxes[i].classList.remove('checkbox_checked');
         }
-        let event = new Event("change");
-        checkboxes[i].dispatchEvent(event);
+        checkboxes[i].onclick = function () {
+            if (checkboxes[i].getElementsByClassName('checkbox__hidden')[0].checked) {
+                checkboxes[i].classList.add('checkbox_checked');
+            } else {
+                checkboxes[i].classList.remove('checkbox_checked');
+            }
+            checkboxes[i].getElementsByClassName('checkbox__hidden')[0].click();
+            let event = new Event("change");
+            checkboxes[i].dispatchEvent(event);
+        }
     }
 }
+hangCheckboxesHandler();
+
+
+
+export default hangCheckboxesHandler;

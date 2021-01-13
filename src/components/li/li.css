@@ -1,0 +1,15 @@
+.li {
+    font-weight: normal;
+    list-style-type: none;
+    display: flex;
+    align-items: baseline;
+}
+
+.li__marker {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: rgba(31, 32, 65, 0.25);
+    margin-right: 1em;
+    flex-shrink: 0;
+}

@@ -1,0 +1,6 @@
+mixin textWithPicture(img, header, text)
+    .text-with-picture&attributes(attributes)
+        span(class="text-with-picture__icon")=img
+        .text-with-picture__description
+            span(class="text-with-picture__header")=header
+            span=text

@@ -1,5 +1,5 @@
 import './filter.css';
-import data from './data.json';
+import data from '../../pages/search-room/data.json';
 import room350 from './images/room350.jpg';
 import room352 from './images/room352.jpg';
 import room444 from './images/room444.jpg';
@@ -15,12 +15,16 @@ import room982 from './images/room982.jpg';
 import sub1Room888 from './images/sub1Room888.jpg';
 import sub2Room888 from './images/sub2Room888.jpg';
 import hangPaginationHandlers from '../pagination/pagination.js';
+import hangCheckboxesHandler from '../checkbox/checkbox.js';
+import hangRichCheckboxesHandler from '../rich-checkbox/rich-checkbox.js';
 
 const filters = document.getElementsByClassName('filter');
-const localData = getDataFromLocalStorage('toxin');
 let rooms = data.rooms.slice();
 
 for (let i = 0; i < filters.length; i++) {
+    console.log(localStorage.toxin);
+    
+    const localData = getDataFromLocalStorage('toxin');
     const screen = filters[i].getElementsByClassName('filter__result')[0];
     const pagination = filters[i].getElementsByClassName('pagination')[0];
     const roomsOnPage = 12;
@@ -46,8 +50,16 @@ for (let i = 0; i < filters.length; i++) {
     const calendar = filters[i].getElementsByClassName('calendar')[0];
     const datepicker = $(calendar).datepicker().data('datepicker');
     const dropdownValues = filters[i].getElementsByClassName('drop-guests')[0].getElementsByClassName('dropdown__input-value');
-    let local = {"startDate": "null", "endDate": "null", "guestsAmount": "[0,0,0]"};
     const calendarAltField = filters[i].getElementsByClassName('calendar__altField')[0];
+    let local = localData ? localData : {"startDate": "", "endDate": "", "guestsAmount": "[0,0,0]"};
+    const checkBoxes = filters[i].getElementsByClassName('checkbox__hidden');
+    const richCheckBoxes = filters[i].getElementsByClassName('rich-checkbox__input');
+    const createLocalData = function(storageName) {        
+        local.startDate = calendarAltField.value.split('-')[0];
+        local.endDate = calendarAltField.value.split('-')[1];
+        local.guestsAmount = dropGuestsHandler.value;
+        localStorage[storageName] = JSON.stringify(local);
+    };
     const showPage = function () {
 
         const pageNum = +pagination.getElementsByClassName('pagination__page_active')[0].innerHTML;
@@ -104,13 +116,21 @@ for (let i = 0; i < filters.length; i++) {
             div.innerHTML = divHtml;
             screen.append(div);
             div.getElementsByClassName('carousel__window')[0].onclick = function() {
-                local.startDate = calendarAltField.value.split('-')[0];
-                local.endDate = calendarAltField.value.split('-')[1];
-                local.guestsAmount = dropGuestsHandler.value;
+                const checkBxs = [];
+                const richCheckBxs = [];
+                
                 for (let key in note) {
                     local[key] = note[key]; 
-                } 
-                localStorage.toxin = JSON.stringify(local);
+                }
+                for (let j = 0; j < checkBoxes.length; j++) {
+                    checkBxs.push(checkBoxes[j].checked);
+                }
+                for (let j = 0; j < richCheckBoxes.length; j++) {
+                    richCheckBxs.push(richCheckBoxes[j].checked);
+                }
+                local.checkBxs = checkBxs;
+                local.richCheckBxs = richCheckBxs;
+                createLocalData('toxin');
                 this.getElementsByTagName('a')[0].click();
             }
         }
@@ -244,23 +264,6 @@ for (let i = 0; i < filters.length; i++) {
         hangPaginationHandlers();
         showPage();
     };
-
-    setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
-    pagination.onchange = showPage;
-
-    filterSmoke.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
-    }
-    filterPets.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
-    }
-    filterGuests.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
-    }
-    filterWideCorridor.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
-    }
-
     const showValue = function () {
         const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1];
         const babiesAmount = JSON.parse(dropGuestsHandler.value)[2];
@@ -275,7 +278,11 @@ for (let i = 0; i < filters.length; i++) {
             dropGuestsValue.innerHTML = 'Сколько гостей?';
         }
     };
-
+    
+    window.onbeforeunload = function(e) {
+        localStorage.toxin = JSON.stringify(local);
+    };
+    
     if (localData) {
         if (localData.startDate && !localData.endDate) {
             datepicker.selectDate(new Date(localData.startDate));
@@ -285,8 +292,37 @@ for (let i = 0; i < filters.length; i++) {
         for (let j = 0; j < dropdownValues.length; j++) {
             dropdownValues[j].innerHTML = JSON.parse(localData.guestsAmount)[j];
         }
+        for (let j = 0; j < checkBoxes.length; j++) {
+            if (localData.checkBxs) {
+                checkBoxes[j].checked = localData.checkBxs[j];
+            }
+        }
+        for (let j = 0; j < richCheckBoxes.length; j++) {
+            if (localData.richCheckBxs) {
+                richCheckBoxes[j].checked = localData.richCheckBxs[j];
+            }
+        }
+        hangCheckboxesHandler();
+        hangRichCheckboxesHandler();
         dropGuestsHandler.value = localData.guestsAmount;
         showValue();
+    }
+    
+    
+    setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    pagination.onchange = showPage;
+
+    filterSmoke.onchange = function () {
+        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    }
+    filterPets.onchange = function () {
+        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    }
+    filterGuests.onchange = function () {
+        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    }
+    filterWideCorridor.onchange = function () {
+        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
 
     dropGuests.onchange = showValue;
@@ -316,6 +352,7 @@ function getDataFromLocalStorage(localStorageKey) {
     let result = null;
     if (localStorage[localStorageKey]) {
         result = JSON.parse(localStorage[localStorageKey]);
+        localStorage.removeItem(localStorageKey);
     }
     return result;
 }
