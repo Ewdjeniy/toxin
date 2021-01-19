@@ -120,8 +120,9 @@ for (let i = 0; i < filters.length; i++) {
                 const richCheckBxs = [];
                 
                 for (let key in note) {
-                    local[key] = note[key]; 
+                    local[key] = note[key];
                 }
+
                 for (let j = 0; j < checkBoxes.length; j++) {
                     checkBxs.push(checkBoxes[j].checked);
                 }

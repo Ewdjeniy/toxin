@@ -1,0 +1,10 @@
+/*модификатор*/
+.toggle_on {
+    border: 1px solid #BC9CFF;
+}
+
+/*модификатор*/
+.toggle_on::after {
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    left: 61%;
+}

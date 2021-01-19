@@ -6,6 +6,10 @@ block title
   | Room-details
 
 block main
+    .room-pictures
+        img(alt="picture1")
+        img(alt="picture1")
+        img(alt="picture1")
     .room-details
         include ../../components/info-card/info-card.pug  
         .room-details__info
@@ -22,7 +26,9 @@ block main
                     +li('Удовлетворительно')
                     +li('Разочарован')
         .room-details__comments
-            h2 Отзвывы посетителей номера
+            div(class="room-details__comments-header")
+                h2 Отзвывы посетителей номера
+                span(class="room-details__comments-amount") 2 отзыва
         .bullet-list
             h3 Правила
             ul(class="bullet-list__ul")

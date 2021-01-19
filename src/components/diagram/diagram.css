@@ -3,7 +3,7 @@
     height: 15em;
 }
 
-.chart-text {
+.diagram__text {
     font-family: "Montserrat", Arial, sans-serif;
     fill: #BC9CFF;
     font-weight: bold;
@@ -13,7 +13,7 @@
     transform: translateY(0.25em);
 }
 
-.chart-number {
+.diagram__number {
     font-size: 0.7em;
     line-height: 1.9em;
     text-anchor: middle;
@@ -23,7 +23,7 @@
     transform: translateY(-0.25em);
 }
 
-.chart-label {
+.diagram__label {
     font-size: 0.4em;
     line-height: 1.5em;
     text-transform: uppercase;

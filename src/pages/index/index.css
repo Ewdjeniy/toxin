@@ -1,6 +1,6 @@
 @import "../../theme/variables.css";
 
-.content {
+.content-index {
     font-size: 0.625rem;
     width: 100%;
     background-size: cover;
@@ -13,7 +13,7 @@
     background-image: url("./images/landing.jpg");
 }
 
-.content__span {
+.content-index__span {
     @extend %Body;
     width: 29.7em;
     height: 4.8em;
@@ -23,7 +23,7 @@
     right: 9.4%;
 }
 
-.content .search-room-card {
+.content-index .search-room-card {
     display: block;
     position: absolute;
     top: 8.4%;

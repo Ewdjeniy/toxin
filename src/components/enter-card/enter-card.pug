@@ -1,9 +1,13 @@
-//-Главный блок
-div(class="enter-card")
-    h1(class="enter-card__header") Войти
-    include ./__email-input/enter-card__email-input.pug
-    include ./__password-input/enter-card__password-input.pug
-    include ./__button-with-arrow/enter-card__button-with-arrow.pug
-    div(class="enter-card__create-account")
+include ../arrow-btn/arrow-btn
+include ../button/button
+include ../inpt/inpt
+
+.enter-card
+    h1 Войти
+    form(enctype="multipart/form-data" method="GET")
+        +inpt(type="email" placeholder="Email" name="email")
+        +inpt(type="password" placeholder="Пароль"  name="password")
+        +arrowBtn('Войти')(type="submit")
+    div(class="enter-card__create")
         span(class="enter-card__create-account-span") Нет аккаунта на Toxin?
-        include ./__click-button/enter-card__click-button.pug
+        +button('Создать', '/signup.html')(class="button_theme_enter button_size_m")

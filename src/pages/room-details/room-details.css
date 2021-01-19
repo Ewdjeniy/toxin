@@ -46,3 +46,9 @@
 .votes {
     align-self: flex-end;
 }
+
+.room-details__comments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}

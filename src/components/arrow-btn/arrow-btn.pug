@@ -1,5 +1,5 @@
 mixin arrowBtn(label, link)
-    button.arrow-btn
+    button.arrow-btn&attributes(attributes)
         a(href=link)
         h3.arrow-btn__label=label
         span.arrow-btn__arrow arrow_forward

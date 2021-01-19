@@ -1,0 +1,31 @@
+mixin radio(label, checked, name)
+    if checked == 'checked'
+        div(class="radio radio_checked")&attributes(attributes)
+            div(class="radio__wrapper")
+                .radio__circle
+                    input(type="radio" class="radio__input" name=name checked)
+                    .radio__checker
+                span(class="radio__label")=label
+    else
+        .radio&attributes(attributes)
+            div(class="radio__wrapper")
+                .radio__circle
+                    input(type="radio" class="radio__input" name=name)
+                    .radio__checker
+                span(class="radio__label")=label
+
+
+
+//-mixin checkbox(label, checked)
+    if checked == 'checked'
+        div(class="checkbox checkbox_checked")&attributes(attributes)
+            input(class="checkbox__hidden" type="checkbox" name=name checked)
+            div(class="checkbox__box")
+                div(class="checkbox__checker")
+            span=label
+    else
+        div(class="checkbox")&attributes(attributes)
+            input(class="checkbox__hidden" type="checkbox")
+            div(class="checkbox__box")
+                div(class="checkbox__checker")
+            span=label

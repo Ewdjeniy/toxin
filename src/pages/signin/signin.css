@@ -1,0 +1,12 @@
+@import "../../theme/variables.css";
+
+.content-sign {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83em;
+    background-image: url("./images/sign.jpg");
+}

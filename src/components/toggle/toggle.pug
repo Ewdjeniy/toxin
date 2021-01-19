@@ -1,0 +1,9 @@
+mixin toggle(name, switcher)
+    .toggle
+        .toggle__wrapper
+        if switcher == 'on'
+            div(class="toggle__btn toggle_on")
+                input(class="toggle__checkbox" type="checkbox" name=name checked)
+        else
+            .toggle__btn
+                input(class="toggle__checkbox" type="checkbox" name=name)

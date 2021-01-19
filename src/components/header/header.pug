@@ -14,5 +14,5 @@ mixin header(options)
     .header__menu
       +menu({items: options.menuItems})
     .header__buttons
-      +button('Войти')(class="button button_theme_enter")
-      +button('зарегистрироваться')(class="button button_theme_registration")
+      +button('Войти', '/signin.html')(class="button_theme_enter button_size_s")
+      +button('зарегистрироваться', '/signup.html')(class="button_theme_registration")

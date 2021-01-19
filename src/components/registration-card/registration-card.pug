@@ -1,15 +1,27 @@
+include ../arrow-btn/arrow-btn
+include ../button/button
+include ../inpt/inpt
+include ../toggle/toggle
+include ../masked-inpt/masked-inpt
+include ../radio/radio
+
 //-Главный блок
-div(class="registration-card")
-    h1(class="registration-card__header") Регистрация аккаунта
-    include ./__name-input/registration-card__name-input.pug
-    include ./__surname-input/registration-card__surname-input.pug
-    include ./__radio-sex/registration-card__radio-sex.pug
-    include ./__masked-text-field/registration-card__masked-text-field.pug
-    h3(class="registration-card__data-label") данные для входа в сервис
-    include ./__email-input/registration-card__email-input.pug
-    include ./__password-input/registration-card__password-input.pug
-    include ./__toggle/registration-card__toggle.pug
-    include ./__button-with-arrow/registration-card__button-with-arrow.pug
-    div(class="registration-card__create-account")
-        span(class="registration-card__create-account-span") Уже есть аккаунт на Toxin
-        include ./__click-button/registration-card__click-button.pug
+.registration-card
+    h1 Регистрация аккаунта
+    form(enctype="multipart/form-data" method="GET")
+        +inpt(type="text" placeholder="Имя" name="name")
+        +inpt(type="text" placeholder="Фамилия"  name="surname")
+        .registration-card__radio-buttons
+            +radio('Мужчина', 'checked', 'sex')
+            +radio('Женщина', '', 'sex')
+        +maskedInpt(type="text" placeholder="ДД.ММ.ГГГГ" name="birth")
+        h3 данные для входа в сервис
+        +inpt(type="email" placeholder="Email" name="reg_email")
+        +inpt(type="password" placeholder="Пароль"  name="reg_password")
+        .registration-card__special-offers
+            +toggle('special_offers')
+            span(class="registration-card__toggle-span") Получать спецпредложения
+        +arrowBtn('зарегистрироваться')(type="submit")
+    .registration-card__create
+        span(class="registration-card__create-span") Уже есть аккаунт на Toxin
+        +button('войти', '/signin.html')(class="button_theme_enter button_size_m")

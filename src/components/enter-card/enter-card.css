@@ -1,32 +1,17 @@
-@import "./__button-with-arrow/enter-card__button-with-arrow.css";
-@import "./__click-button/enter-card__click-button.css";
-@import "./__email-input/enter-card__email-input.css";
-@import "./__password-input/enter-card__password-input.css";
-
-
-
 /*Главный блок*/
 .enter-card {
-    @extend %Body;
-    width: 38rem;
-    height: 35.8rem;
-    padding: 3.8rem 3rem 3rem 2.8rem;
+    width: 38em;
+    height: 39em;
+    padding: 3.8em 3em 3em 2.8em;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
-    box-shadow: 0px 0px 2.5rem rgba(0, 0, 0, 0.2);
-    border-radius: 0.4rem;
-}
-
-/*Заголовок главного блока*/
-.enter-card__header {
-    @extend %mp;
-    @extend %H1;
-    margin-bottom: 2rem;
+    box-shadow: 0px 0px 2.5em rgba(0, 0, 0, 0.2);
+    border-radius: 0.4em;
 }
 
 /*блок для создания аккаунта*/
-.enter-card__create-account {
+.enter-card__create {
     display: flex;
     justify-content: space-between;
     align-items: baseline;

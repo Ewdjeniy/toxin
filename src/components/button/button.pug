@@ -1,2 +1,3 @@
-mixin button(label)
-    button&attributes(attributes)=label
+mixin button(label, link)
+    button(class="button")&attributes(attributes)=label
+        a(href=link)

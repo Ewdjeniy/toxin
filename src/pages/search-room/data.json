@@ -32,7 +32,8 @@
                     "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
                     "likes": 2
                 }
-            ]
+            ],
+            "votes": {"best": "130", "good": "65", "satisfactorily": "65", "bad": "0"}
         },
         {
             "images": ["images/room840.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
@@ -66,7 +67,8 @@
                     "comment": "Обслуживание на высоте! Все аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
                     "likes": 2
                 }
-            ]
+            ],
+            "votes": {"best": "50", "good": "25", "satisfactorily": "25", "bad": "0"}
         },
         {
             "images": ["images/room980.jpg", "images/sub1Room888.jpg", "images/sub2Room888.jpg"],
