@@ -9,7 +9,7 @@ mixin header(options)
     - options = {}
 
   .header
-    a.header__logo(href = '/index.html')
+    a.header__logo(href = 'index.html')
       include ../logo/logo.pug
     .header__menu
       +menu({items: options.menuItems})
