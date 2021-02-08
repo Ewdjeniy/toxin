@@ -16,9 +16,9 @@
     align-items: center;
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    border-radius: 0.4em;
+    border-radius: 0.29em;
     width: 100%;
-    padding-left: 1.4em;
+    padding-left: 1em;
     cursor: pointer;
 }
 
@@ -26,41 +26,84 @@
 .dropdown__arrow {
     @extend %material-icon;
     color: rgba(31, 32, 65, 0.5);
-    width: 2em;
-    height: 1.3em;
+    width: 1.7em;
+    height: 1.7em;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown__inputs {
+.dropdown__wrapper {
     display: none;
+    padding: 0 0.35em 0 0.82em;
     width: 100%;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     border: 1px solid rgba(31, 32, 65, 0.5);
-    padding: 1rem;
     background-color: #FFFFFF;
     position: absolute;
     z-index: 1;
-    box-sizing: border-box;
+    border-bottom-left-radius: 0.29em;
+    border-bottom-right-radius: 0.29em;
+    border-top: none;
+}
+
+.dropdown__inputs {
+    width: 100%;
     border-collapse: collapse;
+    tr {
+        height: 3.1em;
+    }
+    td {
+        vertical-align: middle;
+    }
+}
+
+.dropdown__minus, .dropdown__plus {
+    font-size: 1.29em;
+    font-weight: 400;
+    line-height: 1.22em;
+    font-style: normal;
+    color: $darkShade50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border: 1px solid $darkShade50;
+    border-radius: 50%;
+    margin-top: 0.2em;
 }
 
 .dropdown__input {
     @extend %H3;
 }
 
-.dropdown__plus, .dropdown__minus {
+.dropdown__plus-td, .dropdown__minus-td {
     cursor: pointer;
+    width: 2.5em;
+}
+
+.dropdown__input-value {
+    width: 2.5em;
+    text-align: center;
+}
+
+.dropdown__submit-td {
+    padding-top: 0.5em;
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.dropdown__refresh-td {
+    padding-top: 0.5em;
+    vertical-align: bottom;
 }
 
 .dropdown__refresh {
-    cursor: pointer;
     display: none;
-    color: rgba(31, 32, 65, 0.5);
 }
 
-.dropdown__submit {
-    cursor: pointer;
-    color: #BC9CFF;
+.dropdown__minus_inactive {
+    color: $darkShade25;
+    border-color: $darkShade25;
 }

@@ -1,21 +1,27 @@
+include ../button/button
+
 mixin dropdown(label, inputs)
     div(class="dropdown")&attributes(attributes)
         input(type="hidden" class="dropdown__handler")
         div(class="dropdown__switcher")
             div(class="dropdown__value")=label
             span(class="dropdown__arrow") keyboard_arrow_down
-        table(class="dropdown__inputs")
-            each val, key in inputs
-                tr(class="dropdown__input")
-                    td(class="dropdown__input-label")=key
-                    td(class="dropdown__minus") -
-                    td(class="dropdown__input-value")=val
-                    td(class="dropdown__plus") +
-            tr(class="dropdown__btns")
-                td
-                    button(class="dropdown__refresh") Очистить
-                td
-                td
-                td
-                    button(class="dropdown__submit") Применить
+        .dropdown__wrapper
+            table(class="dropdown__inputs")
+                each val, key in inputs
+                    tr(class="dropdown__input")
+                        td(class="dropdown__input-label")=key
+                        td(class="dropdown__minus-td")
+                            if val == '0'
+                                span(class="dropdown__minus dropdown__minus_inactive") -
+                            else
+                                span(class="dropdown__minus") -
+                        td(class="dropdown__input-value")=val
+                        td(class="dropdown__plus-td")
+                            span(class="dropdown__plus") +
+                tr(class="dropdown__btns")
+                    td(class="dropdown__refresh-td")
+                        +button('Очистить')(class="dropdown__refresh button_theme_click")
+                    td(class="dropdown__submit-td" colspan=3)
+                        +button('Применить')(class="button_theme_click")
         

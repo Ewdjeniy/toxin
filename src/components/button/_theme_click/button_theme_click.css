@@ -1,0 +1,9 @@
+.button_theme_click {
+    background-color: #FFFFFF;
+    color: #BC9CFF !important;
+    border: none;
+}
+
+.button_theme_click_clicked {
+    color: rgba(31, 32, 65, 0.5) !important;
+}

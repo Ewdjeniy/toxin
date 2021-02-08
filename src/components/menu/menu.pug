@@ -4,12 +4,22 @@
   options.items[0].href - ссылка элемента меню
 
 mixin menu(options)
-  if !options
-    - options = {}
-  if !options.items
-    - options.items = []
-
-  .menu
-    nav.menu__list
-      for item in options.items
-        a.menu__item(href = item.href)= item.name
+    if !options
+        - options = {}
+    if !options.items
+        - options.items = []
+    
+    - richItems = [1, 4];
+    .menu
+        .menu__button
+            span
+            span
+            span
+        nav.menu__list
+            for item, index in options.items
+                a.menu__item(href = item.href)= item.name
+                    for richItem in richItems
+                        if richItem == index
+                            span(class="menu__arrow") keyboard_arrow_down
+            block
+        

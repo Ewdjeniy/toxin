@@ -1,19 +1,64 @@
+@import "../../theme/variables.css";
+
 /*главный блок*/
 .footer {
-    font-size: 0.625rem;
-    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+
+    .arrow-inpt {
+        grid-area: subscribeInput;
+        margin-top: 2.5em;
+    }
+
+    @media screen and (max-width: 767px) {
+        .footer__nav {
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .footer__copyright {
+            font-size: 1rem;
+            padding: 8.55em 10px 8em 10px;
+            text-align: center;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer__icons {
+            margin: 0;
+        }
+        
+        .footer__logo-wrapper {
+            width: auto;
+            height: auto;
+        }
+        
+        .footer__copyright-span {
+            margin: 1.4em 0 1.4em 0;
+        }
+    }
+}
+
+.footer__logo-wrapper {
+    width: 0;
+    height: 0;
 }
 
 /*навигационное меню*/
 .footer__nav {
-    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    background-color: #FFFFFF;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
-    padding: 9.9em 14em 7.9em 13.95em;
+    padding: 7.07em 10em 6em 9.9em;
     display: grid;
+    /*grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;*/
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 4.3em 3.7em 3.8em 3.8em 3.8em;
+    grid-template-rows: 2.6em 2.64em 2.71em 2.71em 2.71em;
     grid-template-areas:
         "logo navHeader aboutUsHeader supportHeader subscribeHeader"
         "best aboutUsLink aboutServiceLink agreementsLink subscribeDescription"
@@ -21,6 +66,11 @@
         "best supportLink vacanciesLink contactLink subscribeInput"
         "best servicesLink investorsLink contactLink subscribeInput";
     align-items: canter;
+
+    a:hover {
+        color: rgba(31, 32, 65, 0.75);
+        ;
+    }
 }
 
 /*логотип*/
@@ -33,16 +83,14 @@
 /*описание отеля по версии ассоциации "Отельные взгляды"*/
 .footer__best-hotel {
     grid-area: best;
-    @extend %Body;
     margin: 0;
-    padding: 1.6em 2em 0 0;
+    padding: 1.5em 1.43em 0 0;
 }
 
 /*Заголовок Навигация*/
 .footer__nav-header {
     grid-area: navHeader;
-    @extend %H3;
-    padding-top: 0.5em;
+    padding-top: 0.36em;
 }
 
 /*ссылка О нас*/
@@ -76,8 +124,7 @@
 /*Заголовок О нас*/
 .footer__about-us-header {
     grid-area: aboutUsHeader;
-    @extend %H3;
-    padding-top: 0.5em;
+    padding-top: 0.41em;
 }
 
 /*ссылка О сервисе*/
@@ -111,8 +158,7 @@
 /*Заголовок Служба поддержки*/
 .footer__support-header {
     grid-area: supportHeader;
-    @extend %H3;
-    padding-top: 0.5em;
+    padding-top: 0.36em;
 }
 
 /*ссылка Соглашения*/
@@ -139,46 +185,33 @@
 /*Заголовок Подписка*/
 .footer__subscribe-header {
     grid-area: subscribeHeader;
-    @extend %H3;
-    padding-top: 0.5em;
+    padding-top: 0.36em;
 }
 
 /*специальные предложения*/
 .footer__subscribe-description {
     grid-area: subscribeDescription;
-    @extend %Body;
-    margin: -0.3em 0 0 0;
-    padding: 0;
-}
-
-/*текстовое поле со стрелкой*/
-.footer__subscription {
-    grid-area: subscribeInput;
-    margin-top: 2.9em;
 }
 
 /*элемент Все права защищены*/
 .footer__copyright {
-    padding: 0 14.2em 0 14.1em;
+    background-color: #fff;
+    padding: 0 10.14em 0 9.9em;
     display: flex;
     align-items: center;
-    height: 7em;
-    order: 2;
+    margin-top: 1px;
+    @media screen and (min-width: 768px) {
+        height: 4.95em; 
+    }
 }
 
 /*Надпись Copyright...*/
 .footer__copyright-span {
+    display: block;
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.395em;
-    line-height: 1.7em;
+    font-size: 1em/1.21em;
     color: rgba(31, 32, 65, 0.75);
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
-
-/*Обертка логотипа*/
-.footer__logo-wrapper {
-    width: 0;
-    height : 0;
 }

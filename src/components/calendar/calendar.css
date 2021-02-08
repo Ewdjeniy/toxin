@@ -18,7 +18,13 @@
     box-sizing: border-box;
     box-shadow: 0px 1em 2em rgba(31, 32, 65, 0.05) !important;
     border-radius: 0.4em;
-    padding: 0.3em 1.5em 0 1em;
+    @media screen and (min-width: 768px) {
+        padding: 0.3em 1.5em 0 0.99em;
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 9px;
+        padding: 0.3em 1.5em 0 0.9em;
+    }
 }
 
 .datepicker--cell-month {
@@ -31,36 +37,18 @@
 
 .datepicker--nav {
     border-bottom: none;
-    padding: 0 0 1.2em 0;
+    padding: 0 0 1.2em 0.8em;
 }
 
-.datepicker--nav-action {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 2.4em;
-    line-height: 2.4em;
-    display: inline-block;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
-    font-feature-settings: 'liga';
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: #BC9CFF;
+.datepicker--content {
+    padding: 0 0.17em 0 1em;
 }
 
 .datepicker--nav-title {
     font-family: "Quicksand", "Open Sans";
     font-style: normal;
     font-weight: bold;
-    font-size: 1.9em;
+    font-size: 2em;
     line-height: 2.4em;
     color: #1F2041;
 }
@@ -71,7 +59,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 1.2em;
-    line-height: 1.5em;
+    line-: 1.5em;
     color: rgba(31, 32, 65, 0.5);
 }
 
@@ -97,6 +85,8 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
+    padding: 1em 0.5em 1.1em 0.85em;
 }
 
 .datepicker--button {
@@ -113,33 +103,7 @@
     flex: 0;
     display: flex;
     align-items: center;
-}
-
-/*кнопка очистить*/
-.calendar__refresh {
-    color: rgba(31, 32, 65, 0.5);
-}
-
-/*кнопка применить*/
-.calendar__submit {
-    color: rgba(31, 32, 65, 0.5);
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 4px;
-    flex: 0;
-    display: flex;
-    align-items: center;
-}
-
-.datepicker__button_active {
-    color: #BC9CFF;
+    display: none;
 }
 
 .-other-month- {
@@ -208,4 +172,18 @@
     border-radius: 50% !important;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
     color: #FFFFFF;
+}
+
+.datepicker--nav-action {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2.4em;
+    line-height: 2.4em;
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    color: #BC9CFF;
 }

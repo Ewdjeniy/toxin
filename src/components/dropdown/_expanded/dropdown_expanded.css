@@ -1,13 +1,13 @@
 /*выпадающее меню с модификатором search-room-card_dropdown-guests-expanded*/
-.dropdown_expanded .dropdown__inputs {
-    display: table;
+.dropdown_expanded .dropdown__wrapper {
+    display: block;
 }
 
 /*блок с переключателем выпадающего меню с модификатором search-room-card_dropdown-guests-expanded*/
 .dropdown_expanded .dropdown__switcher {
     border: 1px solid rgba(31, 32, 65, 0.5);
-    border-top-left-radius: 0.2rem;
-    border-top-right-radius: 0.2rem;
+    border-top-left-radius: 0.13em;
+    border-top-right-radius: 0.13em;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }

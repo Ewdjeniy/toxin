@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Room-details
+    </title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js" integrity="sha512-sM9DpZQXHGs+rFjJYXE1OcuCviEgaXoQIvgsH7nejZB64A09lKeTU4nrs/K6YxFs6f+9FF2awNeJTkaLuplBhg==" crossorigin="anonymous"></script>
+  <link href="toxin.css?4e464013f9d1419f0876" rel="stylesheet"></head>
+  <body>
+    <div class="layout">
+      <header class="layout__header">
+        <div class="header"><a class="header__logo" href="/index.html">
+<div class="logo">
+  <div class="logo__circle"><svg viewBox="0 0 40 40" fill="none" style="max-width: 100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.0003 27.0587C19.3533 27.0587 18.8239 26.5292 18.8239 25.8822C18.8239 21.3528 15.118 17.6469 10.5886 17.6469C9.94152 17.6469 9.41211 17.1175 9.41211 16.4704C9.41211 15.8234 9.94152 15.2939 10.5886 15.2939C16.4415 15.2939 21.1768 20.0292 21.1768 25.8822C21.1768 26.5292 20.6474 27.0587 20.0003 27.0587Z" fill="url(#paint0_linear)" />
+  <path d="M30.5884 16.4704C30.5884 17.1175 30.0589 17.6469 29.4119 17.6469C26.6178 17.6469 24.1178 19.0587 22.6472 21.2057C22.3236 20.3822 21.9413 19.6175 21.4707 18.9116C23.4119 16.6763 26.2648 15.2939 29.4119 15.2939C30.0589 15.2939 30.5884 15.8234 30.5884 16.4704Z" fill="url(#paint1_linear)" />
+  <path d="M20 40C8.97059 40 0 31.0294 0 20C0 8.97059 8.97059 0 20 0C31.0294 0 40 8.97059 40 20C40 31.0294 31.0294 40 20 40ZM20 2.35294C10.2647 2.35294 2.35294 10.2647 2.35294 20C2.35294 29.7353 10.2647 37.6471 20 37.6471C29.7353 37.6471 37.6471 29.7353 37.6471 20C37.6471 10.2647 29.7353 2.35294 20 2.35294Z" fill="url(#paint2_linear)" />
+  <defs>
+    <linearGradient id="paint0_linear" x1="15.2945" y1="15.2939" x2="15.2945" y2="27.0587" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="26.0295" y1="15.2939" x2="26.0295" y2="21.2057" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FCF97" />
+      <stop offset="1" stop-color="#66D2EA" />
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+  </defs>
+</svg>
+
+  </div>
+  <div class="logo__toxin"><svg viewBox="0 0 54 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%">
+  <path d="M10.335 0.368008C10.5567 0.368008 10.7375 0.443841 10.8775 0.595508C11.0292 0.735508 11.105 0.916341 11.105 1.13801C11.105 1.34801 11.0292 1.52884 10.8775 1.68051C10.7375 1.83217 10.5567 1.90801 10.335 1.90801H6.5725V12.408C6.5725 12.6297 6.49667 12.8163 6.345 12.968C6.205 13.108 6.02417 13.178 5.8025 13.178C5.5925 13.178 5.41167 13.108 5.26 12.968C5.10833 12.8163 5.0325 12.6297 5.0325 12.408V1.90801H1.27C1.06 1.90801 0.879167 1.83217 0.7275 1.68051C0.575833 1.52884 0.5 1.34801 0.5 1.13801C0.5 0.916341 0.575833 0.735508 0.7275 0.595508C0.879167 0.443841 1.06 0.368008 1.27 0.368008H10.335Z" fill="#1F2041" />
+  <path d="M16.9076 0.368008C17.7943 0.368008 18.6285 0.537175 19.4101 0.875508C20.2034 1.21384 20.8918 1.67467 21.4751 2.25801C22.0701 2.84134 22.5368 3.52967 22.8751 4.32301C23.2134 5.10467 23.3826 5.93884 23.3826 6.82551C23.3826 7.86384 23.1609 8.82051 22.7176 9.69551C22.2743 10.5705 21.6735 11.3055 20.9151 11.9005C20.9151 11.9005 20.9035 11.9122 20.8801 11.9355C20.3201 12.3555 19.7076 12.688 19.0426 12.933C18.3776 13.1663 17.6659 13.283 16.9076 13.283C16.0209 13.283 15.1868 13.1138 14.4051 12.7755C13.6234 12.4372 12.9351 11.9763 12.3401 11.393C11.7568 10.8097 11.2959 10.1272 10.9576 9.34551C10.6193 8.56384 10.4501 7.72384 10.4501 6.82551C10.4501 5.84551 10.6484 4.94134 11.0451 4.11301C11.4418 3.27301 11.9843 2.55551 12.6726 1.96051L12.7426 1.89051C12.7543 1.89051 12.7718 1.87884 12.7951 1.85551C13.3551 1.38884 13.9851 1.02717 14.6851 0.770508C15.3851 0.502175 16.1259 0.368008 16.9076 0.368008ZM16.9076 11.743C17.3509 11.743 17.771 11.6905 18.1676 11.5855C18.576 11.4688 18.9609 11.3113 19.3226 11.113L13.1801 3.64051C12.8068 4.07217 12.5151 4.56217 12.3051 5.11051C12.0951 5.64717 11.9901 6.21884 11.9901 6.82551C11.9901 7.50217 12.1185 8.13801 12.3751 8.73301C12.6318 9.32801 12.9818 9.85301 13.4251 10.308C13.8801 10.7513 14.4051 11.1013 15.0001 11.358C15.5951 11.6147 16.2309 11.743 16.9076 11.743ZM20.5301 10.1505C20.9384 9.70717 21.2535 9.20551 21.4751 8.64551C21.7085 8.07384 21.8251 7.46718 21.8251 6.82551C21.8251 6.14884 21.6968 5.51301 21.4401 4.91801C21.1834 4.32301 20.8276 3.80384 20.3726 3.36051C19.9293 2.90551 19.4101 2.54967 18.8151 2.29301C18.2201 2.03634 17.5843 1.90801 16.9076 1.90801C16.4409 1.90801 15.9918 1.97217 15.5601 2.10051C15.1284 2.21717 14.7259 2.39217 14.3526 2.62551L20.5301 10.1505Z" fill="#1F2041" />
+  <path d="M30.351 7.63051C30.1177 7.63051 29.9194 7.53717 29.756 7.35051L25.2585 1.57551C25.1302 1.41218 25.0777 1.23134 25.101 1.03301C25.1244 0.823008 25.2177 0.653842 25.381 0.525508C25.5444 0.397175 25.7252 0.350508 25.9235 0.385508C26.1335 0.408841 26.3027 0.502174 26.431 0.665508L30.351 5.67051L34.1835 0.753008C34.3119 0.589674 34.4752 0.496341 34.6735 0.473008C34.8835 0.449675 35.0702 0.502175 35.2335 0.630508C35.3969 0.758841 35.4902 0.928008 35.5135 1.13801C35.5369 1.33634 35.4844 1.51717 35.356 1.68051L30.946 7.35051C30.7944 7.53717 30.596 7.63051 30.351 7.63051ZM35.2685 13.2655C35.2219 13.2655 35.146 13.2597 35.041 13.248C34.9477 13.2363 34.8369 13.2072 34.7085 13.1605C34.5802 13.1022 34.4402 13.0263 34.2885 12.933C34.1485 12.828 34.0085 12.688 33.8685 12.513L30.351 7.98051L26.5185 12.9155C26.3902 13.0788 26.221 13.1722 26.011 13.1955C25.8127 13.2188 25.6319 13.1663 25.4685 13.038C25.3052 12.9097 25.2119 12.7463 25.1885 12.548C25.1652 12.338 25.2177 12.1513 25.346 11.988L29.756 6.31801C29.896 6.13134 30.0885 6.03801 30.3335 6.03801C30.5902 6.03801 30.7944 6.13134 30.946 6.31801L35.041 11.568C35.0994 11.6497 35.1519 11.7022 35.1985 11.7255C35.2452 11.7488 35.2802 11.7663 35.3035 11.778C35.5019 11.778 35.6652 11.848 35.7935 11.988C35.9335 12.1163 36.0094 12.2797 36.021 12.478C36.0444 12.688 35.986 12.8688 35.846 13.0205C35.706 13.1722 35.531 13.2538 35.321 13.2655H35.2685Z" fill="#1F2041" />
+  <path d="M39.7343 13.2655C39.5126 13.2655 39.326 13.1897 39.1743 13.038C39.0226 12.8863 38.9468 12.6997 38.9468 12.478V1.10301C38.9468 0.893008 39.0226 0.712175 39.1743 0.560508C39.326 0.408841 39.5126 0.333008 39.7343 0.333008C39.9443 0.333008 40.1251 0.408841 40.2768 0.560508C40.4285 0.712175 40.5043 0.893008 40.5043 1.10301V12.478C40.5043 12.6997 40.4285 12.8863 40.2768 13.038C40.1251 13.1897 39.9443 13.2655 39.7343 13.2655Z" fill="#1F2041" />
+  <path d="M52.9377 13.2305C52.681 13.2305 52.4827 13.1313 52.3427 12.933L45.0452 3.34301V12.478C45.0452 12.688 44.9693 12.8688 44.8177 13.0205C44.6777 13.1605 44.5027 13.2305 44.2927 13.2305C44.0943 13.2305 43.9193 13.1605 43.7677 13.0205C43.616 12.8688 43.5402 12.688 43.5402 12.478V1.12051C43.5402 0.957175 43.5868 0.811342 43.6802 0.683009C43.7735 0.554675 43.9018 0.467174 44.0652 0.420508C44.2168 0.362174 44.3685 0.356341 44.5202 0.403008C44.6718 0.449675 44.8002 0.537175 44.9052 0.665508L52.1852 10.273V1.12051C52.1852 0.922174 52.2552 0.747174 52.3952 0.595508C52.5468 0.443841 52.7277 0.368008 52.9377 0.368008C53.1477 0.368008 53.3227 0.443841 53.4627 0.595508C53.6143 0.747174 53.6902 0.922174 53.6902 1.12051V12.478C53.6902 12.6413 53.6435 12.7872 53.5502 12.9155C53.4568 13.0438 53.3343 13.1372 53.1827 13.1955C53.066 13.2188 52.9843 13.2305 52.9377 13.2305Z" fill="#1F2041" />
+</svg>
+
+  </div>
+</div></a>
+          <div class="header__menu">
+            <div class="menu">
+              <div class="menu__button"><span></span><span></span><span></span></div>
+              <nav class="menu__list"><a class="menu__item" href="/#">О нас</a><a class="menu__item" href="/#">Услуги<span class="menu__arrow">keyboard_arrow_down</span></a><a class="menu__item" href="/#">Вакансии</a><a class="menu__item" href="/#">Новости</a><a class="menu__item" href="/#">Соглашения<span class="menu__arrow">keyboard_arrow_down</span></a><a class="menu__item menu__extra-item" href="signin.html">Войти</a><a class="menu__item menu__extra-item" href="signup.html">Зарегистрироваться</a>
+              </nav>
+            </div>
+          </div>
+          <div class="header__buttons">
+            <button class="button button_theme_enter button_size_s">Войти<a href="signin.html"></a></button>
+            <button class="button button_theme_registration button_size_l">зарегистрироваться<a href="signup.html"></a></button>
+          </div>
+        </div>
+      </header>
+      <main class="layout__main">
+        <div class="room-pictures"><img alt="picture1"><img alt="picture1"><img alt="picture1"></div>
+        <div class="room-details">
+          <div class="info-card">
+            <div class="info-card__about-room">
+              <div class="info-card__info"><span class="info-card__badge-number">№ </span><span class="info-card__room-number">888</span><span class="info-card__room-category"> люкс</span></div>
+              <div class="info-card__money-for-room"><span class="info-card__money">9 990</span>&#8381<span class="info-card__time"> в сутки</span></div>
+            </div>
+            <div class="drop-dates">
+              <div class="drop-dates__droper">
+                <div class="drop-dates__arrival">
+                  <h3>Прибытие</h3>
+                  <div class="drop-dates__arrival-switcher"><span class="drop-dates__arrival-value">ДД.ММ.ГГГГ</span><span class="drop-dates__arrow">keyboard_arrow_down</span></div>
+                </div>
+                <div class="drop-dates__departure">
+                  <h3>Выезд</h3>
+                  <div class="drop-dates__departure-switcher"><span class="drop-dates__departure-value">ДД.ММ.ГГГГ</span><span class="drop-dates__arrow">keyboard_arrow_down</span></div>
+                </div>
+              </div>
+                  <input class="calendar drop-dates__calendar" type="text" data-offset="-7">
+            </div>
+            <h3>Гости</h3>
+              <div class="dropdown drop-guests">
+                <input class="dropdown__handler" type="hidden">
+                <div class="dropdown__switcher">
+                  <div class="dropdown__value">Сколько гостей</div><span class="dropdown__arrow">keyboard_arrow_down</span>
+                </div>
+                <div class="dropdown__wrapper">
+                  <table class="dropdown__inputs">
+                    <tr class="dropdown__input">
+                      <td class="dropdown__input-label">Взрослые</td>
+                      <td class="dropdown__minus-td"><span class="dropdown__minus dropdown__minus_inactive">-</span>
+                      </td>
+                      <td class="dropdown__input-value">0</td>
+                      <td class="dropdown__plus-td"><span class="dropdown__plus">+</span></td>
+                    </tr>
+                    <tr class="dropdown__input">
+                      <td class="dropdown__input-label">Дети</td>
+                      <td class="dropdown__minus-td"><span class="dropdown__minus dropdown__minus_inactive">-</span>
+                      </td>
+                      <td class="dropdown__input-value">0</td>
+                      <td class="dropdown__plus-td"><span class="dropdown__plus">+</span></td>
+                    </tr>
+                    <tr class="dropdown__input">
+                      <td class="dropdown__input-label">Младенцы</td>
+                      <td class="dropdown__minus-td"><span class="dropdown__minus dropdown__minus_inactive">-</span>
+                      </td>
+                      <td class="dropdown__input-value">0</td>
+                      <td class="dropdown__plus-td"><span class="dropdown__plus">+</span></td>
+                    </tr>
+                    <tr class="dropdown__btns">
+                      <td class="dropdown__refresh-td">
+                          <button class="button dropdown__refresh button_theme_click">Очистить<a></a></button>
+                      </td>
+                      <td class="dropdown__submit-td" colspan="3">
+                          <button class="button button_theme_click">Применить<a></a></button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+<table class="info-card__calculations">
+  <tr>
+    <td class="info-card__first-td" colspan="2"><span class="info-card__money">9 990</span>&#8381 x <span class="info-card__amount-of-days">4 </span><span>суток</span></td>
+    <td class="info-card__last-td"><span class="info-card__money-result">39 960</span>&#8381</td>
+  </tr>
+  <tr>
+    <td class="info-card__discount-td">Сбор за услуги: скидка <span class="info-card__discount">2179</span>&#8381</td>
+    <td class="info-card__badge-info-td">
+      <div class="info-card__badge-info">i</div>
+    </td>
+    <td class="info-card__last-td"><span class="info-card__discount-result">0</span>&#8381</td>
+  </tr>
+  <tr>
+    <td class="info-card__charges">Сбор за дополнительные услуги</td>
+    <td>
+      <div class="info-card__badge-info">i</div>
+    </td>
+    <td class="info-card__last-td3"><span class="info-card__discount-result">300</span>&#8381</td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <div class="info-card__calculations-result"><span>Итого</span><span class="info-card__line"></span><span class="info-card__total">38 081</span>&#8381</div>
+    </td>
+  </tr>
+</table>
+              <button class="arrow-btn"><a></a>
+                <h3 class="arrow-btn__label">Забронировать</h3><span class="arrow-btn__arrow">arrow_forward</span>
+              </button>
+          </div>
+          <div class="room-details__info">
+            <h2>Сведения о номере</h2>
+            <div class="text-with-picture text-with-picture_border-bottom"><span class="text-with-picture__icon">tag_faces</span>
+              <div class="text-with-picture__description"><span class="text-with-picture__header">Комфорт</span><span>Шумопоглощающие стены</span></div>
+            </div>
+            <div class="text-with-picture"><span class="text-with-picture__icon">location_city</span>
+              <div class="text-with-picture__description"><span class="text-with-picture__header">Удобство</span><span>Окно в каждой из спален</span></div>
+            </div>
+          </div>
+          <div class="room-details__impressions">
+            <h2>Впечатления от номера</h2>
+            <div class="layout__container">
+<div class="diagram">
+  <svg class="diagram__svg" width="100%" height="100%" viewBox="0 0 42 42">
+    <defs>
+      <linearGradient id="gradient1" x1="0" x2="0" y1="0" y2="1">
+        <stop stop-color="#FFE39C" offset="0%"></stop>
+        <stop stop-color="#FFBA9C" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient id="gradient2" x1="0" x2="0" y1="0" y2="1">
+        <stop stop-color="#6FCF97" offset="0%"></stop>
+        <stop stop-color="#66D2EA" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient id="gradient3" x1="0" x2="0" y1="0" y2="1">
+        <stop stop-color="#BC9CFF" offset="0%"></stop>
+        <stop stop-color="#8BA4F9" offset="100%"></stop>
+      </linearGradient>
+      <linearGradient id="gradient4" x1="0" x2="0" y1="0" y2="1">
+        <stop stop-color="#919191" offset="0%"></stop>
+        <stop stop-color="#3D4975" offset="100%"></stop>
+      </linearGradient>
+    </defs>
+    <g class="diagram__circles">
+      <circle class="diagram__hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+      <circle class="diagram__ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient4)" stroke-width="1"></circle>
+      <circle class="diagram__segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="0" stroke-dasharray="0.5 99.5" stroke-dashoffset="25.5"></circle>
+      <circle class="diagram__satisfactorily" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient3)" stroke-width="1" stroke-dasharray="24.5 75.5" stroke-dashoffset="25"></circle>
+      <circle class="diagram__segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="1" stroke-dasharray="0.5 99.5" stroke-dashoffset="100.5"></circle>
+      <circle class="diagram__good" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient2)" stroke-width="1" stroke-dasharray="24.5 75.5" stroke-dashoffset="100"></circle>
+      <circle class="diagram__segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="1" stroke-dasharray="0.5 99.5" stroke-dashoffset="75.5"></circle>
+      <circle class="diagram__best" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#gradient1)" stroke-width="1" stroke-dasharray="49.5 50.5" stroke-dashoffset="75"></circle>
+      <circle class="diagram__segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="1" stroke-dasharray="0.5 99.5" stroke-dashoffset="25.5"></circle>
+    </g>
+    <g class="diagram__text">
+      <text class="diagram__number" x="50%" y="50%">260</text>
+      <text class="diagram__label" x="50%" y="50%">Голосов</text>
+    </g>
+  </svg>
+</div>
+              <ul class="votes">
+                <li class="li"><span class="li__marker"></span><span class="li__text">Великолепно</span></li>
+                <li class="li"><span class="li__marker"></span><span class="li__text">Хорошо</span></li>
+                <li class="li"><span class="li__marker"></span><span class="li__text">Удовлетворительно</span></li>
+                <li class="li"><span class="li__marker"></span><span class="li__text">Разочарован</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="room-details__comments">
+            <div class="room-details__comments-header">
+              <h2>Отзвывы посетителей номера</h2><span class="room-details__comments-amount">2 отзыва</span>
+            </div>
+          </div>
+          <div class="bullet-list">
+            <h3>Правила</h3>
+            <ul class="bullet-list__ul">
+              <li class="li"><span class="li__marker"></span><span class="li__text">Время прибытия &mdash; после 13:00, а выезд до 12:00</span></li>
+            </ul>
+          </div>
+          <div class="room-details__canseling">
+            <h2>Отмена</h2>
+            <p>
+              Бесплатная отмена в течении 48ч. После 
+              этого при отмене не позднее чем за 5дн. до 
+              прибытия вы получите полный возврат зы 
+              вычетом сбора за услуги.
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__nav">
+<div class="logo">
+  <div class="logo__circle"><svg viewBox="0 0 40 40" fill="none" style="max-width: 100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.0003 27.0587C19.3533 27.0587 18.8239 26.5292 18.8239 25.8822C18.8239 21.3528 15.118 17.6469 10.5886 17.6469C9.94152 17.6469 9.41211 17.1175 9.41211 16.4704C9.41211 15.8234 9.94152 15.2939 10.5886 15.2939C16.4415 15.2939 21.1768 20.0292 21.1768 25.8822C21.1768 26.5292 20.6474 27.0587 20.0003 27.0587Z" fill="url(#paint0_linear)" />
+  <path d="M30.5884 16.4704C30.5884 17.1175 30.0589 17.6469 29.4119 17.6469C26.6178 17.6469 24.1178 19.0587 22.6472 21.2057C22.3236 20.3822 21.9413 19.6175 21.4707 18.9116C23.4119 16.6763 26.2648 15.2939 29.4119 15.2939C30.0589 15.2939 30.5884 15.8234 30.5884 16.4704Z" fill="url(#paint1_linear)" />
+  <path d="M20 40C8.97059 40 0 31.0294 0 20C0 8.97059 8.97059 0 20 0C31.0294 0 40 8.97059 40 20C40 31.0294 31.0294 40 20 40ZM20 2.35294C10.2647 2.35294 2.35294 10.2647 2.35294 20C2.35294 29.7353 10.2647 37.6471 20 37.6471C29.7353 37.6471 37.6471 29.7353 37.6471 20C37.6471 10.2647 29.7353 2.35294 20 2.35294Z" fill="url(#paint2_linear)" />
+  <defs>
+    <linearGradient id="paint0_linear" x1="15.2945" y1="15.2939" x2="15.2945" y2="27.0587" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="26.0295" y1="15.2939" x2="26.0295" y2="21.2057" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FCF97" />
+      <stop offset="1" stop-color="#66D2EA" />
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+  </defs>
+</svg>
+
+  </div>
+  <div class="logo__toxin"><svg viewBox="0 0 54 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%">
+  <path d="M10.335 0.368008C10.5567 0.368008 10.7375 0.443841 10.8775 0.595508C11.0292 0.735508 11.105 0.916341 11.105 1.13801C11.105 1.34801 11.0292 1.52884 10.8775 1.68051C10.7375 1.83217 10.5567 1.90801 10.335 1.90801H6.5725V12.408C6.5725 12.6297 6.49667 12.8163 6.345 12.968C6.205 13.108 6.02417 13.178 5.8025 13.178C5.5925 13.178 5.41167 13.108 5.26 12.968C5.10833 12.8163 5.0325 12.6297 5.0325 12.408V1.90801H1.27C1.06 1.90801 0.879167 1.83217 0.7275 1.68051C0.575833 1.52884 0.5 1.34801 0.5 1.13801C0.5 0.916341 0.575833 0.735508 0.7275 0.595508C0.879167 0.443841 1.06 0.368008 1.27 0.368008H10.335Z" fill="#1F2041" />
+  <path d="M16.9076 0.368008C17.7943 0.368008 18.6285 0.537175 19.4101 0.875508C20.2034 1.21384 20.8918 1.67467 21.4751 2.25801C22.0701 2.84134 22.5368 3.52967 22.8751 4.32301C23.2134 5.10467 23.3826 5.93884 23.3826 6.82551C23.3826 7.86384 23.1609 8.82051 22.7176 9.69551C22.2743 10.5705 21.6735 11.3055 20.9151 11.9005C20.9151 11.9005 20.9035 11.9122 20.8801 11.9355C20.3201 12.3555 19.7076 12.688 19.0426 12.933C18.3776 13.1663 17.6659 13.283 16.9076 13.283C16.0209 13.283 15.1868 13.1138 14.4051 12.7755C13.6234 12.4372 12.9351 11.9763 12.3401 11.393C11.7568 10.8097 11.2959 10.1272 10.9576 9.34551C10.6193 8.56384 10.4501 7.72384 10.4501 6.82551C10.4501 5.84551 10.6484 4.94134 11.0451 4.11301C11.4418 3.27301 11.9843 2.55551 12.6726 1.96051L12.7426 1.89051C12.7543 1.89051 12.7718 1.87884 12.7951 1.85551C13.3551 1.38884 13.9851 1.02717 14.6851 0.770508C15.3851 0.502175 16.1259 0.368008 16.9076 0.368008ZM16.9076 11.743C17.3509 11.743 17.771 11.6905 18.1676 11.5855C18.576 11.4688 18.9609 11.3113 19.3226 11.113L13.1801 3.64051C12.8068 4.07217 12.5151 4.56217 12.3051 5.11051C12.0951 5.64717 11.9901 6.21884 11.9901 6.82551C11.9901 7.50217 12.1185 8.13801 12.3751 8.73301C12.6318 9.32801 12.9818 9.85301 13.4251 10.308C13.8801 10.7513 14.4051 11.1013 15.0001 11.358C15.5951 11.6147 16.2309 11.743 16.9076 11.743ZM20.5301 10.1505C20.9384 9.70717 21.2535 9.20551 21.4751 8.64551C21.7085 8.07384 21.8251 7.46718 21.8251 6.82551C21.8251 6.14884 21.6968 5.51301 21.4401 4.91801C21.1834 4.32301 20.8276 3.80384 20.3726 3.36051C19.9293 2.90551 19.4101 2.54967 18.8151 2.29301C18.2201 2.03634 17.5843 1.90801 16.9076 1.90801C16.4409 1.90801 15.9918 1.97217 15.5601 2.10051C15.1284 2.21717 14.7259 2.39217 14.3526 2.62551L20.5301 10.1505Z" fill="#1F2041" />
+  <path d="M30.351 7.63051C30.1177 7.63051 29.9194 7.53717 29.756 7.35051L25.2585 1.57551C25.1302 1.41218 25.0777 1.23134 25.101 1.03301C25.1244 0.823008 25.2177 0.653842 25.381 0.525508C25.5444 0.397175 25.7252 0.350508 25.9235 0.385508C26.1335 0.408841 26.3027 0.502174 26.431 0.665508L30.351 5.67051L34.1835 0.753008C34.3119 0.589674 34.4752 0.496341 34.6735 0.473008C34.8835 0.449675 35.0702 0.502175 35.2335 0.630508C35.3969 0.758841 35.4902 0.928008 35.5135 1.13801C35.5369 1.33634 35.4844 1.51717 35.356 1.68051L30.946 7.35051C30.7944 7.53717 30.596 7.63051 30.351 7.63051ZM35.2685 13.2655C35.2219 13.2655 35.146 13.2597 35.041 13.248C34.9477 13.2363 34.8369 13.2072 34.7085 13.1605C34.5802 13.1022 34.4402 13.0263 34.2885 12.933C34.1485 12.828 34.0085 12.688 33.8685 12.513L30.351 7.98051L26.5185 12.9155C26.3902 13.0788 26.221 13.1722 26.011 13.1955C25.8127 13.2188 25.6319 13.1663 25.4685 13.038C25.3052 12.9097 25.2119 12.7463 25.1885 12.548C25.1652 12.338 25.2177 12.1513 25.346 11.988L29.756 6.31801C29.896 6.13134 30.0885 6.03801 30.3335 6.03801C30.5902 6.03801 30.7944 6.13134 30.946 6.31801L35.041 11.568C35.0994 11.6497 35.1519 11.7022 35.1985 11.7255C35.2452 11.7488 35.2802 11.7663 35.3035 11.778C35.5019 11.778 35.6652 11.848 35.7935 11.988C35.9335 12.1163 36.0094 12.2797 36.021 12.478C36.0444 12.688 35.986 12.8688 35.846 13.0205C35.706 13.1722 35.531 13.2538 35.321 13.2655H35.2685Z" fill="#1F2041" />
+  <path d="M39.7343 13.2655C39.5126 13.2655 39.326 13.1897 39.1743 13.038C39.0226 12.8863 38.9468 12.6997 38.9468 12.478V1.10301C38.9468 0.893008 39.0226 0.712175 39.1743 0.560508C39.326 0.408841 39.5126 0.333008 39.7343 0.333008C39.9443 0.333008 40.1251 0.408841 40.2768 0.560508C40.4285 0.712175 40.5043 0.893008 40.5043 1.10301V12.478C40.5043 12.6997 40.4285 12.8863 40.2768 13.038C40.1251 13.1897 39.9443 13.2655 39.7343 13.2655Z" fill="#1F2041" />
+  <path d="M52.9377 13.2305C52.681 13.2305 52.4827 13.1313 52.3427 12.933L45.0452 3.34301V12.478C45.0452 12.688 44.9693 12.8688 44.8177 13.0205C44.6777 13.1605 44.5027 13.2305 44.2927 13.2305C44.0943 13.2305 43.9193 13.1605 43.7677 13.0205C43.616 12.8688 43.5402 12.688 43.5402 12.478V1.12051C43.5402 0.957175 43.5868 0.811342 43.6802 0.683009C43.7735 0.554675 43.9018 0.467174 44.0652 0.420508C44.2168 0.362174 44.3685 0.356341 44.5202 0.403008C44.6718 0.449675 44.8002 0.537175 44.9052 0.665508L52.1852 10.273V1.12051C52.1852 0.922174 52.2552 0.747174 52.3952 0.595508C52.5468 0.443841 52.7277 0.368008 52.9377 0.368008C53.1477 0.368008 53.3227 0.443841 53.4627 0.595508C53.6143 0.747174 53.6902 0.922174 53.6902 1.12051V12.478C53.6902 12.6413 53.6435 12.7872 53.5502 12.9155C53.4568 13.0438 53.3343 13.1372 53.1827 13.1955C53.066 13.2188 52.9843 13.2305 52.9377 13.2305Z" fill="#1F2041" />
+</svg>
+
+  </div>
+</div>
+          <p class="footer__best-hotel">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации &laquo;Отельные взгляды&raquo;</p>
+          <h3 class="footer__nav-header">Навигация</h3><a class="footer__about-us-link" href="#">О нас</a><a class="footer__news-link" href="#">Новости</a><a class="footer__support-link" href="#">Служба поддержки</a><a class="footer__services-link" href="#">Услуги</a>
+          <h3 class="footer__about-us-header">О нас</h3><a class="footer__about-service-link" href="#">О сервисе</a><a class="footer__command-link" href="#">Наша команда</a><a class="footer__vacancies-link" href="#">Вакансии</a><a class="footer__investors-link" href="#">Инвесторы</a>
+          <h3 class="footer__support-header">Служба поддержки</h3><a class="footer__agreements-link" href="#">Соглашения</a><a class="footer__community-link" href="#">Сообщества</a><a class="footer__contact-link" href="#">Связь с нами</a>
+          <h3 class="footer__subscribe-header">Подписка</h3>
+          <p class="footer__subscribe-description">Получайте специальные предложения и новости сервиса</p>
+          <form class="arrow-inpt">
+            <input class="arrow-inpt__field" type="email" placeholder="Email" name="subscribe">
+            <div class="arrow-inpt__arrow-wrapper">
+              <button class="arrow-inpt__arrow" type="submit">arrow_forward</button>
+            </div>
+          </form>
+        </div>
+        <div class="footer__copyright">
+          <div class="footer__logo-wrapper">
+<div class="logo">
+  <div class="logo__circle"><svg viewBox="0 0 40 40" fill="none" style="max-width: 100%" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20.0003 27.0587C19.3533 27.0587 18.8239 26.5292 18.8239 25.8822C18.8239 21.3528 15.118 17.6469 10.5886 17.6469C9.94152 17.6469 9.41211 17.1175 9.41211 16.4704C9.41211 15.8234 9.94152 15.2939 10.5886 15.2939C16.4415 15.2939 21.1768 20.0292 21.1768 25.8822C21.1768 26.5292 20.6474 27.0587 20.0003 27.0587Z" fill="url(#paint0_linear)" />
+  <path d="M30.5884 16.4704C30.5884 17.1175 30.0589 17.6469 29.4119 17.6469C26.6178 17.6469 24.1178 19.0587 22.6472 21.2057C22.3236 20.3822 21.9413 19.6175 21.4707 18.9116C23.4119 16.6763 26.2648 15.2939 29.4119 15.2939C30.0589 15.2939 30.5884 15.8234 30.5884 16.4704Z" fill="url(#paint1_linear)" />
+  <path d="M20 40C8.97059 40 0 31.0294 0 20C0 8.97059 8.97059 0 20 0C31.0294 0 40 8.97059 40 20C40 31.0294 31.0294 40 20 40ZM20 2.35294C10.2647 2.35294 2.35294 10.2647 2.35294 20C2.35294 29.7353 10.2647 37.6471 20 37.6471C29.7353 37.6471 37.6471 29.7353 37.6471 20C37.6471 10.2647 29.7353 2.35294 20 2.35294Z" fill="url(#paint2_linear)" />
+  <defs>
+    <linearGradient id="paint0_linear" x1="15.2945" y1="15.2939" x2="15.2945" y2="27.0587" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="26.0295" y1="15.2939" x2="26.0295" y2="21.2057" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6FCF97" />
+      <stop offset="1" stop-color="#66D2EA" />
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="20" y1="0" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#BC9CFF" />
+      <stop offset="1" stop-color="#8BA4F9" />
+    </linearGradient>
+  </defs>
+</svg>
+
+  </div>
+  <div class="logo__toxin"><svg viewBox="0 0 54 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%">
+  <path d="M10.335 0.368008C10.5567 0.368008 10.7375 0.443841 10.8775 0.595508C11.0292 0.735508 11.105 0.916341 11.105 1.13801C11.105 1.34801 11.0292 1.52884 10.8775 1.68051C10.7375 1.83217 10.5567 1.90801 10.335 1.90801H6.5725V12.408C6.5725 12.6297 6.49667 12.8163 6.345 12.968C6.205 13.108 6.02417 13.178 5.8025 13.178C5.5925 13.178 5.41167 13.108 5.26 12.968C5.10833 12.8163 5.0325 12.6297 5.0325 12.408V1.90801H1.27C1.06 1.90801 0.879167 1.83217 0.7275 1.68051C0.575833 1.52884 0.5 1.34801 0.5 1.13801C0.5 0.916341 0.575833 0.735508 0.7275 0.595508C0.879167 0.443841 1.06 0.368008 1.27 0.368008H10.335Z" fill="#1F2041" />
+  <path d="M16.9076 0.368008C17.7943 0.368008 18.6285 0.537175 19.4101 0.875508C20.2034 1.21384 20.8918 1.67467 21.4751 2.25801C22.0701 2.84134 22.5368 3.52967 22.8751 4.32301C23.2134 5.10467 23.3826 5.93884 23.3826 6.82551C23.3826 7.86384 23.1609 8.82051 22.7176 9.69551C22.2743 10.5705 21.6735 11.3055 20.9151 11.9005C20.9151 11.9005 20.9035 11.9122 20.8801 11.9355C20.3201 12.3555 19.7076 12.688 19.0426 12.933C18.3776 13.1663 17.6659 13.283 16.9076 13.283C16.0209 13.283 15.1868 13.1138 14.4051 12.7755C13.6234 12.4372 12.9351 11.9763 12.3401 11.393C11.7568 10.8097 11.2959 10.1272 10.9576 9.34551C10.6193 8.56384 10.4501 7.72384 10.4501 6.82551C10.4501 5.84551 10.6484 4.94134 11.0451 4.11301C11.4418 3.27301 11.9843 2.55551 12.6726 1.96051L12.7426 1.89051C12.7543 1.89051 12.7718 1.87884 12.7951 1.85551C13.3551 1.38884 13.9851 1.02717 14.6851 0.770508C15.3851 0.502175 16.1259 0.368008 16.9076 0.368008ZM16.9076 11.743C17.3509 11.743 17.771 11.6905 18.1676 11.5855C18.576 11.4688 18.9609 11.3113 19.3226 11.113L13.1801 3.64051C12.8068 4.07217 12.5151 4.56217 12.3051 5.11051C12.0951 5.64717 11.9901 6.21884 11.9901 6.82551C11.9901 7.50217 12.1185 8.13801 12.3751 8.73301C12.6318 9.32801 12.9818 9.85301 13.4251 10.308C13.8801 10.7513 14.4051 11.1013 15.0001 11.358C15.5951 11.6147 16.2309 11.743 16.9076 11.743ZM20.5301 10.1505C20.9384 9.70717 21.2535 9.20551 21.4751 8.64551C21.7085 8.07384 21.8251 7.46718 21.8251 6.82551C21.8251 6.14884 21.6968 5.51301 21.4401 4.91801C21.1834 4.32301 20.8276 3.80384 20.3726 3.36051C19.9293 2.90551 19.4101 2.54967 18.8151 2.29301C18.2201 2.03634 17.5843 1.90801 16.9076 1.90801C16.4409 1.90801 15.9918 1.97217 15.5601 2.10051C15.1284 2.21717 14.7259 2.39217 14.3526 2.62551L20.5301 10.1505Z" fill="#1F2041" />
+  <path d="M30.351 7.63051C30.1177 7.63051 29.9194 7.53717 29.756 7.35051L25.2585 1.57551C25.1302 1.41218 25.0777 1.23134 25.101 1.03301C25.1244 0.823008 25.2177 0.653842 25.381 0.525508C25.5444 0.397175 25.7252 0.350508 25.9235 0.385508C26.1335 0.408841 26.3027 0.502174 26.431 0.665508L30.351 5.67051L34.1835 0.753008C34.3119 0.589674 34.4752 0.496341 34.6735 0.473008C34.8835 0.449675 35.0702 0.502175 35.2335 0.630508C35.3969 0.758841 35.4902 0.928008 35.5135 1.13801C35.5369 1.33634 35.4844 1.51717 35.356 1.68051L30.946 7.35051C30.7944 7.53717 30.596 7.63051 30.351 7.63051ZM35.2685 13.2655C35.2219 13.2655 35.146 13.2597 35.041 13.248C34.9477 13.2363 34.8369 13.2072 34.7085 13.1605C34.5802 13.1022 34.4402 13.0263 34.2885 12.933C34.1485 12.828 34.0085 12.688 33.8685 12.513L30.351 7.98051L26.5185 12.9155C26.3902 13.0788 26.221 13.1722 26.011 13.1955C25.8127 13.2188 25.6319 13.1663 25.4685 13.038C25.3052 12.9097 25.2119 12.7463 25.1885 12.548C25.1652 12.338 25.2177 12.1513 25.346 11.988L29.756 6.31801C29.896 6.13134 30.0885 6.03801 30.3335 6.03801C30.5902 6.03801 30.7944 6.13134 30.946 6.31801L35.041 11.568C35.0994 11.6497 35.1519 11.7022 35.1985 11.7255C35.2452 11.7488 35.2802 11.7663 35.3035 11.778C35.5019 11.778 35.6652 11.848 35.7935 11.988C35.9335 12.1163 36.0094 12.2797 36.021 12.478C36.0444 12.688 35.986 12.8688 35.846 13.0205C35.706 13.1722 35.531 13.2538 35.321 13.2655H35.2685Z" fill="#1F2041" />
+  <path d="M39.7343 13.2655C39.5126 13.2655 39.326 13.1897 39.1743 13.038C39.0226 12.8863 38.9468 12.6997 38.9468 12.478V1.10301C38.9468 0.893008 39.0226 0.712175 39.1743 0.560508C39.326 0.408841 39.5126 0.333008 39.7343 0.333008C39.9443 0.333008 40.1251 0.408841 40.2768 0.560508C40.4285 0.712175 40.5043 0.893008 40.5043 1.10301V12.478C40.5043 12.6997 40.4285 12.8863 40.2768 13.038C40.1251 13.1897 39.9443 13.2655 39.7343 13.2655Z" fill="#1F2041" />
+  <path d="M52.9377 13.2305C52.681 13.2305 52.4827 13.1313 52.3427 12.933L45.0452 3.34301V12.478C45.0452 12.688 44.9693 12.8688 44.8177 13.0205C44.6777 13.1605 44.5027 13.2305 44.2927 13.2305C44.0943 13.2305 43.9193 13.1605 43.7677 13.0205C43.616 12.8688 43.5402 12.688 43.5402 12.478V1.12051C43.5402 0.957175 43.5868 0.811342 43.6802 0.683009C43.7735 0.554675 43.9018 0.467174 44.0652 0.420508C44.2168 0.362174 44.3685 0.356341 44.5202 0.403008C44.6718 0.449675 44.8002 0.537175 44.9052 0.665508L52.1852 10.273V1.12051C52.1852 0.922174 52.2552 0.747174 52.3952 0.595508C52.5468 0.443841 52.7277 0.368008 52.9377 0.368008C53.1477 0.368008 53.3227 0.443841 53.4627 0.595508C53.6143 0.747174 53.6902 0.922174 53.6902 1.12051V12.478C53.6902 12.6413 53.6435 12.7872 53.5502 12.9155C53.4568 13.0438 53.3343 13.1372 53.1827 13.1955C53.066 13.2188 52.9843 13.2305 52.9377 13.2305Z" fill="#1F2041" />
+</svg>
+
+  </div>
+</div>
+          </div><span class="footer__copyright-span">Copyright &copy; 2018 Toxin отель. Все права защищены.</span>
+<div class="footer__icons"><a class="footer__twitter fab fa-twitter" href="https://twitter.com/?lang=ru" target="_blank"></a><a class="footer__facebook fab fa-facebook-square" href="https://ru-ru.facebook.com" target="_blank"></a><a class="footer__instagram fab fa-instagram" href="https://www.instagram.com/?hl=ru" target="_blank"></a></div>
+        </div>
+      </footer>
+    </div>
+  <script type="text/javascript" src="toxin.bundle.js?4e464013f9d1419f0876"></script></body>
+</html>

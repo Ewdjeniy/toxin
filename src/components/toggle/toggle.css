@@ -1,8 +1,6 @@
 /*блок элемента*/
 .toggle {
-    @extend %Body;
     box-sizing: border-box;
-    margin-bottom: 2.2em;
 }
 
 .toggle__checkbox {
@@ -12,14 +10,13 @@
 /*наружняя часть переключателя*/
 .toggle__btn {
     display: inline-block;
-    width: 4em;
+    width: 2.86em;
     /* ширина */
-    height: 2em;
+    height: 1.43em;
     /* высота */
-    border-radius: 1em;
+    border-radius: 0.71em;
     /* радиус скругления */
     z-index: 0;
-    margin: 0 1em 0 0;
     background-color: #FFFFFF;
     padding: 0;
     border: 1px solid rgba(31, 32, 65, 0.25);
@@ -33,9 +30,9 @@
 /*внутренняя часть переключателя*/
 .toggle__btn::after {
     content: "";
-    height: 1.2em;
+    height: 0.86em;
     /* высота кнопки */
-    width: 1.2em;
+    width: 0.86em;
     /* ширина кнопки */
     border-radius: 50%;
     top: 15%;

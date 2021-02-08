@@ -2,9 +2,10 @@ extends ../base/base
 
 
 block title
-  | Toxin
+    | Toxin
 
 block main
-  .content-index
-    include ../../components/search-room-card/search-room-card.pug
-    span(class="content__span") Лучшие номера для вашей работы, отдыха и просто вдохновения
+    .content-index
+        img(class="content-index__img" src=require('./images/landing.jpg') alt="landing picture")
+        include ../../components/search-room-card/search-room-card.pug
+        span(class="content-index__span") Лучшие номера для вашей работы, отдыха и просто вдохновения

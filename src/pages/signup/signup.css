@@ -1,0 +1,29 @@
+@import "../../theme/variables.css";
+
+.content-signup {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .registration-card {
+        margin-top: 5em;
+    }
+}
+
+.content-signup .registration-card {
+    display: block;
+    @media screen and (min-width: 768px) {
+        position: absolute;
+    }
+}
+
+.content-signup__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}

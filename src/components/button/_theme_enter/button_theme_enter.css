@@ -2,5 +2,8 @@
     background-color: #FFFFFF;
     color: #BC9CFF !important;
     border: 2px solid #BC9CFF;
-    margin-top: 0.5em;
+}
+
+.button_theme_enter_clicked {
+    border-color: rgba(188, 156, 255, 0.5);
 }

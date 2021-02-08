@@ -1,4 +1,5 @@
 import './calendar.css';
+import hangClickButtonsHandler from '../button/_theme_click/button_theme_click.js';
 
 const calendars = document.getElementsByClassName('calendar');
 
@@ -21,7 +22,7 @@ for (let i = 0; i < calendars.length; i++) {
     $(calendars[i]).datepicker({
         keyboardNav: false,
         multipleDatesSeparator: ' - ',
-        minDate: new Date(),
+        //minDate: new Date(),
         altField: $(altInput),
         altFieldDateFormat: 'yyyy,m,d',
         navTitles: {
@@ -30,8 +31,6 @@ for (let i = 0; i < calendars.length; i++) {
             years: 'yyyy1 - yyyy2'
         },
         monthsField: 'months',
-        
-        
         range: true,
         clearButton: true,
         prevHtml: 'arrow_back',
@@ -47,7 +46,6 @@ for (let i = 0; i < calendars.length; i++) {
         },
         onSelect: function(formattedDate, date, inst) {
             calendarChangeView(i);
-            activateButtons(i, date.length);
             let event = new Event("input");
             calendars[i].dispatchEvent(event);
             event = new Event("change");
@@ -59,24 +57,14 @@ for (let i = 0; i < calendars.length; i++) {
 function calendarChangeView(i) {
     const datepickers = document.getElementsByClassName('datepicker');
     const buttons = datepickers[i].getElementsByClassName('datepicker--buttons')[0];
+    const datepicker = $(calendars[i]).datepicker().data('datepicker');
 
-    buttons.innerHTML = '<div class="datepicker--button calendar__refresh" data-action="clear">Очистить</div><div class="calendar__submit">Применить</div>';
-}
-
-function activateButtons(i, length) {
-    const datepickers = document.getElementsByClassName('datepicker');
-    const buttons = datepickers[i].getElementsByClassName('datepicker--buttons')[0],
-          refreshButton = datepickers[i].getElementsByClassName('calendar__refresh')[0],
-          submitButton = datepickers[i].getElementsByClassName('calendar__submit')[0];
-    
-    if (length == 0) {
-        refreshButton.classList.remove('datepicker__button_active');
-        submitButton.classList.remove('datepicker__button_active');
-    } else if (length == 1) {
-        refreshButton.classList.add('datepicker__button_active');
-        submitButton.classList.remove('datepicker__button_active');
-    } else {
-        refreshButton.classList.add('datepicker__button_active');
-        submitButton.classList.add('datepicker__button_active');
-    }
+    buttons.innerHTML = '<div class="datepicker--button" data-action="clear"></div><button class="button button_theme_click calendar__refresh">Очистить</button><button class="button button_theme_click calendar__submit">Применить</button>';
+    hangClickButtonsHandler();
+    buttons.getElementsByClassName('calendar__refresh')[0].addEventListener('click', function() {
+        setTimeout(() => this.previousElementSibling.click(), 290);
+    });
+    buttons.getElementsByClassName('calendar__submit')[0].addEventListener('click', function() {
+        datepicker.hide();
+    });
 }

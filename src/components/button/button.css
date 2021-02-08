@@ -2,7 +2,7 @@
 
 .button {
     @extend %H3;
-    border-radius: 2.2em;
+    border-radius: 1.83em;
     cursor: pointer;
     outline: 0;
 }

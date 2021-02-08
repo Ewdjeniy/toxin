@@ -3,7 +3,7 @@
     background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 11.3em;
+    width: 7.9em;
     display: flex;
     justify-content: space-between;
     margin-left: auto;
@@ -11,8 +11,8 @@
 
 /*ссылки*/
 .footer__twitter, .footer__facebook, .footer__instagram {
-    font-size: 2.4em;
+    font-size: 1.71em;
     font-weight: normal;
-    line-height: 2.3em;
+    line-height: 1.64em;
     text-decoration: none;
 }

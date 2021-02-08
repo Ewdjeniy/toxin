@@ -1,18 +1,17 @@
 .logo {
-  display: flex;
-  margin-right: auto;
-  cursor: pointer;
-  font-size: 0.625rem;
-  align-items: center;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
 
-  .logo__circle {
-    width: 4em;
-    height: 4em;
-  }
+    .logo__circle {
+        width: 2.86em;
+        height: 2.86em;
+    }
 
-  .logo__toxin {
-    width: 5.4em;
-    height: 1.3em;
-    margin-left: 1.1em;
-  }
+    .logo__toxin {
+        width: 3.86em;
+        height: 0.93em;
+        margin-left: 0.79em;
+        margin-bottom: 0.3em;
+    }
 }

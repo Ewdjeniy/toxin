@@ -13,6 +13,8 @@ mixin header(options)
       include ../logo/logo.pug
     .header__menu
       +menu({items: options.menuItems})
+        a.menu__item.menu__extra-item(href='signin.html') Войти
+        a.menu__item.menu__extra-item(href='signup.html') Зарегистрироваться
     .header__buttons
-      +button('Войти', '/signin.html')(class="button_theme_enter button_size_s")
-      +button('зарегистрироваться', '/signup.html')(class="button_theme_registration")
+      +button('Войти', 'signin.html')(class="button_theme_enter button_size_s")
+      +button('зарегистрироваться', 'signup.html')(class="button_theme_registration button_size_l")

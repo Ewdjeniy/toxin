@@ -1,0 +1,21 @@
+.menu_open {
+    .menu__list {
+        display: flex;
+    }
+
+    .menu__button {
+        span:nth-child(1) {
+            transform: rotate(45deg);
+            transform-origin: 19% 100%;
+        }
+
+        span:nth-child(2) {
+            transform: rotate(-45deg);
+            transform-origin: 47% 50%;
+        }
+
+        span:nth-child(3) {
+            display: none;
+        }
+    }
+}

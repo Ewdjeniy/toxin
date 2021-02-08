@@ -1,31 +1,38 @@
 @import "../../theme/variables.css";
 
 .content-index {
-    font-size: 0.625rem;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    height: 83em;
-    background-image: url("./images/landing.jpg");
 }
 
 .content-index__span {
-    @extend %Body;
-    width: 29.7em;
-    height: 4.8em;
+    width: 21.21em;
+    height: 3.43em;
     text-align: right;
     position: absolute;
-    top: 91.8%;
-    right: 9.4%;
+    top: 92.3%;
+    right: 9.3%;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .content-index .search-room-card {
+    @media screen and (min-width: 768px) {
+        display: block;
+        position: absolute;
+        top: 15.6%;
+        left: 9.7%;
+    }
+    @media screen and (max-width: 767px) {
+        margin-top: 5em; 
+    }
+}
+
+.content-index__img {
+    width: 100%;
+    height: auto;
     display: block;
-    position: absolute;
-    top: 8.4%;
-    left: 9.7%;
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }

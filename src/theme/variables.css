@@ -15,10 +15,9 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: "Quicksand", "Open Sans";
     font-style: normal;
     font-weight: bold;
-    line-height: 1.5em;
     color: #1F2041;
     letter-spacing: normal;
-    font-size: 2.4em;
+    font-size: 1.54rem/1.88rem;/*24 30*/
 }
 
 %H2 {
@@ -27,19 +26,16 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: "Quicksand", "Open Sans";
     font-style: normal;
     font-weight: bold;
-    font-size: 1.9em;
-    line-height: 2.4em;
+    font-size: 1.19rem/1.5rem;/*19 23*/
     color: #1F2041;
 }
 
 %H3 {
     padding: 0;
-    margin: 0 0 0.5em 0;
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
-    font-size: 1.2em;
-    line-height: 1.5em;
+    font-size: 0.75rem/0.94rem;/*12 15*/
     color: #1F2041;
     text-transform: uppercase;
 }
@@ -48,7 +44,7 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    font-size: 1.4em;
+    font-size: 0.88rem/1.5rem;/*14 24*/
     color: rgba(31, 32, 65, 0.75);
 }
 
@@ -56,14 +52,15 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.4em;
-    line-height: 1.7em;
+    font-size: 0.88rem/1.06rem;/*14 17*/
+    line-height: 1.7rem;
     color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
 }
 
 %mp {
     margin: 0;
-    padding :0;
+    padding : 0;
     box-sizing: border-box;
 }
 
@@ -71,8 +68,7 @@ $greenGrad: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 2.4em;
-    line-height: 2.4em;
+    font-size: 1.5rem/1.5rem;
     /* Preferred icon size */
     display: inline-block;
     text-transform: none;
