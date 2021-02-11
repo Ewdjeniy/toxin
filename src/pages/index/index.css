@@ -11,28 +11,52 @@
     position: absolute;
     top: 92.3%;
     right: 9.3%;
-    @media screen and (max-width: 767px) {
-        display: none;
-    }
 }
 
 .content-index .search-room-card {
-    @media screen and (min-width: 768px) {
-        display: block;
-        position: absolute;
-        top: 15.6%;
-        left: 9.7%;
-    }
-    @media screen and (max-width: 767px) {
-        margin-top: 5em; 
-    }
+    /*
+    display: block;
+    position: absolute;
+    top: 15.6%;
+    left: 9.7%;
+*/
 }
 
 .content-index__img {
     width: 100%;
     height: auto;
     display: block;
-    @media screen and (max-width: 767px) {
+}
+
+
+@media screen and (max-width: 767px) {
+    .content-index .search-room-card {
+        font-size: 13px;
+        width: 100%;
+        border: 0;
+
+        h1 {
+            font-size: 23px;
+        }
+
+        h3 {
+            font-size: 11px;
+        }
+
+        box-shadow: none;
+    }
+
+    .content-index__img,
+    .content-index__span {
         display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .search-room-card {
+        display: block;
+        position: absolute;
+        top: 15.6%;
+        left: 9.7%;
     }
 }

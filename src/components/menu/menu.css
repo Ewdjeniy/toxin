@@ -4,12 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 31.6em;
 
     @media screen and (max-width: 767px) {
         display: none;
         width: 50%;
-        min-width: 230px;
+        min-width: 16.43em;
         position: absolute;
         top: 5em;
         right: 0;
@@ -22,6 +21,10 @@
         .menu__extra-item {
             display: flex !important;
         }
+    }
+    
+    @media screen and (min-width: 768px) {
+        width: 31.6em; 
     }
 }
 
@@ -64,8 +67,8 @@
 
     @media screen and (max-width: 767px) {
         display: block;
-        width: 35px;
-        height: 24px;
+        width: 2.5em;
+        height: 1.71em;
         cursor: pointer;
 
         span {
@@ -73,7 +76,7 @@
             height: 6px;
             width: 100%;
             background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-            border-radius: 9px;
+            border-radius: 0.64em;
         }
 
         span:nth-child(2) {

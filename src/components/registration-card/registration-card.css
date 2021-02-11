@@ -1,7 +1,6 @@
 /*Главный блок*/
 .registration-card {
     width: 27em;
-    height: 45.9em;
     padding: 2.74em 2.14em 2.14em 2.07em;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -39,12 +38,6 @@
     
     .radio {
         width: 8.3em;
-    }
-    
-    @media screen and (max-width: 767px) {
-        min-width: 100%;
-        border: 0;
-        padding: 2.74em 2.14em 46em 2.07em;
     }
 }
 

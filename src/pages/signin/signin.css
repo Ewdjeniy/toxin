@@ -6,24 +6,57 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    .enter-card {
-        margin-top: 5em;
-    }
 }
 
 .content-signin .enter-card {
+    /*
     display: block;
-    @media screen and (min-width: 768px) {
-        position: absolute;
-    }
+    position: absolute;
+*/
 }
 
 .content-signin__img {
     width: 100%;
     height: auto;
     display: block;
-    @media screen and (max-width: 767px) {
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        padding-top: 5em;
+    }
+
+    .content-signin .enter-card {
+        font-size: 13px;
+        width: 100%;
+        border: 0;
+
+        h1 {
+            font-size: 23px;
+        }
+
+        h3 {
+            font-size: 11px;
+        }
+
+        box-shadow: none;
+    }
+
+    .content-signin__img {
         display: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 859px) {
+    .content-signin__enter-card-wrapper {
+        display: block;
+        position: absolute;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    .enter-card {
+        display: block;
+        position: absolute;
     }
 }
