@@ -20,6 +20,8 @@
     width: 100%;
     padding-left: 1em;
     cursor: pointer;
+    height: 3.1em;
+    max-height: 3.1em;
 }
 
 /*стрелка вниз*/
@@ -27,7 +29,6 @@
     @extend %material-icon;
     color: rgba(31, 32, 65, 0.5);
     width: 1.7em;
-    height: 1.7em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,4 +107,11 @@
 .dropdown__minus_inactive {
     color: $darkShade25;
     border-color: $darkShade25;
+}
+
+.dropdown__value {
+    width: 65%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }

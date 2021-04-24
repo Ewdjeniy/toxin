@@ -2,14 +2,30 @@
 
 /*главный блок*/
 .info-card {
-    width: 38em;
-    height: 51.1em;
-    padding: 4em 3em 3em 2.9em;
+    width: 27em;
+    height: 36.3em;
+    padding: 2.7em 2.14em 2.14em 2.07em;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     box-shadow: 0px 0px 2.5em rgba(0, 0, 0, 0.2);
-    border-radius: 0.4em;
+    border-radius: 0.29em;
+    
+    .drop-dates {
+        margin-bottom: 1.48em;
+    }
+    
+    .dropdown {
+        margin: 0.33em 0 1.3em 0;
+    }
+    
+    .arrow-btn {
+        margin-top: 1.45em;
+        
+        h3 {
+            margin-top: -0.5em; 
+        }
+    }
 }
 
 /*блок элемента*/
@@ -17,15 +33,13 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-bottom: 1.25em;
 }
 
 /*значок №*/
 .info-card__badge-number {
-    font-family: Quicksand;
-    font-style: normal;
+    @extend %nav;
     font-weight: bold;
-    font-size: 1.4em;
-    line-height: 1.7em;
     color: #1F2041;
 }
 
@@ -42,12 +56,8 @@
 
 /*цена*/
 .info-card__money-for-room {
-    font-family: Montserrat;
-    font-style: normal;
+    @extend %nav;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 18px;
-    color: rgba(31, 32, 65, 0.5);
 }
 
 /*за какое время (сутки)*/
@@ -55,7 +65,7 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.2em;
-    line-height: 1.8em;
+    font-size: 0.86em;
+    line-height: 1.29em;
     color: rgba(31, 32, 65, 0.5);
 }

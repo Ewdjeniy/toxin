@@ -8,17 +8,11 @@
     align-items: center;
 }
 
-.content-signin .enter-card {
-    /*
-    display: block;
-    position: absolute;
-*/
-}
-
 .content-signin__img {
     width: 100%;
     height: auto;
     display: block;
+    margin-top: -5em;
 }
 
 @media screen and (max-width: 767px) {
@@ -47,14 +41,7 @@
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 859px) {
-    .content-signin__enter-card-wrapper {
-        display: block;
-        position: absolute;
-    }
-}
-
-@media screen and (min-width: 860px) {
+@media screen and (min-width: 768px) {
     .enter-card {
         display: block;
         position: absolute;

@@ -2,6 +2,7 @@ include ./base-data
 
 include ../../components/layout/layout
 include ../../components/header/header
+include ../../components/pagination/pagination
 
 doctype html
 html
@@ -13,7 +14,7 @@ html
         script(src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.min.js" integrity="sha512-sM9DpZQXHGs+rFjJYXE1OcuCviEgaXoQIvgsH7nejZB64A09lKeTU4nrs/K6YxFs6f+9FF2awNeJTkaLuplBhg==" crossorigin="anonymous")
     body
-        //-.test(style="width: 767px; height: 1000px; background-color: red;")
+        //-div(class="test" style="height: 1000px; background-color: red;")
             include ../../components/footer/footer.pug
         +layout()
             +layout__header()

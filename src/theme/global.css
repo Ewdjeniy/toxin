@@ -33,10 +33,5 @@ h3 {
 body {
     @extend %Body;
     overflow-x: hidden;
-}
-
-@media screen and (max-width: 767px) {
-    body {
-        padding-top: 5em;
-    }
+    padding-top: 5em;
 }

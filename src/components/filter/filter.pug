@@ -5,27 +5,36 @@ include ../room/room
 include ../pagination/pagination
 
 .filter
+    .filter__responsive-inputs
+        h1 Фильтры
+        span(class="filter__arrow") arrow_drop_down
     .filter__inputs
-        h3 даты пребывания в отеле
-        include ../datefield/datefield.pug
-        h3 гости
-        +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
-        include ./__range/filter__range.pug
-        form(name="test")
-            h3 Правила дома
-            +checkbox('Можно курить')(class="filter__smoke")
-            +checkbox('Можно с питомцами', 'checked')(class="filter__pets")
-            +checkbox('Можно пригласить гостей (до 10 человек)', 'checked')(class="filter__guests")
-        form
-            h3 доступность
-            +richCheckbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')(class="filter__wide-corridor")
-            +richCheckbox('Помощник для инвалидов', 'На первом этаже вас встретит специалист и проводит до номера.')
-        h3 Удоства номера
-        +dropdown('2 спальни, 2 кровати...', {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 1})(class="drop-conveniences")
-        include ./__expandable-checkbox/filter__expandable-checkbox.pug
+        .filter__fixed
+            h3 даты пребывания в отеле
+            include ../datefield/datefield.pug
+            h3 гости
+            +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
+            div(style="height: 9.36em;")
+            form
+                h3(class="filter__home-rules") Правила дома
+                +checkbox('Можно курить', 'checked')(class="filter__smoke")
+                +checkbox('Можно с питомцами')(class="filter__pets")
+                +checkbox('Можно пригласить гостей (до 10 человек)')(class="filter__guests")
+            form
+                h3(class="filter__availability") доступность
+                +richCheckbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')(class="filter__wide-corridor")
+                +richCheckbox('Помощник для инвалидов', 'На первом этаже вас встретит специалист и проводит до номера.')
+            h3(class="filter__convenience") Удоства номера
+            +dropdown('2 спальни, 2 кровати...', {'Спальни': 2, 'Кровати': 2, 'Ванные комнаты': 0})(class="drop-conveniences")
+            include ./__expandable-checkbox/filter__expandable-checkbox.pug
     .filter__screen
         h1(class="filter__screen-header") Номера, которые мы для вас подобрали
-        .filter__result
-            each room in data.rooms
-                +room(room)
-        +pagination(15)
+        .filter__rooms
+            .filter__result
+                each room in data.rooms
+                    +room(room)
+        .filter__pagination-wrapper
+            div(class="filter__empty1")
+            +pagination(15)
+            div(class="filter__empty2")
+            

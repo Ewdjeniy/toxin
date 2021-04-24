@@ -8,13 +8,6 @@
     align-items: center;
 }
 
-.content-signup .registration-card {
-/*
-    display: block;
-    position: absolute;
-*/
-}
-
 .content-signup__img {
     width: 100%;
     height: auto;
@@ -26,31 +19,58 @@
     body {
         padding-top: 5em;
     }
+
     .content-signup .registration-card {
         font-size: 12px;
         width: 100%;
         border: 0;
+
         h1 {
             font-size: 22px;
         }
+
         h3 {
             font-size: 10px;
         }
+
         box-shadow: none;
     }
-    
+
     .content-signup__img {
-        display: none;   
+        display: none;
     }
-    
+
     .toggle {
         font-size: 1.5em;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1269px) {
+    .registration-card {
+        margin: 1.5em 0 1.5em 0;
+        display: block;
+    }
+
+    .content-signup__img {
+        position: absolute;
+        height: 100%;
+        z-index: -1;
+    }
+}
+
+@media screen and (min-width: 1270px) and (max-width: 1409px) {
     .registration-card {
         display: block;
         position: absolute;
+    }
+}
+
+@media screen and (min-width: 1410px) {
+    .registration-card {
+        display: block;
+        position: absolute;
+    }
+    .content-signup__img {
+        margin-top: -5em;
     }
 }

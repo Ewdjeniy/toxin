@@ -2,8 +2,8 @@
 
 .text-with-picture {
     display: flex;
-    padding-bottom: 2em;
-    width: 26.6em;
+    padding-bottom: 1.43em;
+    width: 19.00em;
 }
 
 .text-with-picture__icon {
@@ -12,15 +12,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #BC9CFF;
-    font-size: 5em;
-    line-height: 1em;
+    font-size: 3.57em;
+    line-height: 0.85em;
 }
 
 .text-with-picture__description {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding-left: 1em;
+    padding-left: 0.6em;
 }
 
 .text-with-picture__header {

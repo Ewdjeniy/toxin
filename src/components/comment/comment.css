@@ -1,8 +1,9 @@
 .comment {
+    width: 100%;
     display: grid;
-    grid-template-columns: 0.1fr 1fr;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
+    grid-template-columns: 3.43em 1fr;
+    grid-column-gap: 0.68em;
+    grid-row-gap: 0.8em;
     grid-template-areas: 
         "ava author"
         "like comment";
@@ -10,8 +11,8 @@
 
 .comment__author-avatar {
     grid-area: ava;
-    width: 4.8em;
-    height: 4.8em;
+    width: 3.43em;
+    height: 3.43em;
     border-radius: 50%;
     background-image: url('./images/murad.png');
     background-position: center 25%;

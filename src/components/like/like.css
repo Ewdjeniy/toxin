@@ -3,31 +3,32 @@
 .like {
     box-sizing: border-box;  
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    padding: 0 0.7em 0 0.3em;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    width: 4em;
-    height: 2em;
-    border-radius: 1em;
+    width: 2.86em;
+    height: 1.43em;
+    border-radius: 0.71em;
     color: rgba(31, 32, 65, 0.25);
 }
 
 .like__btn {
     @extend %material-icon;
-    font-size: 1em;
+    font-size: 0.71em;
 }
 
 .like__btn:before {
     content: 'favorite_border';
   }
 
-.like__nubmer {
+.like__number {
     font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
-    font-size: 1em;
-    line-height: 1.2em;
+    font-size: 0.71em;
+    line-height: 0.86em;
 }
 
 .like_liked {

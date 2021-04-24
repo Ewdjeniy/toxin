@@ -24,6 +24,10 @@ let rooms = data.rooms.slice();
 for (let i = 0; i < filters.length; i++) {
     console.log(localStorage.toxin);
     
+    const filterJs = filters[i].getElementsByClassName('filter__responsive-inputs')[0];
+    const filterInputs = filters[i].getElementsByClassName('filter__inputs')[0];
+    const filterArrow = filters[i].getElementsByClassName('filter__arrow')[0];
+    let filterTurner = 0;
     const localData = getDataFromLocalStorage('toxin');
     const screen = filters[i].getElementsByClassName('filter__result')[0];
     const pagination = filters[i].getElementsByClassName('pagination')[0];
@@ -61,82 +65,88 @@ for (let i = 0; i < filters.length; i++) {
         localStorage[storageName] = JSON.stringify(local);
     };
     const showPage = function () {
-
-        const pageNum = +pagination.getElementsByClassName('pagination__page_active')[0].innerHTML;
-        const roomsOnPage = 12;
-
-        const start = (pageNum - 1) * roomsOnPage;
-        const end = start + roomsOnPage;
-        const notes = rooms.slice(start, end);
-        screen.innerHTML = '';
-        for (let note of notes) {
-            const div = document.createElement('div');
-            let divHtml = '';
-            div.className = 'room';
-            let luxury = note.luxury ? 'люкс' : '';
-            divHtml =
-                '<div class="carousel">' +
-                '<div class="carousel__window">';
-            for (let j = 0; j < note.images.length; j++) {
-                divHtml += '<img class="carousel__img" src="' + note.images[j] + '">';
-            }
-            divHtml +=
-                '<a href="room-details.html">' +
-                '</a>' +
-                '</div>' +
-                '<div class="carousel__buttons">' +
-                '<div class="carousel__switcher">';
-            for (let j = 0; j < note.images.length; j++) {
-                if (j != 0) {
-                    divHtml += '<span class="carousel__circle"></span>';
-                } else {
-                    divHtml += '<span class="carousel__circle carousel__circle_active"></span>';
-                }
-            }
-            divHtml +=
-                '</div>' +
-                '<div class="carousel__arrow-right-wrapper"><span class="carousel__arrow-right">keyboard_arrow_left</span></div>' +
-                '<div class="carousel__arrow-left-wrapper"><span class="carousel__arrow-left">keyboard_arrow_left</span></div>' +
-                '</div>' +
-                '</div>' +
-                '<div class="room__about-room">' +
-                '<div class="room__info"><span class="room__badge-number">№ </span><span class="room__room-number">' + note.number + '</span><span class="room__room-category"> ' + luxury + '</span>' +
-                '</div>' +
-                '<div class="room__money-for-room"><span class="room__money">' + parseFloat(note.price).toLocaleString('ru-RU') + '</span>₽<span class="room__time"> в сутки</span></div>' +
-                '</div>' +
-                '<div class="room__rate-wrapper">' +
-                '<div class="rate rate_star_' + note.stars + '">' +
-                '<span class="rate__star1"></span>' +
-                '<span class="rate__star2"></span>' +
-                '<span class="rate__star3"></span>' +
-                '<span class="rate__star4"></span>' +
-                '<span class="rate__star5"></span></div>' +
-                '<div class="room__comments-indicator"><span class="room__comments-amount">' + note.reviews + '</span><span> Отзывов</span></div>' +
-                '</div>';
-            div.innerHTML = divHtml;
-            screen.append(div);
-            div.getElementsByClassName('carousel__window')[0].onclick = function() {
-                const checkBxs = [];
-                const richCheckBxs = [];
-                
-                for (let key in note) {
-                    local[key] = note[key];
-                }
-
-                for (let j = 0; j < checkBoxes.length; j++) {
-                    checkBxs.push(checkBoxes[j].checked);
-                }
-                for (let j = 0; j < richCheckBoxes.length; j++) {
-                    richCheckBxs.push(richCheckBoxes[j].checked);
-                }
-                local.checkBxs = checkBxs;
-                local.richCheckBxs = richCheckBxs;
-                createLocalData('toxin');
-                this.getElementsByTagName('a')[0].click();
-            }
-        }
-        setCarouselsHandler();
+        const pageNum = +pagination.getElementsByClassName('pagination__page_active')[0].innerHTML;        
+        const screenWidth = window.screen.width - (18.88 + 9.95 + 9.9 + 4.3) * parseFloat(window.getComputedStyle(screen).fontSize);
+        const colGap = (window.screen.width - (18.88 + 9.95 + 9.9 + 4.3 + 19.2 * 3) * parseFloat(window.getComputedStyle(screen).fontSize)) / 2;
+        screen.style.marginLeft = (pageNum == 1) ? 0 : ((-1) * screenWidth - colGap) * (pageNum - 1) + 'px';
     };
+//    const showPage = function () {
+//
+//        const pageNum = +pagination.getElementsByClassName('pagination__page_active')[0].innerHTML;
+//        const roomsOnPage = 12;
+//
+//        const start = (pageNum - 1) * roomsOnPage;
+//        const end = start + roomsOnPage;
+//        const notes = rooms.slice(start, end);
+//        screen.innerHTML = '';
+//        for (let note of notes) {
+//            const div = document.createElement('div');
+//            let divHtml = '';
+//            div.className = 'room';
+//            let luxury = note.luxury ? 'люкс' : '';
+//            divHtml =
+//                '<div class="carousel">' +
+//                '<div class="carousel__window">';
+//            for (let j = 0; j < note.images.length; j++) {
+//                divHtml += '<img class="carousel__img" src="' + note.images[j] + '">';
+//            }
+//            divHtml +=
+//                '<a href="room-details.html">' +
+//                '</a>' +
+//                '</div>' +
+//                '<div class="carousel__buttons">' +
+//                '<div class="carousel__switcher">';
+//            for (let j = 0; j < note.images.length; j++) {
+//                if (j != 0) {
+//                    divHtml += '<span class="carousel__circle"></span>';
+//                } else {
+//                    divHtml += '<span class="carousel__circle carousel__circle_active"></span>';
+//                }
+//            }
+//            divHtml +=
+//                '</div>' +
+//                '<div class="carousel__arrow-right-wrapper"><span class="carousel__arrow-right">keyboard_arrow_left</span></div>' +
+//                '<div class="carousel__arrow-left-wrapper"><span class="carousel__arrow-left">keyboard_arrow_left</span></div>' +
+//                '</div>' +
+//                '</div>' +
+//                '<div class="room__about-room">' +
+//                '<div class="room__info"><span class="room__badge-number">№ </span><span class="room__room-number">' + note.number + '</span><span class="room__room-category"> ' + luxury + '</span>' +
+//                '</div>' +
+//                '<div class="room__money-for-room"><span class="room__money">' + parseFloat(note.price).toLocaleString('ru-RU') + '</span>₽<span class="room__time"> в сутки</span></div>' +
+//                '</div>' +
+//                '<div class="room__rate-wrapper">' +
+//                '<div class="rate rate_star_' + note.stars + '">' +
+//                '<span class="rate__star1"></span>' +
+//                '<span class="rate__star2"></span>' +
+//                '<span class="rate__star3"></span>' +
+//                '<span class="rate__star4"></span>' +
+//                '<span class="rate__star5"></span></div>' +
+//                '<div class="room__comments-indicator"><span class="room__comments-amount">' + note.reviews + '</span><span> Отзывов</span></div>' +
+//                '</div>';
+//            div.innerHTML = divHtml;
+//            screen.append(div);
+//            div.getElementsByClassName('carousel__window')[0].onclick = function() {
+//                const checkBxs = [];
+//                const richCheckBxs = [];
+//                
+//                for (let key in note) {
+//                    local[key] = note[key];
+//                }
+//
+//                for (let j = 0; j < checkBoxes.length; j++) {
+//                    checkBxs.push(checkBoxes[j].checked);
+//                }
+//                for (let j = 0; j < richCheckBoxes.length; j++) {
+//                    richCheckBxs.push(richCheckBoxes[j].checked);
+//                }
+//                local.checkBxs = checkBxs;
+//                local.richCheckBxs = richCheckBxs;
+//                createLocalData('toxin');
+//                this.getElementsByTagName('a')[0].click();
+//            }
+//        }
+//        setCarouselsHandler();
+//    };
     const setPagination = function (pagesAmount) {
         const paginationPages = pagination.getElementsByClassName('pagination__pages')[0];
 
@@ -260,10 +270,10 @@ for (let i = 0; i < filters.length; i++) {
                 j = -1;
             }
         }
-        pagesAmount = Math.ceil(rooms.length / roomsOnPage);
-        setPagination(pagesAmount);
-        hangPaginationHandlers();
-        showPage();
+//        pagesAmount = Math.ceil(rooms.length / roomsOnPage);
+//        setPagination(pagesAmount);
+//        hangPaginationHandlers();
+//        showPage();
     };
     const showValue = function () {
         const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1];
@@ -309,6 +319,17 @@ for (let i = 0; i < filters.length; i++) {
         showValue();
     }
     
+    filterJs.onclick = function() {
+        if (filterTurner == 0) {
+            filterInputs.style.display = 'block';
+            filterTurner = 1;
+            filterArrow.innerHTML = 'arrow_drop_up';
+        } else {
+            filterInputs.style.display = 'none';
+            filterTurner = 0;
+            filterArrow.innerHTML = 'arrow_drop_down';
+        }
+    }    
     
     setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     pagination.onchange = showPage;

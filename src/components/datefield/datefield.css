@@ -6,16 +6,16 @@
     align-items: center;
     border: 1px solid rgba(31, 32, 65, 0.25);
     box-sizing: border-box;
-    border-radius: 0.4em;
-    width: 26.6em;
-    padding-left: 1em;
+    border-radius: 0.29em;
+    width: 100%;
+/*    padding-left: 0.71em;*/
     cursor: pointer;
 }
 
 .datefield__arrow {
     @extend %material-icon;
-    width: 2.4em;
-    height: 2.4em;
+    width: 1.71em;
+    height: 1.71em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,5 +27,7 @@
 }
 
 .datefield__value {
+    display: block;
+    padding-left: 0.71em;
     text-transform: lowercase;
 }

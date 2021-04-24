@@ -3,7 +3,7 @@ import './_active/pagination__page_active.css';
 
 function hangPaginationHandlers() {
     'use strict';
-    
+
     const paginations = document.getElementsByClassName('pagination');
 
 
@@ -23,6 +23,7 @@ function hangPaginationHandlers() {
                 activePage = paginations[i].getElementsByClassName('pagination__page_active')[0];
                 lastPage.previousElementSibling.innerHTML = parseInt(lastPage.innerHTML) - 1;
                 lastPage.previousElementSibling.previousElementSibling.innerHTML = parseInt(lastPage.innerHTML) - 2;
+                lastPage.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML = '1';
                 paginationArrowForward.classList.add('pagination__arrow_hidden');
                 paginationArrowBack.classList.remove('pagination__arrow_hidden');
                 const span = document.createElement('span');
@@ -285,7 +286,7 @@ function hangPaginationHandlers() {
             paginations[i].dispatchEvent(event);
         }
     }
-    
+
 }
 hangPaginationHandlers();
 

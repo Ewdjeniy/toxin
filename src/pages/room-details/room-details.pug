@@ -7,9 +7,9 @@ block title
 
 block main
     .room-pictures
-        img(alt="picture1")
-        img(alt="picture1")
-        img(alt="picture1")
+        img(class="room-pictures__img1" alt="picture1" src="images/room888.jpg")
+        img(class="room-pictures__img2" alt="picture1" src="images/sub1Room888.jpg")
+        img(class="room-pictures__img3" alt="picture1" src="images/sub2Room888.jpg")
     .room-details
         include ../../components/info-card/info-card.pug  
         .room-details__info
@@ -20,17 +20,17 @@ block main
             h2 Впечатления от номера
             +layout__container()
                 include ../../components/diagram/diagram.pug
-                ul(class="votes")
-                    +li('Великолепно')
-                    +li('Хорошо')
-                    +li('Удовлетворительно')
-                    +li('Разочарован')
+                ul(class="room-detailes__votes")
+                    +li('Великолепно')(class="room-detail__li-best")
+                    +li('Хорошо')(class="room-detail__li-good")
+                    +li('Удовлетворительно')(class="room-detail__li-satisfied")
+                    +li('Разочарован')(class="room-detail__li-bad")
         .room-details__comments
             div(class="room-details__comments-header")
                 h2 Отзвывы посетителей номера
-                span(class="room-details__comments-amount") 2 отзыва
+                span(class="room-details__comments-amount")
         .bullet-list
-            h3 Правила
+            h2 Правила
             ul(class="bullet-list__ul")
                 +li('Время прибытия &mdash; после 13:00, а выезд до 12:00')
         .room-details__canseling

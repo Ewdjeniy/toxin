@@ -2,17 +2,20 @@
 
 .info-card__calculations {
     width: 100%;
-    margin-bottom: 1.8em;
+    border-collapse: collapse;
+    position: relative;
+    td {
+        vertical-align: top;
+    }
 }
 
-.info-card__money-per-day {
-    display: inline-block;
-    height: 2.7em;
+.info-card__first-td {
+    height: 2.5em;
 }
 
 .info-card__discount-td {
-    height: 3.2em;
-    width: 21.4em;
+    height: 2.5em;
+    width: 15.52em;
     text-align: left;
 }
 
@@ -20,23 +23,20 @@
     @extend %H2;
     display: flex;
     align-items: flex-end;
-    height: 4.7em;
-}
-
-.info-card__calculations-result {
+    height: 2.5em;
     flex-shrink: 0;
 }
 
 .info-card__line {
     width: 100%;
-    height: 0.8em;
-    border-top: 1px dashed rgba(31, 32, 65, 0.25);
-    margin: 0 15px 0 15px;
+    height: 0.3em;
+    border-top: 1px dotted rgba(31, 32, 65, 0.25);
+    margin: 0 0.3em 0 0.3em;
 }
 
 .info-card__badge-info {
-    width: 2em;
-    height: 2em;
+    width: 1.43em;
+    height: 1.43em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,10 @@
     color: rgba(31, 32, 65, 0.25);
     cursor: pointer;
     border-radius: 50%;
+}
+
+.info-card__discount {
+    white-space: nowrap;
 }
 
 .info-card__last-td, .info-card__last-td3 {
@@ -57,6 +61,13 @@
 }
 
 .info-card__charges {
-    line-height: 1.8em;
-    height: 4.3em;
+    line-height: 1.29em;
+    height: 3.07em;
+}
+
+
+.info-card__total {
+    white-space: nowrap;
+    font-size: 1.13em;
+    margin-right: -0.45em;
 }

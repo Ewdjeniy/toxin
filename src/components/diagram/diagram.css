@@ -1,12 +1,14 @@
+@import "../../theme/variables.css";
+
 .diagram {
-    width: 15em;
-    height: 15em;
+    width: 8.8em;
+    height: 8.8em;
 }
 
 .diagram__text {
     font-family: "Montserrat", Arial, sans-serif;
     fill: #BC9CFF;
-    font-weight: bold;
+    font-weight: 700;
     -moz-transform: translateY(0.25em);
     -ms-transform: translateY(0.25em);
     -webkit-transform: translateY(0.25em);
@@ -14,18 +16,18 @@
 }
 
 .diagram__number {
-    font-size: 0.7em;
-    line-height: 1.9em;
+    font-size: 0.47em;
     text-anchor: middle;
     -moz-transform: translateY(-0.25em);
     -ms-transform: translateY(-0.25em);
     -webkit-transform: translateY(-0.25em);
     transform: translateY(-0.25em);
+    display: block;
+    margin-bottom: 1em;
 }
 
 .diagram__label {
-    font-size: 0.4em;
-    line-height: 1.5em;
+    font-size: 0.23em;
     text-transform: uppercase;
     text-anchor: middle;
     -moz-transform: translateY(0.7em);

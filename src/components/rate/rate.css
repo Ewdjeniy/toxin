@@ -4,12 +4,12 @@
 .rate {
     box-sizing: border-box;  
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
     color: rgba(31, 32, 65, 0.25);
-    font-size: 0.6em;
-    width: 12em;
+    font-size: 0.43em;
+    width: 20em;
     background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

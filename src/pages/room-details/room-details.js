@@ -1,17 +1,31 @@
 import './room-details.css';
 import setLikesHandler from '../../components/like/like.js';
 
-const roomDetails = document.getElementsByClassName('room-details')[0];
 let localData = '';
-if (roomDetails) {
-    console.log(localStorage.toxin);
+let local = '';
+const roomPictures = document.getElementsByClassName('room-pictures')[0];
+const roomDetails = document.getElementsByClassName('room-details')[0];
 
+if (roomPictures || roomDetails) {
     localData = getDataFromLocalStorage('toxin');
-    let local = localData ? localData : {
+    local = localData ? localData : {
         "startDate": "",
         "endDate": "",
         "guestsAmount": "[0,0,0]"
     };
+}
+
+if (roomPictures) {
+    const roomImgs = roomPictures.getElementsByTagName('img');
+    
+    if (localData && localData.images) {
+        for (let j = 0; j < roomImgs.length; j++) {
+            roomImgs[j].src = localData.images[j];
+        }
+    }
+}
+
+if (roomDetails) {
     const roomInfo = roomDetails.getElementsByClassName('room-details__info')[0];
     const roomComments = roomDetails.getElementsByClassName('room-details__comments')[0];
     const textsWithPicture = roomDetails.getElementsByClassName('text-with-picture');
@@ -148,6 +162,7 @@ if (roomDetails) {
         for (let i = 0; i < localData.comments.length; i++) {
             createComment(localData.comments[i].name, localData.comments[i].surname, localData.comments[i].date, localData.comments[i].comment, localData.comments[i].likes, localData.comments[i].avatar);
         }
+        roomDetailsCommentsAmount.innerHTML = localData.comments.length + ' ' + returnWordSuffix(localData.comments.length, 'отзыв', 'отзыва', 'отзывов');
     }
     if (localData && !localData.smoke) {
         createRule('Не курить');
@@ -158,7 +173,6 @@ if (roomDetails) {
     if (localData && !localData.pets) {
         createRule('Нельзя с питомцами');
     }
-    roomDetailsCommentsAmount.innerHTML = localData.comments.length + ' ' + returnWordSuffix(localData.comments.length, 'отзыв', 'отзыва', 'отзывов');
 }
 
 

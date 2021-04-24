@@ -3,9 +3,8 @@
 .checkbox {
     display: flex;
     align-items: center;
-    margin-top: 1em;
-    position: relative;
     cursor: pointer;
+    line-height: 1.3em;
 }
 
 .checkbox__hidden {
@@ -13,24 +12,25 @@
 }
 
 .checkbox__box {
+    position: relative;
     border: 1px solid rgba(31, 32, 65, 0.25);
-    border-radius: 0.4rem;
-    width: 2em;
-    height: 2em;
-    margin-right: 1em;
+    border-radius: 0.29em;
+    width: 1.43em;
+    height: 1.43em;
+    margin-right: 0.71em;
     flex-shrink: 0;
 }
 
 .checkbox__checker {
-    width: 0.6em;
-    height: 0.4em;
+    width: 0.49em;
+    height: 0.35em;
     border-left: 0.2em solid;
     border-bottom: 0.2em solid;
     border-image: linear-gradient(180deg, #BC9CFF, #8BA4F9) 0 100%;
     border-image-slice: 1;
     transform: rotate(315deg);
     position: absolute;
-    top: 0.5em;
-    left: 0.5em;
+    top: 0.4em;
+    left: 0.4em;
     display: none;
 }

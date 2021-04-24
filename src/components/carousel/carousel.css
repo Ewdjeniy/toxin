@@ -3,27 +3,28 @@
 /*окошко для карусели*/
 .carousel {
     position: relative;
-    width: 27em;
-    height: 15.1em;
+    width: 19.2em;
+    height: 10.7em;
     overflow: hidden;
-    margin-bottom: 2em;
-    border-top-right-radius: 0.4em;
-    border-top-left-radius: 0.4em;
+    margin-bottom: 1.43em;
+    border-top-right-radius: 0.29em;
+    border-top-left-radius: 0.29em;
 }
 
 /*блок с каруселью (картинки, переключатели..)*/
 .carousel__window {
     display: flex;
-    width: 135em;
-    height: 15.1em;
+    width: 96.43em;
+    height: 10.79em;
     transition: margin-left 1s;
     cursor: pointer;
 }
 
 /*картинка в каруселе*/
 .carousel__img {
-    width: 27em;
-    height: 15.1em;
+    flex-shrink: 0;
+    width: 19.2em;
+    height: 10.7em;
 }
 
 .carousel__buttons {
@@ -32,21 +33,27 @@
 
 /*блок элемента*/
 .carousel__switcher {
-    width: 4.1em;
-    height: 0.749em;
+    display: none;
+    width: 2.93em;
+    height: 0.57em;
     box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
     position: absolute;
-    top: 85%;
+    top: 86%;
     left: 79%;
     z-index: 2;
 }
 
+.carousel:hover {
+    .carousel__switcher {
+        display: flex;
+        justify-content: space-between;        
+    }
+}
+
 /*круглые переключатели картинок*/
 .carousel__circle {
-    width: 0.53em;
-    height: 0.53em;
+    width: 0.5em;
+    height: 0.5em;
     border: 1px solid #FFFFFF;
     filter: drop-shadow(0px 5px 5px rgba(31, 32, 65, 0.3));
     border-radius: 50%;
@@ -56,7 +63,7 @@
 
 /*блок элемента*/
 .carousel__arrow-right-wrapper {
-    width: 4.2em;
+    width: 3em;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -86,7 +93,7 @@
 
 /*блок элемента*/
 .carousel__arrow-left-wrapper {
-    width: 4.2em;
+    width: 3em;
     height: 100%;
     display: flex;
     justify-content: center;
