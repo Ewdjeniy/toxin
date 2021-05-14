@@ -1,9 +1,6 @@
 @import "./__expandable-checkbox/filter__expandable-checkbox.css";
 @import "./_expanded/filter__expandable-checkbox_expanded.css";
 
-$filterResultWidth: calc(100vw - 18.88em - 9.95em - 9.9em - 4.3em);
-$colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
-
 .filter {
     display: flex;
     padding: 2.1em 9.95em 0 9.9em;
@@ -72,11 +69,6 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
     margin-bottom: 0.85em;
 }
 
-.filter__rooms {
-    overflow: hidden;
-    width: $filterResultWidth;
-}
-
 .filter__pagination-wrapper {
     width: 100%;
     display: grid;
@@ -109,7 +101,6 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
     grid-row-gap: 1.44em;
-    grid-column-gap: $colGap;
     justify-content: space-between;
     transition: margin 0.3s;
 }
@@ -117,7 +108,7 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
 @media screen and (max-width: 575px) {
     .filter {
         flex-direction: column;
-        padding: 0.5em 2.14em 0.5em 2.05em;
+        padding: 0 2.14em 0.5em 2.05em;
     }
 
     .filter__screen-header {
@@ -166,15 +157,17 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
         width: 100%;
         justify-content: center;
         padding: 0;
+        margin: 2em 0 0 0;
 
         .filter__empty1,
         .filter__empty2 {
             display: none;
         }
-    }
 
-    .pagination {
-        margin: 2em 0 0 0;
+        .pagination {
+            margin: 0;
+            width: 100%;
+        }
     }
 
     .filter__result {
@@ -183,20 +176,9 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
         display: grid;
         grid-auto-flow: column;
         grid-template-rows: repeat(12, 1fr);
-        grid-row-gap: 1.44em;
-        grid-column-gap: 0;
-        justify-content: space-between;
+        justify-content: stretch;
         transition: margin 0.3s;
         flex-direction: column;
-    }
-
-    .filter__rooms {
-        overflow: hidden;
-        width: calc(100vw - 2.14em - 2.05em);
-
-        .room {
-            width: calc(100vw - 2.14em - 2.05em);
-        }
     }
 
     .datepicker {
@@ -208,7 +190,7 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
 @media screen and (min-width: 576px) and (max-width: 767px) {
     .filter {
         flex-direction: column;
-        padding: 0.5em 2.14em 0.5em 2.05em;
+        padding: 0 2.14em 0.5em 2.05em;
     }
 
     .filter__screen-header {
@@ -257,6 +239,7 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
         width: 100%;
         justify-content: center;
         padding: 0;
+        margin: 2em 0 0 0;
 
         .filter__empty1,
         .filter__empty2 {
@@ -264,30 +247,17 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
         }
     }
 
-    .pagination {
-        margin: 2em 0 0 0;
-    }
-
     .filter__result {
         margin-left: 0 !important;
         width: 100%;
         display: grid;
         grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        grid-row-gap: 1.44em;
-        grid-column-gap: 20px;
-        justify-content: space-between;
+        grid-column-gap: 1em;
+        justify-content: stretch;
         transition: margin 0.3s;
         flex-direction: column;
-    }
-
-    .filter__rooms {
-        overflow: hidden;
-        width: calc(100vw - 2.14em - 2.05em);
-
-        .room {
-            width: calc((100vw - 2.14em - 2.05em) / 2 - 10px);
-        }
     }
 
     .datepicker {
@@ -296,43 +266,135 @@ $colGap: calc((100vw - 18.88em - 9.95em - 9.9em - 4.3em - 19.2em * 3) / 2);
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
     .filter {
-        flex-direction: column;
-        padding: 0.5em 2.14em 0.5em 2.05em;
-    }
-
-    .filter__screen-header {
-        display: none;
+        padding: 2.1em 10px 0.5em 10px;
     }
 
     .filter__inputs {
-        flex-shrink: 0;
-        display: none;
+        display: block !important;
+        font-size: 14px;
+        width: 18.88em;
     }
 
-    .filter__responsive-inputs {
-        cursor: pointer;
-        margin: 0 0 1em -2.05em;
-        padding: 0.5em 2.14em 0.5em 2.05em;
+    h1 {
+        font-size: 18px;
+        line-height: 1.1em;
+    }
+
+    h3 {
+        font-size: 11px;
+    }
+
+    .filter__screen {
+        width: 100%;
+        padding: 0 0 0 2em;
+    }
+
+    .filter__pagination-wrapper {
+        font-size: 15px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        border-top: 1px solid rgba(31, 32, 65, 0.1);
-        background-image: $greenGrad;
-        width: 100vw;
+        width: 100%;
+        justify-content: center;
+
+        .filter__empty1,
+        .filter__empty2 {
+            display: none;
+        }
+
+        .pagination__arrow-forward,
+        .pagination__arrow-back {
+            font-size: 26px;
+        }
     }
 
-    .filter__arrow {
-        @extend %material-icon;
-        font-size: 40px;
+    .filter__result {
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        transition: margin 0.3s;
+    }
+
+    .datepicker {
+        width: 30em;
+        padding: 0;
     }
 }
 
-@media screen and (min-width: 993px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .filter {
+        padding: 2.1em 3em 2em 3em;
+    }
+
     .filter__inputs {
-        width: 18.88em;
         display: block !important;
+        font-size: 14px;
+        width: 18.88em;
+    }
+
+    .filter__screen {
+        width: 100%;
+        padding: 0 0 0 2em;
+    }
+
+    .filter__pagination-wrapper {
+        font-size: 15px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+
+        .filter__empty1,
+        .filter__empty2 {
+            display: none;
+        }
+
+        .pagination__arrow-forward,
+        .pagination__arrow-back {
+            font-size: 26px;
+        }
+    }
+
+    .filter__result {
+        margin-left: 0;
+        padding: 0;
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        transition: margin 0.3s;
+    }
+
+    .datepicker {
+        width: 30em;
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .filter {
+        padding: 2.1em 3em 2em 3em;
+    }
+    
+    .filter__screen {
+        width: 100%;
+        padding: 0 0 0 2em;
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1439px) {
+    .filter__screen {
+        padding: 0 0 0 2em;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .filter__inputs {
+        display: block !important;
+        width: 18.88em;
     }
 }

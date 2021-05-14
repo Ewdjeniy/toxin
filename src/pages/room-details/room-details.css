@@ -53,44 +53,49 @@
         h2 {
             margin-bottom: 1em;
         }
+
         ul {
             margin-left: 2em;
         }
+
         .room-detailes__votes {
             align-self: flex-end;
-            
+
             .li__marker {
                 margin-right: 0.3em;
             }
         }
     }
-    
+
     .room-details__comments {
         margin-bottom: 1.5em;
         padding-right: 5em;
+
         h2 {
             font-size: 1.33em;
         }
-        
+
         .comment {
             margin-top: 1.3em;
         }
     }
-    
+
     .bullet-list {
         padding-right: 7em;
+
         h2 {
             padding-left: 1em;
             margin-bottom: 0.9em;
         }
-        
+
         .li {
             margin-bottom: 0.73em;
         }
     }
-    
+
     .room-details__canseling {
         padding-right: 6em;
+
         h2 {
             margin-bottom: 0.9em;
         }
@@ -163,4 +168,151 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+}
+
+@media screen and (max-width: 767px) {
+    .room-details {
+        font-size: 12px;
+        padding: 0 2.14em 0 2.05em;
+        grid-template-areas:
+            "card"
+            "info"
+            "impressions"
+            "comments"
+            "rules"
+            "canseling";
+        grid-template-columns: 1fr;
+        grid-row-gap: 0.8em;
+
+        .info-card {
+            margin-top: 1em;
+            font-size: 13px;
+            padding: 0;
+            width: 100% !important;
+            border: 0;
+
+            h1 {
+                font-size: 23px;
+            }
+
+            h3 {
+                font-size: 11px;
+            }
+
+            box-shadow: none;
+
+            .info-card__total {
+                margin-right: 0;
+            }
+        }
+
+        .room-details__info {
+            font-size: 14px;
+        }
+
+        .room-details__impressions {
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .room-details__canseling {
+            font-size: 14px;
+            padding-right: 0;
+        }
+
+        .bullet-list {
+            font-size: 14px;
+            padding-right: 0;
+        }
+
+        .room-details__comments {
+            padding-right: 0;
+
+            .like {
+                font-size: 15px;
+            }
+
+            .comment__text {
+                font-size: 14px;
+                line-height: 1.5em;
+            }
+        }
+
+        .room-details__comments h2 {
+            display: none;
+        }
+
+        body {
+            padding-top: 5em;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .room-details {
+        font-size: 13px;
+        padding: 4.9em 10px 0 10px;
+        grid-template-areas:
+            "info card"
+            "impressions card"
+            "comments card"
+            "rules card"
+            "canseling card";
+        grid-template-columns: 1fr 0.8fr;
+        grid-row-gap: 0.8em;
+        justify-content: end;
+
+        .room-details__info {
+            font-size: 14px;
+        }
+
+        .room-details__impressions {
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .room-details__canseling {
+            font-size: 14px;
+            padding-right: 0;
+        }
+
+        .bullet-list {
+            font-size: 14px;
+            padding-right: 0;
+        }
+
+        .room-details__comments {
+            padding-right: 0;
+
+            .like {
+                font-size: 15px;
+            }
+
+            .comment__text {
+                font-size: 14px;
+                line-height: 1.5em;
+            }
+        }
+
+        .room-details__comments h2 {
+            display: none;
+        }
+
+        body {
+            padding-top: 5em;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .room-details {
+        font-size: 16px;
+        padding: 4.9em 3em 0 3em;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+    .room-details {
+        padding: 4.9em 3em 4.5em 3em;
+    }
 }

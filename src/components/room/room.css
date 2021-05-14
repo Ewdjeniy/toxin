@@ -1,6 +1,7 @@
 @import "../../theme/variables.css";
 
 .room {
+    max-width: 100%;
     width: 19.2em;
     background-color: #FFFFFF;
     border-radius: 0.29em;
@@ -79,80 +80,11 @@
     font-weight: bold;
 }
 
-
-/*
 @media screen and (max-width: 767px) {
     .room {
-        margin-bottom: 0.5em;
         width: 100%;
-        font-size: 14px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: start;
-        grid-template-areas: "img num"
-            "star star";
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-        
-        .carousel {
-            width: 100%;
-            height: auto;
-            grid-area: img;
-        }
-
-        .carousel__window {
-            width: 100%;
-            height: auto;
-        }
-
-        .carousel__img {
-            width: 100%;
-            height: auto;
-        }
-
-        .room__about-room {
-            grid-area: num;
-            border-bottom: 0;
-            font-size: 12px;
-        }
-
-        .room__rate-wrapper {
-            grid-area: star;
-        }
-
-        .room__badge-number {
-            display: none;
-        }
-
-        .room__time {
-            display: none;
-        }
-
-        .room__rate-wrapper {
-            padding: 0;
-            width: 100%;
-            font-size: 0.7em;
-            
-            .rate {
-                width: 10em;
-            }
-
-            .rate__star1,
-            .rate__star2,
-            .rate__star3,
-            .rate__star4,
-            .rate__star5 {
-                font-size: 10px;
-            }
-        }
-    }
-}
-*/
-
-@media screen and (max-width: 767px) {
-    .room {
-        padding-bottom: 0.5em;
         border: 1px solid rgba(31, 32, 65, 0.15);
-        
+
         .carousel {
             width: 100%;
             height: auto;
@@ -185,7 +117,7 @@
 
         .room__rate-wrapper {
             padding: 0 0.5em 0 0.5em;
-            
+
             .rate {
                 width: 15em;
             }
@@ -201,61 +133,16 @@
     }
 }
 
-/*
-@media screen and (min-width: 768px) and (max-width: 992px) {
-    .room {
-        margin-bottom: 0.5em;
-        display: grid;
-        grid-template-columns: 0.3fr 1fr;
-        justify-content: start;
-        grid-template-areas: "img num"
-            "star star";
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .room__rate-wrapper {
+        padding: 0 0.5em 0 0.5em;
 
-        .carousel {
-            width: 100%;
-            height: auto;
-            grid-area: img;
-        }
-
-        .carousel__window {
-            width: auto;
-            height: auto;
-        }
-
-        .carousel__img {
-            width: 100%;
-            height: auto;
-        }
-
-        .room__about-room {
-            grid-area: num;
-            border-bottom: 0;
-        }
-
-        .room__rate-wrapper {
-            grid-area: star;
-        }
-
-        .room__badge-number {
-            display: none;
-        }
-
-        .room__time {
-            display: none;
-        }
-
-        .room__rate-wrapper {
-            padding: 0;
-
-            .rate__star1,
-            .rate__star2,
-            .rate__star3,
-            .rate__star4,
-            .rate__star5 {
-                font-size: 20px;
-            }
+        .rate__star1,
+        .rate__star2,
+        .rate__star3,
+        .rate__star4,
+        .rate__star5 {
+            font-size: 20px;
         }
     }
 }
-*/

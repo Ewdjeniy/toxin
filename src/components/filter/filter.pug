@@ -29,10 +29,9 @@ include ../pagination/pagination
             include ./__expandable-checkbox/filter__expandable-checkbox.pug
     .filter__screen
         h1(class="filter__screen-header") Номера, которые мы для вас подобрали
-        .filter__rooms
-            .filter__result
-                each room in data.rooms
-                    +room(room)
+        .filter__result
+            each room in data.rooms
+                +room(room)
         .filter__pagination-wrapper
             div(class="filter__empty1")
             +pagination(15)
