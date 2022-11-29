@@ -42,7 +42,7 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     background-color: #FFFFFF;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     border-bottom-left-radius: 0.29em;
     border-bottom-right-radius: 0.29em;
     border-top: none;

@@ -1,4 +1,5 @@
 import './calendar.css';
+import 'air-datepicker';
 import hangClickButtonsHandler from '../button/_theme_click/button_theme_click.js';
 
 const calendars = document.getElementsByClassName('calendar');

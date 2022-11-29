@@ -7,7 +7,7 @@ const roomPictures = document.getElementsByClassName('room-pictures')[0];
 const roomDetails = document.getElementsByClassName('room-details')[0];
 
 if (roomPictures || roomDetails) {
-    localData = getDataFromLocalStorage('toxin');
+    localData = localStorage.toxin ? JSON.parse(localStorage.toxin) : false;
     local = localData ? localData : {
         "startDate": "",
         "endDate": "",
@@ -94,10 +94,6 @@ if (roomDetails) {
             '<span class="li__marker"></span>' +
             '<span class="li__text">' + rule + '</span>';
         bulletListUl.prepend(li);
-    };
-
-    window.onbeforeunload = function (e) {
-        localStorage.toxin = JSON.stringify(local);
     };
     
     if (localData && localData.votes) {

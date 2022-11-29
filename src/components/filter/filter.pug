@@ -3,6 +3,7 @@ include ../checkbox/checkbox
 include ../rich-checkbox/rich-checkbox
 include ../room/room
 include ../pagination/pagination
+include ../slider/slider
 
 .filter
     .filter__responsive-inputs
@@ -14,7 +15,7 @@ include ../pagination/pagination
             include ../datefield/datefield.pug
             h3 гости
             +dropdown('Сколько гостей', {'Взрослые': 0, 'Дети' : 0, 'Младенцы' : 0})(class="drop-guests")
-            div(style="height: 9.36em;")
+            +slider(class="filter__slider" value="5000 - 10000")
             form
                 h3(class="filter__home-rules") Правила дома
                 +checkbox('Можно курить', 'checked')(class="filter__smoke")

@@ -13,7 +13,7 @@ for (let i = 0; i < dateDrops.length; i++) {
     let turner = 0;
     const switchCalendar = function() {
         if (turner == 0) {
-            calendarInpt.focus();
+            calendarInpt.focus({focusVisible: false});
             turner = 1;
             for (let j = 0; j < dropDatesArrows.length; j++) {
                 dropDatesArrows[j].innerHTML = 'keyboard_arrow_up';

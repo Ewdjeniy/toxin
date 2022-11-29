@@ -3,7 +3,7 @@ import "./search-room-card.css";
 const searchRoomCards = document.getElementsByClassName('search-room-card');
 
 for (let i = 0; i < searchRoomCards.length; i++) {
-    const localData = getDataFromLocalStorage('toxin');
+    const localData = localStorage.toxin ? JSON.parse(localStorage.toxin) : false;
     const dropGuests = searchRoomCards[i].getElementsByClassName('drop-guests')[0];
     const dropGuestsHandler = dropGuests.getElementsByClassName('dropdown__handler')[0],
         dropGuestsValue = dropGuests.getElementsByClassName('dropdown__value')[0],
@@ -55,15 +55,11 @@ for (let i = 0; i < searchRoomCards.length; i++) {
         }
     };
 
-    window.onbeforeunload = function (e) {
-        localStorage.toxin = JSON.stringify(local);
-    };
-
     if (localData) {
         if (localData.startDate && !localData.endDate) {
-            datepicker.selectDate(new Date(localData.startDate));
+            datepicker.selectDate(new Date(+localData.startDate.split(',')[0], +localData.startDate.split(',')[1] - 1, +localData.startDate.split(',')[2]));
         } else if (localData.startDate && localData.endDate) {
-            datepicker.selectDate([new Date(localData.startDate), new Date(localData.endDate)]);
+            datepicker.selectDate([new Date(+localData.startDate.split(',')[0], +localData.startDate.split(',')[1] - 1, +localData.startDate.split(',')[2]), new Date(+localData.endDate.split(',')[0], +localData.endDate.split(',')[1] - 1, +localData.endDate.split(',')[2])]);
         }
         for (let j = 0; j < dropdownValues.length; j++) {
             dropdownValues[j].innerHTML = JSON.parse(localData.guestsAmount)[j];

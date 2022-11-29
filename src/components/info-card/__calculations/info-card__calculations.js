@@ -14,11 +14,11 @@ for (let i = 0; i < infoCards.length; i++) {
     const dateDrops = infoCards[i].getElementsByClassName('drop-dates')[0];
     const calendarAltField = infoCards[i].getElementsByClassName('calendar__altField')[0];
     const calculatePrice = function(startDate, endDate) {
-        days = (startDate && endDate) ? Math.ceil((new Date(endDate) - new Date(startDate))) / 86400000 : 1;
-        priceOnDays = localData.price * days;
+        days = (startDate && endDate) ? Math.ceil((new Date(+localData.endDate.split(',')[0], +localData.endDate.split(',')[1] - 1, +localData.endDate.split(',')[2]) - new Date(+localData.startDate.split(',')[0], +localData.startDate.split(',')[1] - 1, +localData.startDate.split(',')[2]))) / 86400000 : 1;
+        priceOnDays = +localData.price * days;
         infoCardAmountOfDays.innerHTML = days;
         infoCardMoneyResult.innerHTML = (priceOnDays).toLocaleString('ru-RU');
-        infoCardTotal.innerHTML = (localData.price * days - infoCardDiscount.innerHTML + (+infoCardDiscountResult[0].innerHTML) + (+infoCardDiscountResult[1].innerHTML)).toLocaleString('ru-RU');
+        infoCardTotal.innerHTML = (localData.price * days - infoCardDiscount.innerHTML + (+infoCardDiscountResult[0].innerHTML) + (+infoCardDiscountResult[1].innerHTML)).toLocaleString('ru-RU') + '&#8381';
     };
     let days = 0;
     let priceOnDays = 0;

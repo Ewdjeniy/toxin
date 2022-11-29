@@ -22,13 +22,13 @@ const filters = document.getElementsByClassName('filter');
 let rooms = data.rooms.slice();
 
 for (let i = 0; i < filters.length; i++) {
-    console.log(localStorage.toxin);
     
+    const filterSliderVal = filters[i].getElementsByClassName('filter__slider')[0];
     const filterJs = filters[i].getElementsByClassName('filter__responsive-inputs')[0];
     const filterInputs = filters[i].getElementsByClassName('filter__inputs')[0];
     const filterArrow = filters[i].getElementsByClassName('filter__arrow')[0];
     let filterTurner = 0;
-    const localData = getDataFromLocalStorage('toxin');
+    const localData = localStorage.toxin ? JSON.parse(localStorage.toxin) : false;
     const screen = filters[i].getElementsByClassName('filter__result')[0];
     const pagination = filters[i].getElementsByClassName('pagination')[0];
     const roomsOnPage = 12;
@@ -172,6 +172,7 @@ for (let i = 0; i < filters.length; i++) {
         }
         hangPaginationHandlers();
     };
+    
     const setCarouselsHandler = function () {
         const carousels = filters[i].getElementsByClassName('carousel');
 
@@ -211,8 +212,16 @@ for (let i = 0; i < filters.length; i++) {
             }
         }
     };
-    const setFilters = function (smoke, pets, guests, wideCorridor, bedRooms, beds, bathRooms) {
+    
+    const setFilters = function (priceDiapason, smoke, pets, guests, wideCorridor, bedRooms, beds, bathRooms) {
         rooms = data.rooms.slice();
+        
+        for (let j = 0; j < rooms.length; j++) {
+            if (+rooms[j].price < priceDiapason[0] || +rooms[j].price > priceDiapason[1]) {
+                rooms.splice(j, 1);
+                j = -1;
+            }
+        }
 
         if (smoke) {
             for (let j = 0; j < rooms.length; j++) {
@@ -269,6 +278,7 @@ for (let i = 0; i < filters.length; i++) {
         hangPaginationHandlers();
         showPage();
     };
+    
     const showValue = function () {
         const adultsAmount = JSON.parse(dropGuestsHandler.value)[0] + JSON.parse(dropGuestsHandler.value)[1];
         const babiesAmount = JSON.parse(dropGuestsHandler.value)[2];
@@ -284,15 +294,11 @@ for (let i = 0; i < filters.length; i++) {
         }
     };
     
-    window.onbeforeunload = function(e) {
-        localStorage.toxin = JSON.stringify(local);
-    };
-    
     if (localData) {
         if (localData.startDate && !localData.endDate) {
-            datepicker.selectDate(new Date(localData.startDate));
+            datepicker.selectDate(new Date(+localData.startDate.split(',')[0], +localData.startDate.split(',')[1] - 1, +localData.startDate.split(',')[2]));
         } else if (localData.startDate && localData.endDate) {
-            datepicker.selectDate([new Date(localData.startDate), new Date(localData.endDate)]);
+            datepicker.selectDate([new Date(+localData.startDate.split(',')[0], +localData.startDate.split(',')[1] - 1, +localData.startDate.split(',')[2]), new Date(+localData.endDate.split(',')[0], +localData.endDate.split(',')[1] - 1, +localData.endDate.split(',')[2])]);
         }
         for (let j = 0; j < dropdownValues.length; j++) {
             dropdownValues[j].innerHTML = JSON.parse(localData.guestsAmount)[j];
@@ -325,20 +331,24 @@ for (let i = 0; i < filters.length; i++) {
         }
     }    
     
-    setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     pagination.onchange = showPage;
+    
+    filterSliderVal.onchange = () => {
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+    }
 
     filterSmoke.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
     filterPets.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
     filterGuests.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
     filterWideCorridor.onchange = function () {
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
 
     dropGuests.onchange = showValue;
@@ -360,7 +370,7 @@ for (let i = 0; i < filters.length; i++) {
         }
 
         dropConveniencesValue.innerHTML = (bedRoomsValue + bedsValue + bathRoomsValue) != '' ? bedRoomsValue + bedsValue + bathRoomsValue : 'Какие удобства?';
-        setFilters(filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
+        setFilters(filterSliderVal.value.split(' - '), filterSmokeCheckBx.checked, filterPetsCheckBx.checked, filterGuestsCheckBx.checked, filterWideCorridorCheckBx.checked, JSON.parse(dropConveniencesHandler.value)[0], JSON.parse(dropConveniencesHandler.value)[1], JSON.parse(dropConveniencesHandler.value)[2]);
     }
 }
 

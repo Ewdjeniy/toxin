@@ -12,6 +12,14 @@
     .datefield {
         margin: 0 0 1.52em 0;
     }
+    
+    .dropdown {
+        margin: 0 0 1.52em 0;
+    }
+    
+    .slider {
+        margin: 0 0 1.52em 0;
+    }
 
     .filter__guests {
         align-items: flex-start;

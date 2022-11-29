@@ -118,10 +118,6 @@
         .room__rate-wrapper {
             padding: 0 0.5em 0 0.5em;
 
-            .rate {
-                width: 15em;
-            }
-
             .rate__star1,
             .rate__star2,
             .rate__star3,

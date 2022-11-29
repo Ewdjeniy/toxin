@@ -3,6 +3,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const fs = require('fs');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 const pages = [];
 
@@ -113,6 +114,11 @@ const htmlPlugins = pages.map(fileName => new HtmlWebpackPlugin({
       ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
+            
+        }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
